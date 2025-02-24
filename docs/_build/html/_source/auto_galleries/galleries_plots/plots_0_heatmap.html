@@ -1,0 +1,3852 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Heatmap Plot &#8212; Mocharts  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/theme_override.css?v=6ecc848e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/hide_links.css?v=60d22a59" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=94c917f8" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../_static/documentation_options.js?v=7f41d439"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_source/auto_galleries/galleries_plots/plots_0_heatmap';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Histogram Plot" href="plots_0_hist.html" />
+    <link rel="prev" title="Density Plot" href="plots_0_density.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.1" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.jpg" class="logo__image only-light" alt=""/>
+    <img src="../../../_static/logo.jpg" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Modeva-AI</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api_ref.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../galleries.html">
+    Galleries
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/Mocharts" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api_ref.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../galleries.html">
+    Galleries
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/Mocharts" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../galleries_guide/index.html">Mocharts User Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Mocharts Plots</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="plots_0_bar.html">Bar Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plots_0_box.html">Box Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plots_0_density.html">Density Plot</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Heatmap Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plots_0_hist.html">Histogram Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plots_0_line.html">Line Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plots_0_others.html">Other Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plots_0_scatter.html">Scatter Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plots_0_scatter3d.html">3D Scatter Plot</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../galleries.html" class="nav-link">Example Galleries</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Mocharts Plots</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Heatmap Plot</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-source-auto-galleries-galleries-plots-plots-0-heatmap-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="heatmap-plot">
+<span id="sphx-glr-source-auto-galleries-galleries-plots-plots-0-heatmap-py"></span><h1>Heatmap Plot<a class="headerlink" href="#heatmap-plot" title="Link to this heading">#</a></h1>
+<div style="margin: 0 0;">
+    <a href="https://colab.research.google.com/github/modeva-ai/MoCharts/blob/main/docs/_source/auto_galleries/galleries_plots/plots_0_heatmap.ipynb" target="_blank" style="text-decoration: none;">
+        <button style="background-color: white; border: none; color: black; padding: 0px 0px;
+                       text-align: center; text-decoration: none; display: inline-block; font-size: 20px;
+                       margin: 0px 0px 10px 0px; cursor: pointer; border-radius: 0px;">
+            <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Colab Logo" style="height: 30px; vertical-align: middle;">
+        </button>
+    </a>
+</div><p>Installation</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># To install the required package, use the following command:</span>
+<span class="c1"># !pip install mocharts</span>
+</pre></div>
+</div>
+<p>Simple Heatmap</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="kn">import</span> <span class="nn">mocharts</span> <span class="k">as</span> <span class="nn">mc</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">uniform_data</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.rand.html#numpy.random.rand" title="numpy.random.rand" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span></a><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">hm</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">uniform_data</span></a><span class="p">)</span>
+<span class="n">hm</span><span class="o">.</span><span class="n">set_visualmap</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">560</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">hm</span><span class="o">.</span><span class="n">set_figsize</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">hm</span><span class="o">.</span><span class="n">set_toolbox</span><span class="p">(</span><span class="n">itemSize</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="s1">&#39;7%&#39;</span><span class="p">)</span>
+<span class="c1"># hm.show()</span>
+<span class="n">HTML</span><span class="p">(</span><span class="n">hm</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">return_html</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="output_subarea output_html rendered_html output_result">
+
+            <!DOCTYPE html>
+            <html lang="en" style="height: 100%">
+            <head>
+            <meta charset="utf-8">
+            </head>
+            <body style="height: 100%; margin: 0">
+
+
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/echarts-gl/2.0.8/echarts-gl.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-wordcloud@2.1.0/dist/echarts-wordcloud.min.js"></script>
+
+            <div id="1740379246.40059640.0416" style="height: 300px; width: 300px; overflow: auto"></div>
+
+            <script type="text/javascript">
+            var dom = document.getElementById('1740379246.40059640.0416');
+            dom.innerHTML = ""
+            dom.setAttribute('_echarts_instance_', '')
+            var myChart = echarts.init(dom, null, {
+                renderer: 'canvas',
+                useDirtyRect: false
+                });
+            var app = {};
+
+            var option;
+    option = {"chart_id": "1740379246.40059640.0416", "link_id": null, "figname": "", "title": null, "grid": {"show": true, "width": "auto", "height": "auto", "z": 2, "left": "5%", "top": "10%", "right": "10%", "bottom": "5%", "borderColor": "#ccc", "borderWidth": 1, "containLabel": true, "backgroundColor": "transparent", "changed_name_key": {"id_": "id"}}, "legend": null, "brush": null, "yAxis": [{"show": true, "type": "category", "position": "bottom", "name": "", "nameLocation": "center", "nameTextStyle": {"color": "black", "fontStyle": "normal", "fontWeight": "normal", "fontFamily": "sans-serif", "fontSize": 12, "backgroundColor": "", "borderType": "solid", "shadowColor": "transparent", "textBorderType": "solid", "textShadowColor": "transparent", "overflow": "none", "ellipsis": "..."}, "nameGap": "auto", "inverse": true, "splitNumber": 5, "logBase": 10, "axisLine": {}, "axisTick": {"show": true, "alignWithLabel": "none", "interval": "auto", "length": 5}, "axisLabel": {"show": true, "margin": 8, "showMinLabel": true, "fontStyle": "normal", "fontWeight": "normal", "fontFamily": "sans-serif", "fontSize": 12, "backgroundColor": "transparent", "borderType": "solid", "shadowColor": "transparent", "textBorderType": "solid", "textShadowColor": "transparent", "overflow": "none", "ellipsis": "...", "width": 15.0}, "splitLine": {"show": true, "interval": "auto"}, "splitArea": {"show": false, "interval": "auto"}, "axisPointer": {"show": false}, "dimension": "2d", "ignored": false, "changed_name_key": {"min_": "min", "max_": "max", "type_": "type", "name_": "name"}}], "xAxis": [{"show": true, "type": "category", "position": "bottom", "name": "", "nameLocation": "center", "nameTextStyle": {"color": "black", "fontStyle": "normal", "fontWeight": "normal", "fontFamily": "sans-serif", "fontSize": 12, "backgroundColor": "", "borderType": "solid", "shadowColor": "transparent", "textBorderType": "solid", "textShadowColor": "transparent", "overflow": "none", "ellipsis": "..."}, "nameGap": 20, "splitNumber": 5, "logBase": 10, "axisLine": {}, "axisTick": {"show": true, "alignWithLabel": "none", "interval": "auto", "length": 5}, "axisLabel": {"show": true, "margin": 8, "showMinLabel": true, "fontStyle": "normal", "fontWeight": "normal", "fontFamily": "sans-serif", "fontSize": 12, "backgroundColor": "transparent", "borderType": "solid", "shadowColor": "transparent", "textBorderType": "solid", "textShadowColor": "transparent", "overflow": "none", "ellipsis": "...", "width": null}, "splitLine": {"show": true, "interval": "auto"}, "splitArea": {"show": false, "interval": "auto"}, "axisPointer": {"show": false}, "dimension": "2d", "ignored": false, "changed_name_key": {"min_": "min", "max_": "max", "type_": "type", "name_": "name"}}], "parallelAxis": null, "series": [{"type": "heatmap", "name": "heatmap", "colorBy": "series", "z": 2, "legendHoverLink": true, "stackStrategy": "samesign", "cursor": "pointer", "clip": true, "label": {"show": false, "fontSize": 12}, "seriesLayoutBy": "column", "data": [[0, 0, 0.19543670487718623], [0, 1, 0.5018571210115118], [0, 2, 0.07737064566623675], [0, 3, 0.10529669142708542], [0, 4, 0.08994320880606921], [0, 5, 0.18822561378699287], [0, 6, 0.39917915432536977], [0, 7, 0.3888910060286307], [0, 8, 0.3829272451305298], [0, 9, 0.4195785675542608], [0, 10, 0.9901477014213376], [0, 11, 0.3940143198527071], [1, 0, 0.34301584279596986], [1, 1, 0.6502205630760932], [1, 2, 0.10373041593816534], [1, 3, 0.08895071831469481], [1, 4, 0.45859143333625774], [1, 5, 0.9702392852560271], [1, 6, 0.3870462919818515], [1, 7, 0.65236729310907], [1, 8, 0.811546649006516], [1, 9, 0.16375284603120788], [1, 10, 0.11271698575357114], [1, 11, 0.5531376052166967], [2, 0, 0.9811122438735775], [2, 1, 0.2967318439870614], [2, 2, 0.12447170522963613], [2, 3, 0.17880969996426055], [2, 4, 0.2505336903597555], [2, 5, 0.3574710526399133], [2, 6, 0.1002021875282385], [2, 7, 0.9596975458406725], [2, 8, 0.8626382814472664], [2, 9, 0.21942804336201238], [2, 10, 0.2174646657201359], [2, 11, 0.5283888266707996], [3, 0, 0.3467611867882141], [3, 1, 0.3551702544572013], [3, 2, 0.7300403595597574], [3, 3, 0.5771620268002188], [3, 4, 0.719318556400124], [3, 5, 0.6037185400899304], [3, 6, 0.5223025679784575], [3, 7, 0.06299352149893311], [3, 8, 0.32845198792120267], [3, 9, 0.5026953672105765], [3, 10, 0.797013540477576], [3, 11, 0.7885869223277676], [4, 0, 0.08397083776017045], [4, 1, 0.3998754684085656], [4, 2, 0.9552815735262593], [4, 3, 0.23184817980943606], [4, 4, 0.987540616351035], [4, 5, 0.4769918565351845], [4, 6, 0.06034377540116631], [4, 7, 0.5768595644103803], [4, 8, 0.38168596677359046], [4, 9, 0.6220602500010367], [4, 10, 0.4862469272813993], [4, 11, 0.6765780302014266], [5, 0, 0.051189480465731574], [5, 1, 0.07387992817000988], [5, 2, 0.4150323900274362], [5, 3, 0.021151320449389277], [5, 4, 0.8937761511217176], [5, 5, 0.16279551134604253], [5, 6, 0.5600052902802461], [5, 7, 0.729643178647643], [5, 8, 0.6577247485988564], [5, 9, 0.9970766043500112], [5, 10, 0.981949046336073], [5, 11, 0.9809356282475079], [6, 0, 0.4345747839189298], [6, 1, 0.7866820025999223], [6, 2, 0.9853451275449617], [6, 3, 0.9790735617230416], [6, 4, 0.7531880371900477], [6, 5, 0.18967964839245377], [6, 6, 0.21109847778464996], [6, 7, 0.08384349084918441], [6, 8, 0.052710155172416284], [6, 9, 0.5063336426083701], [6, 10, 0.9281290560246376], [6, 11, 0.38578238617758054], [7, 0, 0.6737644496544196], [7, 1, 0.8111281794127277], [7, 2, 0.07157948169491868], [7, 3, 0.4185600690566137], [7, 4, 0.47603593860686244], [7, 5, 0.9559259918575896], [7, 6, 0.27447187702235043], [7, 7, 0.9329722948825396], [7, 8, 0.24828336064372525], [7, 9, 0.012116240472472173], [7, 10, 0.43739780576924525], [7, 11, 0.9809163446506437], [8, 0, 0.7735485022314675], [8, 1, 0.2108254084123955], [8, 2, 0.8564051756554594], [8, 3, 0.5921075552443965], [8, 4, 0.5718408733329692], [8, 5, 0.954730958111488], [8, 6, 0.9183734717694937], [8, 7, 0.08647689818527016], [8, 8, 0.12826961442809925], [8, 9, 0.4496843629045192], [8, 10, 0.07186618602560302], [8, 11, 0.16781030436150624], [9, 0, 0.5021920066756165], [9, 1, 0.06926887917855229], [9, 2, 0.1820287452981333], [9, 3, 0.7852440496637956], [9, 4, 0.8540342437351065], [9, 5, 0.8855532643615378], [9, 6, 0.9667049666992921], [9, 7, 0.42081611580372325], [9, 8, 0.5119326229005469], [9, 9, 0.5615936171976238], [9, 10, 0.9889702230693501], [9, 11, 0.45510240154470194]], "animation": true, "animationThreshold": 2000, "animationDuration": 1000, "animationEasing": "cubicOut", "animationDurationUpdate": 300, "animationEasingUpdate": "cubicOut", "coordinateSystem": "cartesian2d", "pointSize": 20, "blurSize": 10, "maxOpacity": 1, "progressive": 400, "progressiveThreshold": 3000, "colsize": 1, "visualmap_type": "continuous", "map_range": [0.012116240472472173, 0.9970766043500112]}], "visualMap": {"show": true, "type": "continuous", "color": ["#440154", "#481467", "#482576", "#453781", "#404688", "#39558c", "#33638d", "#2d718e", "#287d8e", "#238a8d", "#1f968b", "#20a386", "#29af7f", "#3dbc74", "#56c667", "#75d054", "#95d840", "#bade28", "#dde318", "#fde725"], "left": "auto", "top": "10%", "right": "1%", "bottom": "auto", "min": 0.012116240472472173, "max": 0.9970766043500112, "calculable": false, "realtime": true, "precision": 1, "itemWidth": 20.0, "itemHeight": 560.0, "align": "auto", "textGap": 10, "hoverLink": true, "z": 4, "padding": 0, "backgroundColor": "rgba(0,0,0,0)", "borderColor": "#ccc", "textStyle": {"fontSize": 12, "width": 35, "overflow": "none", "ellipsis": ".."}, "indicatorSize": "50%", "orient": "vertical", "changed_name_key": {"id_": "id", "type_": "type", "min_": "min", "max_": "max", "range_": "range"}}, "toolbox": {"show": true, "orient": "horizontal", "itemSize": 30.0, "itemGap": 8.0, "showTitle": true, "feature": {"dataZoom": {}, "saveAsImage": {}}, "z": 2, "left": "7%", "top": "auto", "right": "1%", "bottom": "auto", "width": "auto", "height": "auto", "popup": true, "changed_name_key": {"id_": "id"}}, "tooltip": null, "dataZoom": null, "event": null, "graphic": null, "radar": null, "figsize": {"height": 300, "width": 300}, "color": ["#1f77b4", "#aec7e8", "#ff7f0e", "#ffbb78", "#2ca02c", "#98df8a", "#d62728", "#ff9896", "#9467bd", "#c5b0d5", "#8c564b", "#c49c94", "#e377c2", "#f7b6d2", "#7f7f7f", "#c7c7c7", "#bcbd22", "#dbdb8d", "#17becf", "#9edae5"], "save_img": false, "auto_size": true, "style": {"overflow": "auto"}, "port": "5001"};function setInnerHTML(elm, html) {
+  elm.innerHTML = html;
+
+  Array.from(elm.querySelectorAll("script"))
+    .forEach( oldScriptEl => {
+      const newScriptEl = document.createElement("script");
+
+      Array.from(oldScriptEl.attributes).forEach( attr => {
+        newScriptEl.setAttribute(attr.name, attr.value)
+      });
+
+      const scriptText = document.createTextNode(oldScriptEl.innerHTML);
+      newScriptEl.appendChild(scriptText);
+
+      oldScriptEl.parentNode.replaceChild(newScriptEl, oldScriptEl);
+  });
+};
+
+function getScreenSize(option) {
+  let testRequest = new Request('http://localhost:' + option['port'] +'/function/js_result_save', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8;',
+          'Access-Control-Allow-Origin':'*',
+          'Access-Control-Allow-Credentials': 'true',
+          'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+        },
+        body: JSON.stringify({'js_func_input':{'height': screen.height, 'width': screen.width},
+                              'event_id': 'screen_size'})
+      });
+      fetch(testRequest).then(response => {});
+  return
+}
+function support_scientific_notation(option) {
+  if (Array.isArray(option['yAxis'])) {
+    for (var tar_ind = 0; tar_ind < option['yAxis'].length; tar_ind++) {
+      if (option['yAxis'][tar_ind]['type'] === 'value') {
+        option['yAxis'][tar_ind]['axisLabel']['formatter'] = function(val) {
+          const superscripts = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹','¹⁰',
+                    '¹¹', '¹²', '¹³', '¹⁴', '¹⁵', '¹⁶', '¹⁷', '¹⁸', '¹⁹','²⁰',
+                    '²¹', '²²', '²³', '²⁴', '²⁵', '²⁶', '²⁷', '²⁸', '²⁹'];
+          function toSuperscript(val) {
+            if (val.toString().length > 5 && !val.toString().includes('.')) {
+              val = Number(val).toExponential().toString();
+              if (val.includes('-')) {
+                val = val.split('-');
+                var val0 = val[0];
+                var val1 = superscripts[val[1]];
+                return val0 + '⁻' + val1
+              }
+              else if (val.includes('+')) {
+                val = val.split('+');
+                var val0 = val[0];
+                var val1 = superscripts[val[1]];
+                return val0 + '⁺' + val1
+              }
+            }
+            else {
+              return val
+            }
+          }
+          return toSuperscript(val)
+        }
+      }
+    }
+  }
+  else {
+    if (option['yAxis']['type'] === 'value') {
+      option['yAxis']['axisLabel']['formatter'] = function(val) {
+        const superscripts = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹','¹⁰',
+                '¹¹', '¹²', '¹³', '¹⁴', '¹⁵', '¹⁶', '¹⁷', '¹⁸', '¹⁹','²⁰',
+                '²¹', '²²', '²³', '²⁴', '²⁵', '²⁶', '²⁷', '²⁸', '²⁹'];
+        function toSuperscript(val) {
+          if (val.toString().length > 5 && !val.toString().includes('.')) {
+            val = Number(val).toExponential().toString();
+            if (val.includes('-')) {
+              val = val.split('-');
+              var val0 = val[0];
+              var val1 = superscripts[val[1]];
+              return val0 + '⁻' + val1
+            }
+            else if (val.includes('+')) {
+              val = val.split('+');
+              var val0 = val[0];
+              var val1 = superscripts[val[1]];
+              return val0 + '⁺' + val1
+            }
+          }
+          else {
+            return val
+          }
+        }
+        return toSuperscript(val)
+      }
+    }
+  };
+  return option;
+};
+
+function auto_component_size(option) {
+  if (typeof option['figsize']['width'] === 'string' || option['figsize']['width'] instanceof String) {
+    if (option['figsize']['width'].includes('%')) {
+      var width = 800 * (parseFloat(option['figsize']['width'].slice(0,-1)) / 100);
+    }
+    else if (option['figsize']['width'].includes('px')) {
+      var width = parseFloat(option['figsize']['width'].slice(0,-2));
+    }
+  }
+  else {
+    var width = option['figsize']['width']
+  }
+
+  if (typeof option['figsize']['height'] === 'string' || option['figsize']['height'] instanceof String) {
+    if (option['figsize']['height'].includes('%')) {
+      var height = 600 * (parseFloat(option['figsize']['height'].slice(0,-1)) / 100);
+    }
+    else if (option['figsize']['height'].includes('px')) {
+      var height = parseFloat(option['figsize']['height'].slice(0,-2));
+    }
+  }
+  else {
+    var height = option['figsize']['height']
+  }
+
+  var relative_ratio = Math.min(width / 700, height / 400)
+  if ('xAxis3D' in option) {
+    var keys = ['xAxis3D', 'yAxis3D', 'zAxis3D']
+  }
+  else {
+    var keys = ['xAxis', 'yAxis']
+  }
+  for (single_key of keys) {
+    for (var ind = 0; ind < option[single_key].length; ind++) {
+      option[single_key][ind]['nameTextStyle']['fontSize'] = Math.max(7, option[single_key][ind]['nameTextStyle']['fontSize'] * relative_ratio);
+      option[single_key][ind]['axisLabel']['fontSize'] = Math.max(7, option[single_key][ind]['axisLabel']['fontSize'] * relative_ratio);
+    }
+  }
+  if (option['series']) {
+    for (var ind = 0; ind < option['series'].length; ind++) {
+      if (['heatmap', 'bar'].includes(option['series'][ind]['type'])) {
+        if (option['series'][ind]['label']) {
+          option['series'][ind]['label']['fontSize'] = Math.max(7, option['series'][ind]['label']['fontSize'] * relative_ratio);
+        }
+      }
+    }
+  }
+  if (option['title']) {
+    if (Array.isArray(option['title'])) {
+      for (var ind = 0; ind < option['title'].length; ind++) {
+        option['title'][ind]['textStyle']['fontSize'] = Math.max(9, option['title'][ind]['textStyle']['fontSize'] * relative_ratio);
+      }
+    }
+    else {
+      option['title']['textStyle']['fontSize'] = Math.max(9, option['title']['textStyle']['fontSize'] * relative_ratio);
+    }
+  }
+  if (option['legend']) {
+    option['legend']['itemHeight'] = option['legend']['itemHeight'] * relative_ratio;
+    option['legend']['itemWidth'] = option['legend']['itemWidth'] * relative_ratio;
+    option['legend']['textStyle']['fontSize'] = Math.max(7, option['legend']['textStyle']['fontSize'] * relative_ratio);
+  }
+  if (option['visualMap']) {
+    option['visualMap']['itemHeight'] = option['visualMap']['itemHeight'] * relative_ratio;
+    option['visualMap']['itemWidth'] = option['visualMap']['itemWidth'] * relative_ratio;
+    option['visualMap']['textStyle']['fontSize'] = Math.max(7, option['visualMap']['textStyle']['fontSize'] * relative_ratio);
+  }
+  if (option['toolbox']) {
+    option['toolbox']['itemSize'] = Math.max(8, option['toolbox']['itemSize'] * relative_ratio)
+    option['toolbox']['itemGap'] = Math.max(4, option['toolbox']['itemGap'] * relative_ratio);
+  }
+  if (option['graphic']) {
+    for (var ind = 0; ind < option['graphic'].length; ind++) {
+      for (var ind2 = 0; ind2 < option['graphic'][ind]['children'].length; ind2++) {
+        var new_font = Math.max(7, 12 * relative_ratio);
+        option['graphic'][ind]['children'][ind2]['style']['font'] = new_font.toString() + 'px Microsoft YaHei';
+      }
+    }
+  }
+  return option;
+}
+
+function save_img(echarts_instance, option) {
+  const base64_str = echarts_instance.getDataURL({
+      pixelRatio: 2,
+      backgroundColor: '#fff',
+      width: option['figsize']['width'],
+      height: option['figsize']['height']
+  });
+
+  let testRequest = new Request('http://localhost:' + option['port'] +'/function/js_image_save', {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8;',
+      'Access-Control-Allow-Origin':'*',
+      'Access-Control-Allow-Credentials': 'true',
+      'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+    },
+    body: JSON.stringify({'figname': option['figname'],
+                          'base64_str': base64_str})
+  });
+  fetch(testRequest).then(response => {});
+};
+
+
+function auto_axis_namegap(echarts_instance, auto_axis_list, axis_type) {
+  const globalModel = echarts_instance._api.getModel()
+  const figsize = globalModel.option.figsize
+  const ctx = document.createElement('canvas').getContext('2d')
+  if (typeof globalModel.option['figsize']['width'] === 'string' || globalModel.option['figsize']['width'] instanceof String) {
+    if (globalModel.option['figsize']['width'].includes('%')) {
+      var width = 800 * (parseFloat(globalModel.option['figsize']['width'].slice(0,-1)) / 100);
+    }
+    else if (globalModel.option['figsize']['width'].includes('px')) {
+      var width = parseFloat(globalModel.option['figsize']['width'].slice(0,-2));
+    }
+  }
+  else {
+    var width = globalModel.option['figsize']['width'];
+  }
+
+  if (typeof globalModel.option['figsize']['height'] === 'string' || globalModel.option['figsize']['height'] instanceof String) {
+    if (globalModel.option['figsize']['height'].includes('%')) {
+      var height = 600 * (parseFloat(globalModel.option['figsize']['height'].slice(0,-1)) / 100);
+    }
+    else if (globalModel.option['figsize']['height'].includes('px')) {
+      var height = parseFloat(globalModel.option['figsize']['height'].slice(0,-2));
+    }
+  }
+  else {
+    var height = option['figsize']['height'];
+  }
+  var relative_ratio = Math.min(width / 700, height / 400);
+  if (axis_type==='2d') {
+    const yAxisList = globalModel.option.yAxis
+    const xAxisList = globalModel.option.xAxis
+
+    for (var axis_idx of auto_axis_list) {
+      const yAxis = yAxisList[axis_idx]
+      const fontSize = yAxis.nameTextStyle?.fontSize ?? 12
+      const fontFamily = yAxis.nameTextStyle?.fontFamily ?? 'sans-serif'
+      ctx.save()
+      ctx.font = fontSize.toString() + 'px' + fontFamily.toString()
+
+      const yAxisComponent = globalModel.getComponent('yAxis', axis_idx)?.axis
+      if (yAxis.type === 'value') {
+        var labelMaxWidth = Math.min(Math.max(...yAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width)), 30)
+      }
+      else {
+        var labelMaxWidth = Math.max(...yAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width))
+      }
+      var axisLabelMargin = yAxis.axisLabel?.margin ?? 8
+      axisLabelMargin = axisLabelMargin * relative_ratio
+      yAxisList[axis_idx].nameGap = labelMaxWidth + axisLabelMargin + 5 * relative_ratio
+      ctx.restore()
+    };
+
+    for (var axis_idx of [...Array(xAxisList.length).keys()]) {
+      var new_gap = Math.max(xAxisList[axis_idx].nameGap * relative_ratio, 12);
+      if (figsize['height'] < 400) {
+        new_gap = Math.min(20, new_gap);
+      }
+      xAxisList[axis_idx].nameGap = new_gap;
+    }
+
+    echarts_instance.setOption({
+      yAxis: yAxisList,
+      xAxis: xAxisList
+    })
+  }
+  else {
+    const yAxisList = globalModel.option.yAxis3D
+    const xAxisList = globalModel.option.xAxis3D
+    const zAxisList = globalModel.option.zAxis3D
+
+    for (var axis_idx of auto_axis_list) {
+      if (axis_idx < xAxisList.length) {
+        const xAxis = xAxisList[axis_idx]
+        const fontSize = xAxis.nameTextStyle?.fontSize ?? 12
+        const fontFamily = xAxis.nameTextStyle?.fontFamily ?? 'sans-serif'
+        ctx.save()
+        ctx.font = fontSize.toString() + 'px' + fontFamily.toString()
+
+        const xAxisComponent = globalModel.getComponent('xAxis3D', axis_idx)?.axis
+        if (xAxis.type === 'value') {
+          var labelMaxWidth = Math.min(Math.max(...xAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width)), 30)
+        }
+        else {
+          var labelMaxWidth = Math.max(...xAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width))
+        }
+        var axisLabelMargin = xAxis.axisLabel?.margin ?? 8
+        axisLabelMargin = axisLabelMargin * relative_ratio
+        xAxisList[axis_idx].nameGap = labelMaxWidth + axisLabelMargin + 5 * relative_ratio
+        ctx.restore()
+      }
+    };
+
+    for (var axis_idx of auto_axis_list) {
+      if (axis_idx < yAxisList.length) {
+        const yAxis = yAxisList[axis_idx]
+        const fontSize = yAxis.nameTextStyle?.fontSize ?? 12
+        const fontFamily = yAxis.nameTextStyle?.fontFamily ?? 'sans-serif'
+        ctx.save()
+        ctx.font = fontSize.toString() + 'px' + fontFamily.toString()
+
+        const yAxisComponent = globalModel.getComponent('yAxis3D', axis_idx)?.axis
+        if (yAxis.type === 'value') {
+          var labelMaxWidth = Math.min(Math.max(...yAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width)), 30)
+        }
+        else {
+          var labelMaxWidth = Math.max(...yAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width))
+        }
+        var axisLabelMargin = yAxis.axisLabel?.margin ?? 8
+        axisLabelMargin = axisLabelMargin * relative_ratio
+        yAxisList[axis_idx].nameGap = labelMaxWidth + axisLabelMargin + 5 * relative_ratio
+        ctx.restore()
+      }
+    };
+
+    for (var axis_idx of auto_axis_list) {
+      if (axis_idx < zAxisList.length) {
+        const zAxis = zAxisList[axis_idx]
+        const fontSize = zAxis.nameTextStyle?.fontSize ?? 12
+        const fontFamily = zAxis.nameTextStyle?.fontFamily ?? 'sans-serif'
+        ctx.save()
+        ctx.font = fontSize.toString() + 'px' + fontFamily.toString()
+
+        const zAxisComponent = globalModel.getComponent('zAxis3D', axis_idx)?.axis
+        if (zAxis.type === 'value') {
+          var labelMaxWidth = Math.min(Math.max(...zAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width)), 30)
+        }
+        else {
+          var labelMaxWidth = Math.max(...zAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width))
+        }
+        var axisLabelMargin = zAxis.axisLabel?.margin ?? 8
+        axisLabelMargin = axisLabelMargin * relative_ratio
+        zAxisList[axis_idx].nameGap = labelMaxWidth + axisLabelMargin + 5 * relative_ratio
+        ctx.restore()
+      }
+    };
+    echarts_instance.setOption({
+      yAxis3D: yAxisList,
+      xAxis3D: xAxisList,
+      zAxis3D: zAxisList
+    });
+    }
+
+};
+
+function custom_scatter_size(option) {
+
+  for (var ind = 0; ind < option['series'].length; ind++) {
+    if (option['series'][ind]['symbolSize'] === 'array_size') {
+      var ind_ = option['series'][ind]['data_dict']['size']
+      option['series'][ind]['symbolSize'] = function (data) {return data[ind_];}
+    }
+  }
+  return option;
+
+};
+
+function show_scatter_label(option) {
+
+  for (var ind = 0; ind < option['series'].length; ind++) {
+    if (option['series'][ind]['label'] === 'show_label') {
+      var ind_ = option['series'][ind]['data_dict']['label']
+      option['series'][ind]['label'] = {
+        show: true,
+        formatter: function (params) {return params.data.value[ind_]; }
+      }
+    }
+  }
+  return option;
+};
+
+function hide_min_max_axis_label(option) {
+  for (var ind = 0; ind < option['xAxis3D'].length; ind++) {
+    if (option['xAxis3D'][ind]['type'] == 'value') {
+      var x_min = option['xAxis3D'][ind]['min']
+      var x_max = option['xAxis3D'][ind]['max']
+      option['xAxis3D'][ind]['axisLabel']['formatter'] = function (value, index) {
+        if (value==x_min || value==x_max){}
+        else {return value}
+      }
+    }
+  }
+  for (var ind = 0; ind < option['yAxis3D'].length; ind++) {
+    if (option['yAxis3D'][ind]['type'] == 'value') {
+      var y_min = option['yAxis3D'][ind]['min']
+      var y_max = option['yAxis3D'][ind]['max']
+      option['yAxis3D'][ind]['axisLabel']['formatter'] = function (value, index) {
+        if (value==y_min || value==y_max){}
+        else {return value}
+      }
+    }
+  }
+  for (var ind = 0; ind < option['zAxis3D'].length; ind++) {
+    if (option['zAxis3D'][ind]['type'] == 'value') {
+      var z_min = option['zAxis3D'][ind]['min']
+      var z_max = option['zAxis3D'][ind]['max']
+      option['zAxis3D'][ind]['axisLabel']['formatter'] = function (value, index) {
+        if (value==z_min || value==z_max){}
+        else {return value}
+      }
+   }
+  }
+  return option;
+}
+
+function custom_axis_label(option) {
+  if (Array.isArray(option['xAxis'])) {
+    for (var ind = 0; ind < option['xAxis'].length; ind++) {
+      if (option['xAxis'][ind]['axisLabel']['formatter_func']) {
+        var f = new Function(option['xAxis'][ind]['axisLabel']['formatter_func'].arguments,
+                             option['xAxis'][ind]['axisLabel']['formatter_func'].body)
+        option['xAxis'][ind]['axisLabel']['formatter'] = f
+      }
+    }
+  }
+  else {
+    if (option['xAxis']['axisLabel']['formatter_func']) {
+      var f = new Function(option['xAxis']['axisLabel']['formatter_func'].arguments,
+                           option['xAxis']['axisLabel']['formatter_func'].body)
+      option['xAxis']['axisLabel']['formatter'] = f
+    }
+  }
+  if (Array.isArray(option['yAxis'])) {
+    for (var ind = 0; ind < option['yAxis'].length; ind++) {
+      if (option['yAxis'][ind]['axisLabel']['formatter_func']) {
+        var f = new Function(option['yAxis'][ind]['axisLabel']['formatter_func'].arguments,
+                             option['yAxis'][ind]['axisLabel']['formatter_func'].body)
+        option['yAxis'][ind]['axisLabel']['formatter'] = f
+      }
+    }
+  }
+  else {
+    if (option['yAxis']['axisLabel']['formatter_func']) {
+      var f = new Function(option['yAxis']['axisLabel']['formatter_func'].arguments,
+                           option['yAxis']['axisLabel']['formatter_func'].body)
+      option['yAxis']['axisLabel']['formatter'] = f
+    }
+  }
+  return option;
+}
+
+function custom_tooltip(option, dimension=2) {
+
+  if (dimension === 2) {
+    var xaxis_key = 'xAxis'
+    var yaxis_key = 'yAxis'
+  }
+
+  else if (dimension === 3) {
+    var xaxis_key = 'xAxis3D'
+    var yaxis_key = 'yAxis3D'
+    var zaxis_key = 'zAxis3D'
+  }
+
+  if (option['radar']) {
+    var radar_names = []
+    for (var ind_ = 0; ind_ < option['radar']['indicator'].length; ind_++) {
+      radar_names.push(option['radar']['indicator'][ind_]['name'])
+    }
+  }
+
+
+  if (option[xaxis_key]['name'] !== null && option[xaxis_key]['name'] !== '' && Array.isArray(option[xaxis_key])!==true) {
+    var xaxis_name = option[xaxis_key]['name'];
+  }
+  else {
+    var xaxis_name = 'X';
+  }
+
+  if (option[yaxis_key]['name'] !== null && option[yaxis_key]['name'] !== ''&& Array.isArray(option[xaxis_key])!==true) {
+    var yaxis_name = option[yaxis_key]['name'];
+  }
+  else {
+    var yaxis_name = 'Y';
+  }
+
+  if (typeof zaxis_key !== 'undefined') {
+    if (option[zaxis_key]['name'] !== ''&& Array.isArray(option[xaxis_key])!==true) {
+      var zaxis_name = option[zaxis_key]['name'];
+    }
+    else {
+      var zaxis_name = 'Z';
+    }
+  }
+
+  if (option['tooltip']) {
+    if (option['tooltip']['precision']) {
+      var precision = option['tooltip']['precision']
+      option['tooltip']['valueFormatter'] = (value) =>  Math.round(Number(value) * (10**precision)) / (10**precision)
+    }
+
+    for (var ind_ = 0; ind_ < option['series'].length; ind_++) {
+      if (option['series'][ind_]['tooltip']) {
+        if (option['series'][ind_]['tooltip']['precision']) {
+          var precision = option['series'][ind_]['tooltip']['precision']
+          const fix = precision_ => value => Math.round(Number(value) * (10**precision_)) / (10**precision_),
+          fix_p = fix(precision);
+          option['series'][ind_]['tooltip']['valueFormatter'] = function (value) {
+            return fix_p(value)
+          }
+        }
+      }
+    }
+
+    if (option['series'].length === 1) {
+      if (['scatter', 'heatmap', 'scatter3D', 'radar'].includes(option['series'][0]['type'])) {
+        option['tooltip']['formatter'] = function(params) {
+          if (params.seriesName.includes('series')) {
+            var series_name = ''
+          }
+
+          else {
+            var series_name = params.seriesName + '<br>'
+          }
+
+          if (params.seriesType === 'scatter') {
+            if (option['tooltip']['custom_tooltip'] === true) {
+              formatter = series_name
+                + params.value[dimension]
+            }
+            else {
+              formatter = series_name
+              + xaxis_name + ': '+ Math.round(params.value[0] * 100) / 100
+              +'<br>' + yaxis_name + ': ' + Math.round(params.value[1] * 100) / 100
+            }
+
+          }
+
+          else if (params.seriesType === 'heatmap') {
+            formatter = params.name + ', ' + option['yAxis'][0]['data'][params.data[1]] + '<br> <b>' + Math.round(params.data[2] * 10000) / 10000
+          }
+
+          else if (params.seriesType === 'scatter3D') {
+            if (option['tooltip']['custom_tooltip'] === true) {
+              formatter = series_name
+                + params.value[dimension]
+            }
+            else {
+              formatter = series_name
+                + xaxis_name + ': '+ Math.round(params.value[0] * 100) / 100
+                +'<br>' + yaxis_name + ': ' + Math.round(params.value[1] * 100) / 100
+                +'<br>' + zaxis_name + ': ' + Math.round(params.value[2] * 100) / 100
+            }
+          }
+
+          else if (params.seriesType === 'radar') {
+            formatter = params.name  + '<br>';
+            for (var ind_ = 0; ind_ < option['radar']['indicator'].length; ind_++) {
+              if (ind_ !== option['radar']['indicator'].length - 1) {
+                formatter += radar_names[ind_] + ': ' + Math.round(params.value[ind_] * 100) / 100 + '<br>'
+              }
+              else {
+                formatter += radar_names[ind_] + ': ' + Math.round(params.value[ind_] * 100) / 100
+              }
+            }
+          }
+        return formatter;
+        }
+      }
+    }
+    else {
+      for (var out_ind_ = 0; out_ind_ < option['series'].length; out_ind_++) {
+        if (['scatter', 'heatmap', 'scatter3D', 'radar'].includes(option['series'][out_ind_]['type'])) {
+          if (option['series'][out_ind_]['tooltip']) {
+          }
+          else {
+            option['series'][out_ind_]['tooltip'] = {}
+          }
+          option['series'][out_ind_]['tooltip']['formatter'] = function(params) {
+            if (params.seriesName.includes('series')) {
+              var series_name = ''
+            }
+
+            else {
+              var series_name = params.seriesName + '<br>'
+            }
+
+            if (params.seriesType === 'scatter') {
+              if (option['tooltip']['custom_tooltip'] === true) {
+                formatter = series_name
+                  + params.value[dimension]
+              }
+              else {
+                formatter = series_name
+                  + xaxis_name + ': '+ Math.round(params.value[0] * 100) / 100
+                  +'<br>' + yaxis_name + ': ' + Math.round(params.value[1] * 100) / 100
+              }
+            }
+
+            else if (params.seriesType === 'heatmap') {
+              if ('data' in option['yAxis'][option['series'][params.seriesIndex]['yAxisIndex']]) {
+                formatter = params.name + ', ' + option['yAxis'][option['series'][params.seriesIndex]['yAxisIndex']]['data'][params.data[1]] + '<br> <b>' + Math.round(params.data[2] * 10000) / 10000
+              }
+              else {
+                formatter = Math.round(params.data[2] * 10000) / 10000
+              }
+
+            }
+
+            else if (params.seriesType === 'scatter3D') {
+              if (option['tooltip']['custom_tooltip'] === true) {
+                formatter = series_name
+                  + params.value[dimension]
+              }
+              else {
+                formatter = series_name
+                  + xaxis_name + ': '+ Math.round(params.value[0] * 100) / 100
+                  +'<br>' + yaxis_name + ': ' + Math.round(params.value[1] * 100) / 100
+                  +'<br>' + zaxis_name + ': ' + Math.round(params.value[2] * 100) / 100
+              }
+            }
+
+            else if (params.seriesType === 'radar') {
+              formatter = params.name  + '<br>';
+              for (var ind_ = 0; ind_ < option['radar']['indicator'].length; ind_++) {
+                if (ind_ !== option['radar']['indicator'].length - 1) {
+                  formatter += radar_names[ind_] + ': ' + Math.round(params.value[ind_] * 100) / 100 + '<br>'
+                }
+                else {
+                  formatter += radar_names[ind_] + ': ' + Math.round(params.value[ind_] * 100) / 100
+                }
+              }
+            }
+          return formatter;
+          }
+        }
+      }
+    }
+  }
+  return option;
+};
+
+function support_brush_event(option) {
+  if (option['event']['type_'] === 'brushselected') {
+    if (option['link_id'] === null) {
+      var link_id = option['chart_id'];
+    }
+    else {
+      var link_id = option['link_id'];
+    }
+    var dom = document.getElementById(link_id);
+    var bind_chart = echarts.init(dom, null, {
+        renderer: 'canvas',
+        useDirtyRect: false
+    });
+    var last_selected = [];
+    bind_chart.on(option['event']['type_'], (params) => {
+      var brushed = [];
+      var brushComponent = params.batch[0];
+      for (var sIdx = 0; sIdx < brushComponent.selected.length; sIdx++) {
+        var rawIndices = brushComponent.selected[sIdx].dataIndex;
+        brushed.push(rawIndices);
+      }
+      var brushed_all = brushed[0];
+
+      if (JSON.stringify(last_selected) !== JSON.stringify(brushed_all)) {
+
+        // Update memory
+        let testRequest = new Request('http://localhost:' + option['port'] +'/function/js_call_python_function', {
+          method: 'post',
+          headers: {
+              'Content-Type': 'application/json;charset=utf-8;',
+              'Access-Control-Allow-Origin':'*',
+              'Access-Control-Allow-Credentials': 'true',
+              'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+          },
+          body: JSON.stringify({'js_func_input':{'selected': brushed_all},
+                                'event_id': option['event']['event_id']})
+        });
+        var dom_dict = {}
+        fetch(testRequest).then(response => {
+          var result = response.json();
+          result.then(res => {
+            dom_dict[res['link_id']] = document.getElementById(res['link_id']);
+            setInnerHTML(dom_dict[res['link_id']], res['html']);
+          });
+        });
+        last_selected = brushed_all;
+      }
+
+    // bind_chart.setOption(option);
+    })
+  }
+  return option;
+};
+
+function support_click_event(option) {
+  if (option['event']['type_'] === 'click') {
+    if (option['link_id'] === null) {
+      var link_id = option['chart_id'];
+    }
+    else {
+      var link_id = option['link_id'];
+    }
+    var dom = document.getElementById(link_id);
+    var bind_chart = echarts.init(dom, null, {
+        renderer: 'canvas',
+        useDirtyRect: false
+    });
+
+    if (option['series'][0]['orient'] === 'vertical') {
+      var value_idx = 0
+    }
+    else {
+      var value_idx = 1
+    }
+
+
+    bind_chart.on(option['event']['type_'], (params) => {
+      if (option['event']['task'] === 'singleselect') {
+        for (var ind_2 = 0; ind_2 < option['series'][0]['data'].length; ind_2++) {
+          if (option['series'][0]['data'][ind_2]['itemStyle']['color'] !== '#1f77b4') {
+            option['series'][0]['data'][ind_2]['itemStyle']['color'] = '#1f77b4';
+          }
+        }
+        var idx = option['series'][0]['x_value'].indexOf(params.value[value_idx])
+        option['series'][0]['data'][idx]['itemStyle']['color'] = '#ff7f0e';
+
+        var selected = params.value[value_idx];
+      }
+      else {
+        console.log(params);
+      }
+
+      let testRequest = new Request('http://localhost:' + option['port'] +'/function/js_call_python_function', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8;',
+          'Access-Control-Allow-Origin':'*',
+          'Access-Control-Allow-Credentials': 'true',
+          'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+        },
+        body: JSON.stringify({'js_func_input':{'selected': selected},
+                              'event_id': option['event']['event_id']})
+      });
+      var dom_dict = {}
+      fetch(testRequest).then(response => {
+        var result = response.json();
+        result.then(res => {
+          dom_dict[res['link_id']] = document.getElementById(res['link_id']);
+          setInnerHTML(dom_dict[res['link_id']], res['html']);
+        });
+      });
+      bind_chart.setOption(option);
+    });
+  }
+  return option;
+};function support_popup(option, height, width, inner_html) {
+  option['toolbox']['feature']['myFeature'] = {
+    show: true,
+    title: 'Open in new window',
+    icon: 'image://https://raw.githubusercontent.com/CnBDM-Su/XAI_demo/master/popup_icon.png',
+    onclick: function (){
+      var height_ = Math.min(screen.height, Math.round(1.5 * parseInt(height.slice(0,-2))))
+      var width_ = Math.min(screen.width, Math.round(1.5 * parseInt(width.slice(0,-2))))
+      var left = (screen.width/2)-(width_/2);
+      var top = (screen.height/2)-(height_/2);
+      var win = window.open('template.html', '_blank',
+        `height=${height_}px, width=${width_}px, top=${top}px, left=${left}px`,
+      );
+      win.document.write(`${inner_html}`);
+      win.document.close();
+    }
+  };
+  return option;
+};option = support_popup(option=option, height="300px", width="300px", inner_html=`
+
+        <html lang="en" style="height: 100%; text-align: -webkit-center; align-content: center">
+        <title>MoCharts</title>
+        <head> <meta charset="utf-8"> </head>
+        <body style="height: 100%; margin: 0">
+
+
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"><\/script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/echarts-gl/2.0.8/echarts-gl.min.js"><\/script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"><\/script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-wordcloud@2.1.0/dist/echarts-wordcloud.min.js"><\/script>
+
+
+        <div id="1740379246.40059640.0416" style="height: 90%; width: 90%"></div>
+        <script type="text/javascript">
+            var dom = document.getElementById('1740379246.40059640.0416');
+            var myChart = echarts.init(dom, null, {
+                renderer: 'canvas',
+                useDirtyRect: false
+                });
+            var app = {};
+
+            var option;
+        option = {"chart_id": "1740379246.40059640.0416", "link_id": null, "figname": "", "title": null, "grid": {"show": true, "width": "auto", "height": "auto", "z": 2, "left": "5%", "top": "10%", "right": "10%", "bottom": "5%", "borderColor": "#ccc", "borderWidth": 1, "containLabel": true, "backgroundColor": "transparent", "changed_name_key": {"id_": "id"}}, "legend": null, "brush": null, "yAxis": [{"show": true, "type": "category", "position": "bottom", "name": "", "nameLocation": "center", "nameTextStyle": {"color": "black", "fontStyle": "normal", "fontWeight": "normal", "fontFamily": "sans-serif", "fontSize": 12, "backgroundColor": "", "borderType": "solid", "shadowColor": "transparent", "textBorderType": "solid", "textShadowColor": "transparent", "overflow": "none", "ellipsis": "..."}, "nameGap": "auto", "inverse": true, "splitNumber": 5, "logBase": 10, "axisLine": {}, "axisTick": {"show": true, "alignWithLabel": "none", "interval": "auto", "length": 5}, "axisLabel": {"show": true, "margin": 8, "showMinLabel": true, "fontStyle": "normal", "fontWeight": "normal", "fontFamily": "sans-serif", "fontSize": 12, "backgroundColor": "transparent", "borderType": "solid", "shadowColor": "transparent", "textBorderType": "solid", "textShadowColor": "transparent", "overflow": "none", "ellipsis": "...", "width": 15.0}, "splitLine": {"show": true, "interval": "auto"}, "splitArea": {"show": false, "interval": "auto"}, "axisPointer": {"show": false}, "dimension": "2d", "ignored": false, "changed_name_key": {"min_": "min", "max_": "max", "type_": "type", "name_": "name"}}], "xAxis": [{"show": true, "type": "category", "position": "bottom", "name": "", "nameLocation": "center", "nameTextStyle": {"color": "black", "fontStyle": "normal", "fontWeight": "normal", "fontFamily": "sans-serif", "fontSize": 12, "backgroundColor": "", "borderType": "solid", "shadowColor": "transparent", "textBorderType": "solid", "textShadowColor": "transparent", "overflow": "none", "ellipsis": "..."}, "nameGap": 20, "splitNumber": 5, "logBase": 10, "axisLine": {}, "axisTick": {"show": true, "alignWithLabel": "none", "interval": "auto", "length": 5}, "axisLabel": {"show": true, "margin": 8, "showMinLabel": true, "fontStyle": "normal", "fontWeight": "normal", "fontFamily": "sans-serif", "fontSize": 12, "backgroundColor": "transparent", "borderType": "solid", "shadowColor": "transparent", "textBorderType": "solid", "textShadowColor": "transparent", "overflow": "none", "ellipsis": "...", "width": null}, "splitLine": {"show": true, "interval": "auto"}, "splitArea": {"show": false, "interval": "auto"}, "axisPointer": {"show": false}, "dimension": "2d", "ignored": false, "changed_name_key": {"min_": "min", "max_": "max", "type_": "type", "name_": "name"}}], "parallelAxis": null, "series": [{"type": "heatmap", "name": "heatmap", "colorBy": "series", "z": 2, "legendHoverLink": true, "stackStrategy": "samesign", "cursor": "pointer", "clip": true, "label": {"show": false, "fontSize": 12}, "seriesLayoutBy": "column", "data": [[0, 0, 0.19543670487718623], [0, 1, 0.5018571210115118], [0, 2, 0.07737064566623675], [0, 3, 0.10529669142708542], [0, 4, 0.08994320880606921], [0, 5, 0.18822561378699287], [0, 6, 0.39917915432536977], [0, 7, 0.3888910060286307], [0, 8, 0.3829272451305298], [0, 9, 0.4195785675542608], [0, 10, 0.9901477014213376], [0, 11, 0.3940143198527071], [1, 0, 0.34301584279596986], [1, 1, 0.6502205630760932], [1, 2, 0.10373041593816534], [1, 3, 0.08895071831469481], [1, 4, 0.45859143333625774], [1, 5, 0.9702392852560271], [1, 6, 0.3870462919818515], [1, 7, 0.65236729310907], [1, 8, 0.811546649006516], [1, 9, 0.16375284603120788], [1, 10, 0.11271698575357114], [1, 11, 0.5531376052166967], [2, 0, 0.9811122438735775], [2, 1, 0.2967318439870614], [2, 2, 0.12447170522963613], [2, 3, 0.17880969996426055], [2, 4, 0.2505336903597555], [2, 5, 0.3574710526399133], [2, 6, 0.1002021875282385], [2, 7, 0.9596975458406725], [2, 8, 0.8626382814472664], [2, 9, 0.21942804336201238], [2, 10, 0.2174646657201359], [2, 11, 0.5283888266707996], [3, 0, 0.3467611867882141], [3, 1, 0.3551702544572013], [3, 2, 0.7300403595597574], [3, 3, 0.5771620268002188], [3, 4, 0.719318556400124], [3, 5, 0.6037185400899304], [3, 6, 0.5223025679784575], [3, 7, 0.06299352149893311], [3, 8, 0.32845198792120267], [3, 9, 0.5026953672105765], [3, 10, 0.797013540477576], [3, 11, 0.7885869223277676], [4, 0, 0.08397083776017045], [4, 1, 0.3998754684085656], [4, 2, 0.9552815735262593], [4, 3, 0.23184817980943606], [4, 4, 0.987540616351035], [4, 5, 0.4769918565351845], [4, 6, 0.06034377540116631], [4, 7, 0.5768595644103803], [4, 8, 0.38168596677359046], [4, 9, 0.6220602500010367], [4, 10, 0.4862469272813993], [4, 11, 0.6765780302014266], [5, 0, 0.051189480465731574], [5, 1, 0.07387992817000988], [5, 2, 0.4150323900274362], [5, 3, 0.021151320449389277], [5, 4, 0.8937761511217176], [5, 5, 0.16279551134604253], [5, 6, 0.5600052902802461], [5, 7, 0.729643178647643], [5, 8, 0.6577247485988564], [5, 9, 0.9970766043500112], [5, 10, 0.981949046336073], [5, 11, 0.9809356282475079], [6, 0, 0.4345747839189298], [6, 1, 0.7866820025999223], [6, 2, 0.9853451275449617], [6, 3, 0.9790735617230416], [6, 4, 0.7531880371900477], [6, 5, 0.18967964839245377], [6, 6, 0.21109847778464996], [6, 7, 0.08384349084918441], [6, 8, 0.052710155172416284], [6, 9, 0.5063336426083701], [6, 10, 0.9281290560246376], [6, 11, 0.38578238617758054], [7, 0, 0.6737644496544196], [7, 1, 0.8111281794127277], [7, 2, 0.07157948169491868], [7, 3, 0.4185600690566137], [7, 4, 0.47603593860686244], [7, 5, 0.9559259918575896], [7, 6, 0.27447187702235043], [7, 7, 0.9329722948825396], [7, 8, 0.24828336064372525], [7, 9, 0.012116240472472173], [7, 10, 0.43739780576924525], [7, 11, 0.9809163446506437], [8, 0, 0.7735485022314675], [8, 1, 0.2108254084123955], [8, 2, 0.8564051756554594], [8, 3, 0.5921075552443965], [8, 4, 0.5718408733329692], [8, 5, 0.954730958111488], [8, 6, 0.9183734717694937], [8, 7, 0.08647689818527016], [8, 8, 0.12826961442809925], [8, 9, 0.4496843629045192], [8, 10, 0.07186618602560302], [8, 11, 0.16781030436150624], [9, 0, 0.5021920066756165], [9, 1, 0.06926887917855229], [9, 2, 0.1820287452981333], [9, 3, 0.7852440496637956], [9, 4, 0.8540342437351065], [9, 5, 0.8855532643615378], [9, 6, 0.9667049666992921], [9, 7, 0.42081611580372325], [9, 8, 0.5119326229005469], [9, 9, 0.5615936171976238], [9, 10, 0.9889702230693501], [9, 11, 0.45510240154470194]], "animation": true, "animationThreshold": 2000, "animationDuration": 1000, "animationEasing": "cubicOut", "animationDurationUpdate": 300, "animationEasingUpdate": "cubicOut", "coordinateSystem": "cartesian2d", "pointSize": 20, "blurSize": 10, "maxOpacity": 1, "progressive": 400, "progressiveThreshold": 3000, "colsize": 1, "visualmap_type": "continuous", "map_range": [0.012116240472472173, 0.9970766043500112]}], "visualMap": {"show": true, "type": "continuous", "color": ["#440154", "#481467", "#482576", "#453781", "#404688", "#39558c", "#33638d", "#2d718e", "#287d8e", "#238a8d", "#1f968b", "#20a386", "#29af7f", "#3dbc74", "#56c667", "#75d054", "#95d840", "#bade28", "#dde318", "#fde725"], "left": "auto", "top": "10%", "right": "1%", "bottom": "auto", "min": 0.012116240472472173, "max": 0.9970766043500112, "calculable": false, "realtime": true, "precision": 1, "itemWidth": 20.0, "itemHeight": 560.0, "align": "auto", "textGap": 10, "hoverLink": true, "z": 4, "padding": 0, "backgroundColor": "rgba(0,0,0,0)", "borderColor": "#ccc", "textStyle": {"fontSize": 12, "width": 35, "overflow": "none", "ellipsis": ".."}, "indicatorSize": "50%", "orient": "vertical", "changed_name_key": {"id_": "id", "type_": "type", "min_": "min", "max_": "max", "range_": "range"}}, "toolbox": {"show": true, "orient": "horizontal", "itemSize": 30.0, "itemGap": 8.0, "showTitle": true, "feature": {"dataZoom": {}, "saveAsImage": {}}, "z": 2, "left": "7%", "top": "auto", "right": "1%", "bottom": "auto", "width": "auto", "height": "auto", "popup": true, "changed_name_key": {"id_": "id"}}, "tooltip": null, "dataZoom": null, "event": null, "graphic": null, "radar": null, "figsize": {"height": 300, "width": 300}, "color": ["#1f77b4", "#aec7e8", "#ff7f0e", "#ffbb78", "#2ca02c", "#98df8a", "#d62728", "#ff9896", "#9467bd", "#c5b0d5", "#8c564b", "#c49c94", "#e377c2", "#f7b6d2", "#7f7f7f", "#c7c7c7", "#bcbd22", "#dbdb8d", "#17becf", "#9edae5"], "save_img": false, "auto_size": true, "style": {"overflow": "auto"}, "port": "5001"};function setInnerHTML(elm, html) {
+  elm.innerHTML = html;
+
+  Array.from(elm.querySelectorAll("script"))
+    .forEach( oldScriptEl => {
+      const newScriptEl = document.createElement("script");
+
+      Array.from(oldScriptEl.attributes).forEach( attr => {
+        newScriptEl.setAttribute(attr.name, attr.value)
+      });
+
+      const scriptText = document.createTextNode(oldScriptEl.innerHTML);
+      newScriptEl.appendChild(scriptText);
+
+      oldScriptEl.parentNode.replaceChild(newScriptEl, oldScriptEl);
+  });
+};
+
+function getScreenSize(option) {
+  let testRequest = new Request('http://localhost:' + option['port'] +'/function/js_result_save', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8;',
+          'Access-Control-Allow-Origin':'*',
+          'Access-Control-Allow-Credentials': 'true',
+          'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+        },
+        body: JSON.stringify({'js_func_input':{'height': screen.height, 'width': screen.width},
+                              'event_id': 'screen_size'})
+      });
+      fetch(testRequest).then(response => {});
+  return
+}
+function support_scientific_notation(option) {
+  if (Array.isArray(option['yAxis'])) {
+    for (var tar_ind = 0; tar_ind < option['yAxis'].length; tar_ind++) {
+      if (option['yAxis'][tar_ind]['type'] === 'value') {
+        option['yAxis'][tar_ind]['axisLabel']['formatter'] = function(val) {
+          const superscripts = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹','¹⁰',
+                    '¹¹', '¹²', '¹³', '¹⁴', '¹⁵', '¹⁶', '¹⁷', '¹⁸', '¹⁹','²⁰',
+                    '²¹', '²²', '²³', '²⁴', '²⁵', '²⁶', '²⁷', '²⁸', '²⁹'];
+          function toSuperscript(val) {
+            if (val.toString().length > 5 && !val.toString().includes('.')) {
+              val = Number(val).toExponential().toString();
+              if (val.includes('-')) {
+                val = val.split('-');
+                var val0 = val[0];
+                var val1 = superscripts[val[1]];
+                return val0 + '⁻' + val1
+              }
+              else if (val.includes('+')) {
+                val = val.split('+');
+                var val0 = val[0];
+                var val1 = superscripts[val[1]];
+                return val0 + '⁺' + val1
+              }
+            }
+            else {
+              return val
+            }
+          }
+          return toSuperscript(val)
+        }
+      }
+    }
+  }
+  else {
+    if (option['yAxis']['type'] === 'value') {
+      option['yAxis']['axisLabel']['formatter'] = function(val) {
+        const superscripts = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹','¹⁰',
+                '¹¹', '¹²', '¹³', '¹⁴', '¹⁵', '¹⁶', '¹⁷', '¹⁸', '¹⁹','²⁰',
+                '²¹', '²²', '²³', '²⁴', '²⁵', '²⁶', '²⁷', '²⁸', '²⁹'];
+        function toSuperscript(val) {
+          if (val.toString().length > 5 && !val.toString().includes('.')) {
+            val = Number(val).toExponential().toString();
+            if (val.includes('-')) {
+              val = val.split('-');
+              var val0 = val[0];
+              var val1 = superscripts[val[1]];
+              return val0 + '⁻' + val1
+            }
+            else if (val.includes('+')) {
+              val = val.split('+');
+              var val0 = val[0];
+              var val1 = superscripts[val[1]];
+              return val0 + '⁺' + val1
+            }
+          }
+          else {
+            return val
+          }
+        }
+        return toSuperscript(val)
+      }
+    }
+  };
+  return option;
+};
+
+function auto_component_size(option) {
+  if (typeof option['figsize']['width'] === 'string' || option['figsize']['width'] instanceof String) {
+    if (option['figsize']['width'].includes('%')) {
+      var width = 800 * (parseFloat(option['figsize']['width'].slice(0,-1)) / 100);
+    }
+    else if (option['figsize']['width'].includes('px')) {
+      var width = parseFloat(option['figsize']['width'].slice(0,-2));
+    }
+  }
+  else {
+    var width = option['figsize']['width']
+  }
+
+  if (typeof option['figsize']['height'] === 'string' || option['figsize']['height'] instanceof String) {
+    if (option['figsize']['height'].includes('%')) {
+      var height = 600 * (parseFloat(option['figsize']['height'].slice(0,-1)) / 100);
+    }
+    else if (option['figsize']['height'].includes('px')) {
+      var height = parseFloat(option['figsize']['height'].slice(0,-2));
+    }
+  }
+  else {
+    var height = option['figsize']['height']
+  }
+
+  var relative_ratio = Math.min(width / 700, height / 400)
+  if ('xAxis3D' in option) {
+    var keys = ['xAxis3D', 'yAxis3D', 'zAxis3D']
+  }
+  else {
+    var keys = ['xAxis', 'yAxis']
+  }
+  for (single_key of keys) {
+    for (var ind = 0; ind < option[single_key].length; ind++) {
+      option[single_key][ind]['nameTextStyle']['fontSize'] = Math.max(7, option[single_key][ind]['nameTextStyle']['fontSize'] * relative_ratio);
+      option[single_key][ind]['axisLabel']['fontSize'] = Math.max(7, option[single_key][ind]['axisLabel']['fontSize'] * relative_ratio);
+    }
+  }
+  if (option['series']) {
+    for (var ind = 0; ind < option['series'].length; ind++) {
+      if (['heatmap', 'bar'].includes(option['series'][ind]['type'])) {
+        if (option['series'][ind]['label']) {
+          option['series'][ind]['label']['fontSize'] = Math.max(7, option['series'][ind]['label']['fontSize'] * relative_ratio);
+        }
+      }
+    }
+  }
+  if (option['title']) {
+    if (Array.isArray(option['title'])) {
+      for (var ind = 0; ind < option['title'].length; ind++) {
+        option['title'][ind]['textStyle']['fontSize'] = Math.max(9, option['title'][ind]['textStyle']['fontSize'] * relative_ratio);
+      }
+    }
+    else {
+      option['title']['textStyle']['fontSize'] = Math.max(9, option['title']['textStyle']['fontSize'] * relative_ratio);
+    }
+  }
+  if (option['legend']) {
+    option['legend']['itemHeight'] = option['legend']['itemHeight'] * relative_ratio;
+    option['legend']['itemWidth'] = option['legend']['itemWidth'] * relative_ratio;
+    option['legend']['textStyle']['fontSize'] = Math.max(7, option['legend']['textStyle']['fontSize'] * relative_ratio);
+  }
+  if (option['visualMap']) {
+    option['visualMap']['itemHeight'] = option['visualMap']['itemHeight'] * relative_ratio;
+    option['visualMap']['itemWidth'] = option['visualMap']['itemWidth'] * relative_ratio;
+    option['visualMap']['textStyle']['fontSize'] = Math.max(7, option['visualMap']['textStyle']['fontSize'] * relative_ratio);
+  }
+  if (option['toolbox']) {
+    option['toolbox']['itemSize'] = Math.max(8, option['toolbox']['itemSize'] * relative_ratio)
+    option['toolbox']['itemGap'] = Math.max(4, option['toolbox']['itemGap'] * relative_ratio);
+  }
+  if (option['graphic']) {
+    for (var ind = 0; ind < option['graphic'].length; ind++) {
+      for (var ind2 = 0; ind2 < option['graphic'][ind]['children'].length; ind2++) {
+        var new_font = Math.max(7, 12 * relative_ratio);
+        option['graphic'][ind]['children'][ind2]['style']['font'] = new_font.toString() + 'px Microsoft YaHei';
+      }
+    }
+  }
+  return option;
+}
+
+function save_img(echarts_instance, option) {
+  const base64_str = echarts_instance.getDataURL({
+      pixelRatio: 2,
+      backgroundColor: '#fff',
+      width: option['figsize']['width'],
+      height: option['figsize']['height']
+  });
+
+  let testRequest = new Request('http://localhost:' + option['port'] +'/function/js_image_save', {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8;',
+      'Access-Control-Allow-Origin':'*',
+      'Access-Control-Allow-Credentials': 'true',
+      'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+    },
+    body: JSON.stringify({'figname': option['figname'],
+                          'base64_str': base64_str})
+  });
+  fetch(testRequest).then(response => {});
+};
+
+
+function auto_axis_namegap(echarts_instance, auto_axis_list, axis_type) {
+  const globalModel = echarts_instance._api.getModel()
+  const figsize = globalModel.option.figsize
+  const ctx = document.createElement('canvas').getContext('2d')
+  if (typeof globalModel.option['figsize']['width'] === 'string' || globalModel.option['figsize']['width'] instanceof String) {
+    if (globalModel.option['figsize']['width'].includes('%')) {
+      var width = 800 * (parseFloat(globalModel.option['figsize']['width'].slice(0,-1)) / 100);
+    }
+    else if (globalModel.option['figsize']['width'].includes('px')) {
+      var width = parseFloat(globalModel.option['figsize']['width'].slice(0,-2));
+    }
+  }
+  else {
+    var width = globalModel.option['figsize']['width'];
+  }
+
+  if (typeof globalModel.option['figsize']['height'] === 'string' || globalModel.option['figsize']['height'] instanceof String) {
+    if (globalModel.option['figsize']['height'].includes('%')) {
+      var height = 600 * (parseFloat(globalModel.option['figsize']['height'].slice(0,-1)) / 100);
+    }
+    else if (globalModel.option['figsize']['height'].includes('px')) {
+      var height = parseFloat(globalModel.option['figsize']['height'].slice(0,-2));
+    }
+  }
+  else {
+    var height = option['figsize']['height'];
+  }
+  var relative_ratio = Math.min(width / 700, height / 400);
+  if (axis_type==='2d') {
+    const yAxisList = globalModel.option.yAxis
+    const xAxisList = globalModel.option.xAxis
+
+    for (var axis_idx of auto_axis_list) {
+      const yAxis = yAxisList[axis_idx]
+      const fontSize = yAxis.nameTextStyle?.fontSize ?? 12
+      const fontFamily = yAxis.nameTextStyle?.fontFamily ?? 'sans-serif'
+      ctx.save()
+      ctx.font = fontSize.toString() + 'px' + fontFamily.toString()
+
+      const yAxisComponent = globalModel.getComponent('yAxis', axis_idx)?.axis
+      if (yAxis.type === 'value') {
+        var labelMaxWidth = Math.min(Math.max(...yAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width)), 30)
+      }
+      else {
+        var labelMaxWidth = Math.max(...yAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width))
+      }
+      var axisLabelMargin = yAxis.axisLabel?.margin ?? 8
+      axisLabelMargin = axisLabelMargin * relative_ratio
+      yAxisList[axis_idx].nameGap = labelMaxWidth + axisLabelMargin + 5 * relative_ratio
+      ctx.restore()
+    };
+
+    for (var axis_idx of [...Array(xAxisList.length).keys()]) {
+      var new_gap = Math.max(xAxisList[axis_idx].nameGap * relative_ratio, 12);
+      if (figsize['height'] < 400) {
+        new_gap = Math.min(20, new_gap);
+      }
+      xAxisList[axis_idx].nameGap = new_gap;
+    }
+
+    echarts_instance.setOption({
+      yAxis: yAxisList,
+      xAxis: xAxisList
+    })
+  }
+  else {
+    const yAxisList = globalModel.option.yAxis3D
+    const xAxisList = globalModel.option.xAxis3D
+    const zAxisList = globalModel.option.zAxis3D
+
+    for (var axis_idx of auto_axis_list) {
+      if (axis_idx < xAxisList.length) {
+        const xAxis = xAxisList[axis_idx]
+        const fontSize = xAxis.nameTextStyle?.fontSize ?? 12
+        const fontFamily = xAxis.nameTextStyle?.fontFamily ?? 'sans-serif'
+        ctx.save()
+        ctx.font = fontSize.toString() + 'px' + fontFamily.toString()
+
+        const xAxisComponent = globalModel.getComponent('xAxis3D', axis_idx)?.axis
+        if (xAxis.type === 'value') {
+          var labelMaxWidth = Math.min(Math.max(...xAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width)), 30)
+        }
+        else {
+          var labelMaxWidth = Math.max(...xAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width))
+        }
+        var axisLabelMargin = xAxis.axisLabel?.margin ?? 8
+        axisLabelMargin = axisLabelMargin * relative_ratio
+        xAxisList[axis_idx].nameGap = labelMaxWidth + axisLabelMargin + 5 * relative_ratio
+        ctx.restore()
+      }
+    };
+
+    for (var axis_idx of auto_axis_list) {
+      if (axis_idx < yAxisList.length) {
+        const yAxis = yAxisList[axis_idx]
+        const fontSize = yAxis.nameTextStyle?.fontSize ?? 12
+        const fontFamily = yAxis.nameTextStyle?.fontFamily ?? 'sans-serif'
+        ctx.save()
+        ctx.font = fontSize.toString() + 'px' + fontFamily.toString()
+
+        const yAxisComponent = globalModel.getComponent('yAxis3D', axis_idx)?.axis
+        if (yAxis.type === 'value') {
+          var labelMaxWidth = Math.min(Math.max(...yAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width)), 30)
+        }
+        else {
+          var labelMaxWidth = Math.max(...yAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width))
+        }
+        var axisLabelMargin = yAxis.axisLabel?.margin ?? 8
+        axisLabelMargin = axisLabelMargin * relative_ratio
+        yAxisList[axis_idx].nameGap = labelMaxWidth + axisLabelMargin + 5 * relative_ratio
+        ctx.restore()
+      }
+    };
+
+    for (var axis_idx of auto_axis_list) {
+      if (axis_idx < zAxisList.length) {
+        const zAxis = zAxisList[axis_idx]
+        const fontSize = zAxis.nameTextStyle?.fontSize ?? 12
+        const fontFamily = zAxis.nameTextStyle?.fontFamily ?? 'sans-serif'
+        ctx.save()
+        ctx.font = fontSize.toString() + 'px' + fontFamily.toString()
+
+        const zAxisComponent = globalModel.getComponent('zAxis3D', axis_idx)?.axis
+        if (zAxis.type === 'value') {
+          var labelMaxWidth = Math.min(Math.max(...zAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width)), 30)
+        }
+        else {
+          var labelMaxWidth = Math.max(...zAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width))
+        }
+        var axisLabelMargin = zAxis.axisLabel?.margin ?? 8
+        axisLabelMargin = axisLabelMargin * relative_ratio
+        zAxisList[axis_idx].nameGap = labelMaxWidth + axisLabelMargin + 5 * relative_ratio
+        ctx.restore()
+      }
+    };
+    echarts_instance.setOption({
+      yAxis3D: yAxisList,
+      xAxis3D: xAxisList,
+      zAxis3D: zAxisList
+    });
+    }
+
+};
+
+function custom_scatter_size(option) {
+
+  for (var ind = 0; ind < option['series'].length; ind++) {
+    if (option['series'][ind]['symbolSize'] === 'array_size') {
+      var ind_ = option['series'][ind]['data_dict']['size']
+      option['series'][ind]['symbolSize'] = function (data) {return data[ind_];}
+    }
+  }
+  return option;
+
+};
+
+function show_scatter_label(option) {
+
+  for (var ind = 0; ind < option['series'].length; ind++) {
+    if (option['series'][ind]['label'] === 'show_label') {
+      var ind_ = option['series'][ind]['data_dict']['label']
+      option['series'][ind]['label'] = {
+        show: true,
+        formatter: function (params) {return params.data.value[ind_]; }
+      }
+    }
+  }
+  return option;
+};
+
+function hide_min_max_axis_label(option) {
+  for (var ind = 0; ind < option['xAxis3D'].length; ind++) {
+    if (option['xAxis3D'][ind]['type'] == 'value') {
+      var x_min = option['xAxis3D'][ind]['min']
+      var x_max = option['xAxis3D'][ind]['max']
+      option['xAxis3D'][ind]['axisLabel']['formatter'] = function (value, index) {
+        if (value==x_min || value==x_max){}
+        else {return value}
+      }
+    }
+  }
+  for (var ind = 0; ind < option['yAxis3D'].length; ind++) {
+    if (option['yAxis3D'][ind]['type'] == 'value') {
+      var y_min = option['yAxis3D'][ind]['min']
+      var y_max = option['yAxis3D'][ind]['max']
+      option['yAxis3D'][ind]['axisLabel']['formatter'] = function (value, index) {
+        if (value==y_min || value==y_max){}
+        else {return value}
+      }
+    }
+  }
+  for (var ind = 0; ind < option['zAxis3D'].length; ind++) {
+    if (option['zAxis3D'][ind]['type'] == 'value') {
+      var z_min = option['zAxis3D'][ind]['min']
+      var z_max = option['zAxis3D'][ind]['max']
+      option['zAxis3D'][ind]['axisLabel']['formatter'] = function (value, index) {
+        if (value==z_min || value==z_max){}
+        else {return value}
+      }
+   }
+  }
+  return option;
+}
+
+function custom_axis_label(option) {
+  if (Array.isArray(option['xAxis'])) {
+    for (var ind = 0; ind < option['xAxis'].length; ind++) {
+      if (option['xAxis'][ind]['axisLabel']['formatter_func']) {
+        var f = new Function(option['xAxis'][ind]['axisLabel']['formatter_func'].arguments,
+                             option['xAxis'][ind]['axisLabel']['formatter_func'].body)
+        option['xAxis'][ind]['axisLabel']['formatter'] = f
+      }
+    }
+  }
+  else {
+    if (option['xAxis']['axisLabel']['formatter_func']) {
+      var f = new Function(option['xAxis']['axisLabel']['formatter_func'].arguments,
+                           option['xAxis']['axisLabel']['formatter_func'].body)
+      option['xAxis']['axisLabel']['formatter'] = f
+    }
+  }
+  if (Array.isArray(option['yAxis'])) {
+    for (var ind = 0; ind < option['yAxis'].length; ind++) {
+      if (option['yAxis'][ind]['axisLabel']['formatter_func']) {
+        var f = new Function(option['yAxis'][ind]['axisLabel']['formatter_func'].arguments,
+                             option['yAxis'][ind]['axisLabel']['formatter_func'].body)
+        option['yAxis'][ind]['axisLabel']['formatter'] = f
+      }
+    }
+  }
+  else {
+    if (option['yAxis']['axisLabel']['formatter_func']) {
+      var f = new Function(option['yAxis']['axisLabel']['formatter_func'].arguments,
+                           option['yAxis']['axisLabel']['formatter_func'].body)
+      option['yAxis']['axisLabel']['formatter'] = f
+    }
+  }
+  return option;
+}
+
+function custom_tooltip(option, dimension=2) {
+
+  if (dimension === 2) {
+    var xaxis_key = 'xAxis'
+    var yaxis_key = 'yAxis'
+  }
+
+  else if (dimension === 3) {
+    var xaxis_key = 'xAxis3D'
+    var yaxis_key = 'yAxis3D'
+    var zaxis_key = 'zAxis3D'
+  }
+
+  if (option['radar']) {
+    var radar_names = []
+    for (var ind_ = 0; ind_ < option['radar']['indicator'].length; ind_++) {
+      radar_names.push(option['radar']['indicator'][ind_]['name'])
+    }
+  }
+
+
+  if (option[xaxis_key]['name'] !== null && option[xaxis_key]['name'] !== '' && Array.isArray(option[xaxis_key])!==true) {
+    var xaxis_name = option[xaxis_key]['name'];
+  }
+  else {
+    var xaxis_name = 'X';
+  }
+
+  if (option[yaxis_key]['name'] !== null && option[yaxis_key]['name'] !== ''&& Array.isArray(option[xaxis_key])!==true) {
+    var yaxis_name = option[yaxis_key]['name'];
+  }
+  else {
+    var yaxis_name = 'Y';
+  }
+
+  if (typeof zaxis_key !== 'undefined') {
+    if (option[zaxis_key]['name'] !== ''&& Array.isArray(option[xaxis_key])!==true) {
+      var zaxis_name = option[zaxis_key]['name'];
+    }
+    else {
+      var zaxis_name = 'Z';
+    }
+  }
+
+  if (option['tooltip']) {
+    if (option['tooltip']['precision']) {
+      var precision = option['tooltip']['precision']
+      option['tooltip']['valueFormatter'] = (value) =>  Math.round(Number(value) * (10**precision)) / (10**precision)
+    }
+
+    for (var ind_ = 0; ind_ < option['series'].length; ind_++) {
+      if (option['series'][ind_]['tooltip']) {
+        if (option['series'][ind_]['tooltip']['precision']) {
+          var precision = option['series'][ind_]['tooltip']['precision']
+          const fix = precision_ => value => Math.round(Number(value) * (10**precision_)) / (10**precision_),
+          fix_p = fix(precision);
+          option['series'][ind_]['tooltip']['valueFormatter'] = function (value) {
+            return fix_p(value)
+          }
+        }
+      }
+    }
+
+    if (option['series'].length === 1) {
+      if (['scatter', 'heatmap', 'scatter3D', 'radar'].includes(option['series'][0]['type'])) {
+        option['tooltip']['formatter'] = function(params) {
+          if (params.seriesName.includes('series')) {
+            var series_name = ''
+          }
+
+          else {
+            var series_name = params.seriesName + '<br>'
+          }
+
+          if (params.seriesType === 'scatter') {
+            if (option['tooltip']['custom_tooltip'] === true) {
+              formatter = series_name
+                + params.value[dimension]
+            }
+            else {
+              formatter = series_name
+              + xaxis_name + ': '+ Math.round(params.value[0] * 100) / 100
+              +'<br>' + yaxis_name + ': ' + Math.round(params.value[1] * 100) / 100
+            }
+
+          }
+
+          else if (params.seriesType === 'heatmap') {
+            formatter = params.name + ', ' + option['yAxis'][0]['data'][params.data[1]] + '<br> <b>' + Math.round(params.data[2] * 10000) / 10000
+          }
+
+          else if (params.seriesType === 'scatter3D') {
+            if (option['tooltip']['custom_tooltip'] === true) {
+              formatter = series_name
+                + params.value[dimension]
+            }
+            else {
+              formatter = series_name
+                + xaxis_name + ': '+ Math.round(params.value[0] * 100) / 100
+                +'<br>' + yaxis_name + ': ' + Math.round(params.value[1] * 100) / 100
+                +'<br>' + zaxis_name + ': ' + Math.round(params.value[2] * 100) / 100
+            }
+          }
+
+          else if (params.seriesType === 'radar') {
+            formatter = params.name  + '<br>';
+            for (var ind_ = 0; ind_ < option['radar']['indicator'].length; ind_++) {
+              if (ind_ !== option['radar']['indicator'].length - 1) {
+                formatter += radar_names[ind_] + ': ' + Math.round(params.value[ind_] * 100) / 100 + '<br>'
+              }
+              else {
+                formatter += radar_names[ind_] + ': ' + Math.round(params.value[ind_] * 100) / 100
+              }
+            }
+          }
+        return formatter;
+        }
+      }
+    }
+    else {
+      for (var out_ind_ = 0; out_ind_ < option['series'].length; out_ind_++) {
+        if (['scatter', 'heatmap', 'scatter3D', 'radar'].includes(option['series'][out_ind_]['type'])) {
+          if (option['series'][out_ind_]['tooltip']) {
+          }
+          else {
+            option['series'][out_ind_]['tooltip'] = {}
+          }
+          option['series'][out_ind_]['tooltip']['formatter'] = function(params) {
+            if (params.seriesName.includes('series')) {
+              var series_name = ''
+            }
+
+            else {
+              var series_name = params.seriesName + '<br>'
+            }
+
+            if (params.seriesType === 'scatter') {
+              if (option['tooltip']['custom_tooltip'] === true) {
+                formatter = series_name
+                  + params.value[dimension]
+              }
+              else {
+                formatter = series_name
+                  + xaxis_name + ': '+ Math.round(params.value[0] * 100) / 100
+                  +'<br>' + yaxis_name + ': ' + Math.round(params.value[1] * 100) / 100
+              }
+            }
+
+            else if (params.seriesType === 'heatmap') {
+              if ('data' in option['yAxis'][option['series'][params.seriesIndex]['yAxisIndex']]) {
+                formatter = params.name + ', ' + option['yAxis'][option['series'][params.seriesIndex]['yAxisIndex']]['data'][params.data[1]] + '<br> <b>' + Math.round(params.data[2] * 10000) / 10000
+              }
+              else {
+                formatter = Math.round(params.data[2] * 10000) / 10000
+              }
+
+            }
+
+            else if (params.seriesType === 'scatter3D') {
+              if (option['tooltip']['custom_tooltip'] === true) {
+                formatter = series_name
+                  + params.value[dimension]
+              }
+              else {
+                formatter = series_name
+                  + xaxis_name + ': '+ Math.round(params.value[0] * 100) / 100
+                  +'<br>' + yaxis_name + ': ' + Math.round(params.value[1] * 100) / 100
+                  +'<br>' + zaxis_name + ': ' + Math.round(params.value[2] * 100) / 100
+              }
+            }
+
+            else if (params.seriesType === 'radar') {
+              formatter = params.name  + '<br>';
+              for (var ind_ = 0; ind_ < option['radar']['indicator'].length; ind_++) {
+                if (ind_ !== option['radar']['indicator'].length - 1) {
+                  formatter += radar_names[ind_] + ': ' + Math.round(params.value[ind_] * 100) / 100 + '<br>'
+                }
+                else {
+                  formatter += radar_names[ind_] + ': ' + Math.round(params.value[ind_] * 100) / 100
+                }
+              }
+            }
+          return formatter;
+          }
+        }
+      }
+    }
+  }
+  return option;
+};
+
+function support_brush_event(option) {
+  if (option['event']['type_'] === 'brushselected') {
+    if (option['link_id'] === null) {
+      var link_id = option['chart_id'];
+    }
+    else {
+      var link_id = option['link_id'];
+    }
+    var dom = document.getElementById(link_id);
+    var bind_chart = echarts.init(dom, null, {
+        renderer: 'canvas',
+        useDirtyRect: false
+    });
+    var last_selected = [];
+    bind_chart.on(option['event']['type_'], (params) => {
+      var brushed = [];
+      var brushComponent = params.batch[0];
+      for (var sIdx = 0; sIdx < brushComponent.selected.length; sIdx++) {
+        var rawIndices = brushComponent.selected[sIdx].dataIndex;
+        brushed.push(rawIndices);
+      }
+      var brushed_all = brushed[0];
+
+      if (JSON.stringify(last_selected) !== JSON.stringify(brushed_all)) {
+
+        // Update memory
+        let testRequest = new Request('http://localhost:' + option['port'] +'/function/js_call_python_function', {
+          method: 'post',
+          headers: {
+              'Content-Type': 'application/json;charset=utf-8;',
+              'Access-Control-Allow-Origin':'*',
+              'Access-Control-Allow-Credentials': 'true',
+              'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+          },
+          body: JSON.stringify({'js_func_input':{'selected': brushed_all},
+                                'event_id': option['event']['event_id']})
+        });
+        var dom_dict = {}
+        fetch(testRequest).then(response => {
+          var result = response.json();
+          result.then(res => {
+            dom_dict[res['link_id']] = document.getElementById(res['link_id']);
+            setInnerHTML(dom_dict[res['link_id']], res['html']);
+          });
+        });
+        last_selected = brushed_all;
+      }
+
+    // bind_chart.setOption(option);
+    })
+  }
+  return option;
+};
+
+function support_click_event(option) {
+  if (option['event']['type_'] === 'click') {
+    if (option['link_id'] === null) {
+      var link_id = option['chart_id'];
+    }
+    else {
+      var link_id = option['link_id'];
+    }
+    var dom = document.getElementById(link_id);
+    var bind_chart = echarts.init(dom, null, {
+        renderer: 'canvas',
+        useDirtyRect: false
+    });
+
+    if (option['series'][0]['orient'] === 'vertical') {
+      var value_idx = 0
+    }
+    else {
+      var value_idx = 1
+    }
+
+
+    bind_chart.on(option['event']['type_'], (params) => {
+      if (option['event']['task'] === 'singleselect') {
+        for (var ind_2 = 0; ind_2 < option['series'][0]['data'].length; ind_2++) {
+          if (option['series'][0]['data'][ind_2]['itemStyle']['color'] !== '#1f77b4') {
+            option['series'][0]['data'][ind_2]['itemStyle']['color'] = '#1f77b4';
+          }
+        }
+        var idx = option['series'][0]['x_value'].indexOf(params.value[value_idx])
+        option['series'][0]['data'][idx]['itemStyle']['color'] = '#ff7f0e';
+
+        var selected = params.value[value_idx];
+      }
+      else {
+        console.log(params);
+      }
+
+      let testRequest = new Request('http://localhost:' + option['port'] +'/function/js_call_python_function', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8;',
+          'Access-Control-Allow-Origin':'*',
+          'Access-Control-Allow-Credentials': 'true',
+          'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+        },
+        body: JSON.stringify({'js_func_input':{'selected': selected},
+                              'event_id': option['event']['event_id']})
+      });
+      var dom_dict = {}
+      fetch(testRequest).then(response => {
+        var result = response.json();
+        result.then(res => {
+          dom_dict[res['link_id']] = document.getElementById(res['link_id']);
+          setInnerHTML(dom_dict[res['link_id']], res['html']);
+        });
+      });
+      bind_chart.setOption(option);
+    });
+  }
+  return option;
+};option = support_scientific_notation(option=option);option = custom_tooltip(option=option, dimension=2);option = custom_axis_label(option=option);option = auto_component_size(option=option);getScreenSize(option=option);
+
+            myChart.setOption(option);
+            window.addEventListener('resize', function () {
+                myChart.resize();
+                var option_copy = JSON.parse(JSON.stringify(option));
+                option_copy['figsize']['height'] = myChart.getHeight();
+                option_copy['figsize']['width'] = myChart.getWidth();
+                // option_copy = auto_component_size(option_copy);
+                myChart.setOption(option_copy);
+            });
+        <\/script>
+        </body>
+        </html>
+    <style>
+.dg.main.taller-than-window .close-button {
+    border-top: 1px solid #ddd;
+}
+
+.dg.main .close-button {
+    background-color: #e8e8e8;
+}
+
+.dg.main .close-button:hover {
+    background-color: #ddd;
+}
+
+.dg {
+    color: #555;
+    text-shadow: none !important;
+}
+
+.dg.main::-webkit-scrollbar {
+    background: #fafafa;
+}
+
+.dg.main::-webkit-scrollbar-thumb {
+    background: #bbb;
+}
+
+.dg li:not(.folder) {
+    background: #fafafa;
+    border-bottom: 1px solid #ddd;
+}
+
+.dg li.save-row .button {
+    text-shadow: none !important;
+}
+
+.dg li.title {
+    background: #e8e8e8 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;
+}
+
+.dg .cr.function:hover,.dg .cr.boolean:hover {
+    background: #fff;
+}
+
+.dg .c input[type=text] {
+    background: #e9e9e9;
+}
+
+.dg .c input[type=text]:hover {
+    background: #eee;
+}
+
+.dg .c input[type=text]:focus {
+    background: #eee;
+    color: #555;
+}
+
+.dg .c .slider {
+    background: #e9e9e9;
+}
+
+.dg .c .slider:hover {
+    background: #eee;
+}<\/style>`);option = support_scientific_notation(option=option);option = custom_tooltip(option=option, dimension=2);option = custom_axis_label(option=option);option = auto_component_size(option=option);getScreenSize(option=option);
+
+            if (option && typeof option === 'object') {
+                myChart.setOption(option);
+                }
+
+            auto_axis_namegap(echarts_instance=myChart, auto_axis_list=[0], axis_type="2d");
+
+        </script>
+        </body>
+        </html>
+
+</div>
+<br />
+<br /><p>Custom Heatmap Plot</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">uniform_data</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.round.html#numpy.round" title="numpy.round" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">round</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.rand.html#numpy.random.rand" title="numpy.random.rand" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span></a><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">hm</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">uniform_data</span></a><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">show_label</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">hm</span><span class="o">.</span><span class="n">set_visualmap</span><span class="p">(</span><span class="n">calculable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">hm</span><span class="o">.</span><span class="n">set_xaxis</span><span class="p">(</span><span class="n">axis_name</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">hm</span><span class="o">.</span><span class="n">set_yaxis</span><span class="p">(</span><span class="n">axis_name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">hm</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Heatmap&#39;</span><span class="p">)</span>
+<span class="n">hm</span><span class="o">.</span><span class="n">set_figsize</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="c1"># hm.show()</span>
+<span class="n">HTML</span><span class="p">(</span><span class="n">hm</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">return_html</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="output_subarea output_html rendered_html output_result">
+
+            <!DOCTYPE html>
+            <html lang="en" style="height: 100%">
+            <head>
+            <meta charset="utf-8">
+            </head>
+            <body style="height: 100%; margin: 0">
+
+
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/echarts-gl/2.0.8/echarts-gl.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-wordcloud@2.1.0/dist/echarts-wordcloud.min.js"></script>
+
+            <div id="1740379246.40571480.8310" style="height: 400px; width: 400px; overflow: auto"></div>
+
+            <script type="text/javascript">
+            var dom = document.getElementById('1740379246.40571480.8310');
+            dom.innerHTML = ""
+            dom.setAttribute('_echarts_instance_', '')
+            var myChart = echarts.init(dom, null, {
+                renderer: 'canvas',
+                useDirtyRect: false
+                });
+            var app = {};
+
+            var option;
+    option = {"chart_id": "1740379246.40571480.8310", "link_id": null, "figname": "", "title": {"show": true, "text": "Heatmap", "link": "", "target": "blank", "textStyle": {"fontStyle": "normal", "fontWeight": "bolder", "fontFamily": "sans-serif", "fontSize": 15, "textBorderType": "solid", "textShadowColor": "transparent", "overflow": "none", "ellipsis": "..."}, "subtext": "", "sublink": "", "subtarget": "blank", "textAlign": "center", "textVerticalAlign": "auto", "padding": 0, "itemGap": 10, "z": 2, "left": "50.0%", "top": "5%", "right": "auto", "bottom": "auto", "backgroundColor": "transparent", "borderColor": "#ccc", "changed_name_key": {"id_": "id"}}, "grid": {"show": true, "width": "auto", "height": "auto", "z": 2, "left": "5%", "top": "10%", "right": "10%", "bottom": "5%", "borderColor": "#ccc", "borderWidth": 1, "containLabel": true, "backgroundColor": "transparent", "changed_name_key": {"id_": "id"}}, "legend": null, "brush": null, "yAxis": [{"show": true, "data": [0.0, 0.09091, 0.1818, 0.2727, 0.3636, 0.4545, 0.5455, 0.6364, 0.7273, 0.8182, 0.9091, 1.0], "type": "category", "position": "bottom", "name": "y", "nameLocation": "center", "nameTextStyle": {"color": "black", "fontStyle": "normal", "fontWeight": "normal", "fontFamily": "sans-serif", "fontSize": 12, "backgroundColor": "", "borderType": "solid", "shadowColor": "transparent", "textBorderType": "solid", "textShadowColor": "transparent", "overflow": "none", "ellipsis": "..."}, "nameGap": "auto", "inverse": true, "splitNumber": 5, "logBase": 10, "axisLine": {}, "axisTick": {"show": true, "alignWithLabel": "none", "interval": "auto", "length": 5}, "axisLabel": {"show": true, "interval": 3, "margin": 8, "showMinLabel": true, "fontStyle": "normal", "fontWeight": "normal", "fontFamily": "sans-serif", "fontSize": 12, "backgroundColor": "transparent", "borderType": "solid", "shadowColor": "transparent", "textBorderType": "solid", "textShadowColor": "transparent", "overflow": "none", "ellipsis": "...", "width": 20.0}, "splitLine": {"show": true, "interval": "auto"}, "splitArea": {"show": false, "interval": "auto"}, "axisPointer": {"show": false}, "dimension": "2d", "ignored": false, "changed_name_key": {"min_": "min", "max_": "max", "type_": "type", "name_": "name"}}], "xAxis": [{"show": true, "data": [0.0, 0.1111, 0.2222, 0.3333, 0.4444, 0.5556, 0.6667, 0.7778, 0.8889, 1.0], "type": "category", "position": "bottom", "name": "x", "nameLocation": "center", "nameTextStyle": {"color": "black", "fontStyle": "normal", "fontWeight": "normal", "fontFamily": "sans-serif", "fontSize": 12, "backgroundColor": "", "borderType": "solid", "shadowColor": "transparent", "textBorderType": "solid", "textShadowColor": "transparent", "overflow": "none", "ellipsis": "..."}, "nameGap": 30, "splitNumber": 5, "logBase": 10, "axisLine": {}, "axisTick": {"show": true, "alignWithLabel": "none", "interval": "auto", "length": 5}, "axisLabel": {"show": true, "interval": 2, "margin": 8, "showMinLabel": true, "fontStyle": "normal", "fontWeight": "normal", "fontFamily": "sans-serif", "fontSize": 12, "backgroundColor": "transparent", "borderType": "solid", "shadowColor": "transparent", "textBorderType": "solid", "textShadowColor": "transparent", "overflow": "none", "ellipsis": "...", "width": null}, "splitLine": {"show": true, "interval": "auto"}, "splitArea": {"show": false, "interval": "auto"}, "axisPointer": {"show": false}, "dimension": "2d", "ignored": false, "changed_name_key": {"min_": "min", "max_": "max", "type_": "type", "name_": "name"}}], "parallelAxis": null, "series": [{"type": "heatmap", "name": "heatmap", "colorBy": "series", "z": 2, "legendHoverLink": true, "stackStrategy": "samesign", "cursor": "pointer", "clip": true, "label": {"show": true, "fontSize": 12}, "seriesLayoutBy": "column", "data": [[0, 0, 0.252], [0, 1, 0.042], [0, 2, 0.996], [0, 3, 0.672], [0, 4, 0.883], [0, 5, 0.426], [0, 6, 0.421], [0, 7, 0.861], [0, 8, 0.141], [0, 9, 0.035], [0, 10, 0.277], [0, 11, 0.926], [1, 0, 0.893], [1, 1, 0.208], [1, 2, 0.044], [1, 3, 0.021], [1, 4, 0.575], [1, 5, 0.416], [1, 6, 0.623], [1, 7, 0.308], [1, 8, 0.288], [1, 9, 0.95], [1, 10, 0.464], [1, 11, 0.644], [2, 0, 0.376], [2, 1, 0.316], [2, 2, 0.292], [2, 3, 0.974], [2, 4, 0.524], [2, 5, 0.312], [2, 6, 0.809], [2, 7, 0.71], [2, 8, 0.264], [2, 9, 0.042], [2, 10, 0.721], [2, 11, 0.442], [3, 0, 0.993], [3, 1, 0.527], [3, 2, 0.325], [3, 3, 0.718], [3, 4, 0.694], [3, 5, 0.941], [3, 6, 0.265], [3, 7, 0.964], [3, 8, 0.454], [3, 9, 0.196], [3, 10, 0.218], [3, 11, 0.254], [4, 0, 0.097], [4, 1, 0.821], [4, 2, 0.704], [4, 3, 0.967], [4, 4, 0.164], [4, 5, 0.518], [4, 6, 0.469], [4, 7, 0.128], [4, 8, 0.545], [4, 9, 0.453], [4, 10, 0.834], [4, 11, 0.654], [5, 0, 0.725], [5, 1, 0.104], [5, 2, 0.894], [5, 3, 0.341], [5, 4, 0.966], [5, 5, 0.687], [5, 6, 0.103], [5, 7, 0.782], [5, 8, 0.549], [5, 9, 0.253], [5, 10, 0.402], [5, 11, 0.879], [6, 0, 0.368], [6, 1, 0.937], [6, 2, 0.489], [6, 3, 0.711], [6, 4, 0.765], [6, 5, 0.485], [6, 6, 0.773], [6, 7, 0.186], [6, 8, 0.911], [6, 9, 0.961], [6, 10, 0.146], [6, 11, 0.111], [7, 0, 0.762], [7, 1, 0.568], [7, 2, 0.223], [7, 3, 0.728], [7, 4, 0.401], [7, 5, 0.601], [7, 6, 0.953], [7, 7, 0.962], [7, 8, 0.578], [7, 9, 0.715], [7, 10, 0.676], [7, 11, 0.269], [8, 0, 0.651], [8, 1, 0.208], [8, 2, 0.97], [8, 3, 0.07], [8, 4, 0.848], [8, 5, 0.454], [8, 6, 0.397], [8, 7, 0.395], [8, 8, 0.534], [8, 9, 0.383], [8, 10, 0.138], [8, 11, 0.828], [9, 0, 0.765], [9, 1, 0.975], [9, 2, 0.424], [9, 3, 0.173], [9, 4, 0.174], [9, 5, 0.78], [9, 6, 0.713], [9, 7, 0.801], [9, 8, 0.015], [9, 9, 0.209], [9, 10, 0.672], [9, 11, 0.65]], "animation": true, "animationThreshold": 2000, "animationDuration": 1000, "animationEasing": "cubicOut", "animationDurationUpdate": 300, "animationEasingUpdate": "cubicOut", "coordinateSystem": "cartesian2d", "pointSize": 20, "blurSize": 10, "maxOpacity": 1, "progressive": 400, "progressiveThreshold": 3000, "colsize": 1, "extent": [0, 1, 0, 1], "visualmap_type": "continuous", "map_range": [0.015, 0.996]}], "visualMap": {"show": true, "type": "continuous", "color": ["#440154", "#481467", "#482576", "#453781", "#404688", "#39558c", "#33638d", "#2d718e", "#287d8e", "#238a8d", "#1f968b", "#20a386", "#29af7f", "#3dbc74", "#56c667", "#75d054", "#95d840", "#bade28", "#dde318", "#fde725"], "left": "auto", "top": "10%", "right": "1%", "bottom": "auto", "min": 0.015, "max": 0.996, "calculable": true, "realtime": true, "precision": 1, "itemWidth": 20.0, "itemHeight": 140.0, "align": "auto", "textGap": 10, "hoverLink": true, "z": 4, "padding": 0, "backgroundColor": "rgba(0,0,0,0)", "borderColor": "#ccc", "textStyle": {"fontSize": 12, "width": 35, "overflow": "none", "ellipsis": ".."}, "indicatorSize": "50%", "orient": "vertical", "changed_name_key": {"id_": "id", "type_": "type", "min_": "min", "max_": "max", "range_": "range"}}, "toolbox": {"show": true, "orient": "horizontal", "itemSize": 15.0, "itemGap": 8.0, "showTitle": true, "feature": {"dataZoom": {}, "saveAsImage": {}}, "z": 2, "left": "auto", "top": "auto", "right": "1%", "bottom": "auto", "width": "auto", "height": "auto", "popup": true, "changed_name_key": {"id_": "id"}}, "tooltip": null, "dataZoom": null, "event": null, "graphic": null, "radar": null, "figsize": {"height": 400, "width": 400}, "color": ["#1f77b4", "#aec7e8", "#ff7f0e", "#ffbb78", "#2ca02c", "#98df8a", "#d62728", "#ff9896", "#9467bd", "#c5b0d5", "#8c564b", "#c49c94", "#e377c2", "#f7b6d2", "#7f7f7f", "#c7c7c7", "#bcbd22", "#dbdb8d", "#17becf", "#9edae5"], "save_img": false, "auto_size": true, "style": {"overflow": "auto"}, "port": "5001"};function setInnerHTML(elm, html) {
+  elm.innerHTML = html;
+
+  Array.from(elm.querySelectorAll("script"))
+    .forEach( oldScriptEl => {
+      const newScriptEl = document.createElement("script");
+
+      Array.from(oldScriptEl.attributes).forEach( attr => {
+        newScriptEl.setAttribute(attr.name, attr.value)
+      });
+
+      const scriptText = document.createTextNode(oldScriptEl.innerHTML);
+      newScriptEl.appendChild(scriptText);
+
+      oldScriptEl.parentNode.replaceChild(newScriptEl, oldScriptEl);
+  });
+};
+
+function getScreenSize(option) {
+  let testRequest = new Request('http://localhost:' + option['port'] +'/function/js_result_save', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8;',
+          'Access-Control-Allow-Origin':'*',
+          'Access-Control-Allow-Credentials': 'true',
+          'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+        },
+        body: JSON.stringify({'js_func_input':{'height': screen.height, 'width': screen.width},
+                              'event_id': 'screen_size'})
+      });
+      fetch(testRequest).then(response => {});
+  return
+}
+function support_scientific_notation(option) {
+  if (Array.isArray(option['yAxis'])) {
+    for (var tar_ind = 0; tar_ind < option['yAxis'].length; tar_ind++) {
+      if (option['yAxis'][tar_ind]['type'] === 'value') {
+        option['yAxis'][tar_ind]['axisLabel']['formatter'] = function(val) {
+          const superscripts = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹','¹⁰',
+                    '¹¹', '¹²', '¹³', '¹⁴', '¹⁵', '¹⁶', '¹⁷', '¹⁸', '¹⁹','²⁰',
+                    '²¹', '²²', '²³', '²⁴', '²⁵', '²⁶', '²⁷', '²⁸', '²⁹'];
+          function toSuperscript(val) {
+            if (val.toString().length > 5 && !val.toString().includes('.')) {
+              val = Number(val).toExponential().toString();
+              if (val.includes('-')) {
+                val = val.split('-');
+                var val0 = val[0];
+                var val1 = superscripts[val[1]];
+                return val0 + '⁻' + val1
+              }
+              else if (val.includes('+')) {
+                val = val.split('+');
+                var val0 = val[0];
+                var val1 = superscripts[val[1]];
+                return val0 + '⁺' + val1
+              }
+            }
+            else {
+              return val
+            }
+          }
+          return toSuperscript(val)
+        }
+      }
+    }
+  }
+  else {
+    if (option['yAxis']['type'] === 'value') {
+      option['yAxis']['axisLabel']['formatter'] = function(val) {
+        const superscripts = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹','¹⁰',
+                '¹¹', '¹²', '¹³', '¹⁴', '¹⁵', '¹⁶', '¹⁷', '¹⁸', '¹⁹','²⁰',
+                '²¹', '²²', '²³', '²⁴', '²⁵', '²⁶', '²⁷', '²⁸', '²⁹'];
+        function toSuperscript(val) {
+          if (val.toString().length > 5 && !val.toString().includes('.')) {
+            val = Number(val).toExponential().toString();
+            if (val.includes('-')) {
+              val = val.split('-');
+              var val0 = val[0];
+              var val1 = superscripts[val[1]];
+              return val0 + '⁻' + val1
+            }
+            else if (val.includes('+')) {
+              val = val.split('+');
+              var val0 = val[0];
+              var val1 = superscripts[val[1]];
+              return val0 + '⁺' + val1
+            }
+          }
+          else {
+            return val
+          }
+        }
+        return toSuperscript(val)
+      }
+    }
+  };
+  return option;
+};
+
+function auto_component_size(option) {
+  if (typeof option['figsize']['width'] === 'string' || option['figsize']['width'] instanceof String) {
+    if (option['figsize']['width'].includes('%')) {
+      var width = 800 * (parseFloat(option['figsize']['width'].slice(0,-1)) / 100);
+    }
+    else if (option['figsize']['width'].includes('px')) {
+      var width = parseFloat(option['figsize']['width'].slice(0,-2));
+    }
+  }
+  else {
+    var width = option['figsize']['width']
+  }
+
+  if (typeof option['figsize']['height'] === 'string' || option['figsize']['height'] instanceof String) {
+    if (option['figsize']['height'].includes('%')) {
+      var height = 600 * (parseFloat(option['figsize']['height'].slice(0,-1)) / 100);
+    }
+    else if (option['figsize']['height'].includes('px')) {
+      var height = parseFloat(option['figsize']['height'].slice(0,-2));
+    }
+  }
+  else {
+    var height = option['figsize']['height']
+  }
+
+  var relative_ratio = Math.min(width / 700, height / 400)
+  if ('xAxis3D' in option) {
+    var keys = ['xAxis3D', 'yAxis3D', 'zAxis3D']
+  }
+  else {
+    var keys = ['xAxis', 'yAxis']
+  }
+  for (single_key of keys) {
+    for (var ind = 0; ind < option[single_key].length; ind++) {
+      option[single_key][ind]['nameTextStyle']['fontSize'] = Math.max(7, option[single_key][ind]['nameTextStyle']['fontSize'] * relative_ratio);
+      option[single_key][ind]['axisLabel']['fontSize'] = Math.max(7, option[single_key][ind]['axisLabel']['fontSize'] * relative_ratio);
+    }
+  }
+  if (option['series']) {
+    for (var ind = 0; ind < option['series'].length; ind++) {
+      if (['heatmap', 'bar'].includes(option['series'][ind]['type'])) {
+        if (option['series'][ind]['label']) {
+          option['series'][ind]['label']['fontSize'] = Math.max(7, option['series'][ind]['label']['fontSize'] * relative_ratio);
+        }
+      }
+    }
+  }
+  if (option['title']) {
+    if (Array.isArray(option['title'])) {
+      for (var ind = 0; ind < option['title'].length; ind++) {
+        option['title'][ind]['textStyle']['fontSize'] = Math.max(9, option['title'][ind]['textStyle']['fontSize'] * relative_ratio);
+      }
+    }
+    else {
+      option['title']['textStyle']['fontSize'] = Math.max(9, option['title']['textStyle']['fontSize'] * relative_ratio);
+    }
+  }
+  if (option['legend']) {
+    option['legend']['itemHeight'] = option['legend']['itemHeight'] * relative_ratio;
+    option['legend']['itemWidth'] = option['legend']['itemWidth'] * relative_ratio;
+    option['legend']['textStyle']['fontSize'] = Math.max(7, option['legend']['textStyle']['fontSize'] * relative_ratio);
+  }
+  if (option['visualMap']) {
+    option['visualMap']['itemHeight'] = option['visualMap']['itemHeight'] * relative_ratio;
+    option['visualMap']['itemWidth'] = option['visualMap']['itemWidth'] * relative_ratio;
+    option['visualMap']['textStyle']['fontSize'] = Math.max(7, option['visualMap']['textStyle']['fontSize'] * relative_ratio);
+  }
+  if (option['toolbox']) {
+    option['toolbox']['itemSize'] = Math.max(8, option['toolbox']['itemSize'] * relative_ratio)
+    option['toolbox']['itemGap'] = Math.max(4, option['toolbox']['itemGap'] * relative_ratio);
+  }
+  if (option['graphic']) {
+    for (var ind = 0; ind < option['graphic'].length; ind++) {
+      for (var ind2 = 0; ind2 < option['graphic'][ind]['children'].length; ind2++) {
+        var new_font = Math.max(7, 12 * relative_ratio);
+        option['graphic'][ind]['children'][ind2]['style']['font'] = new_font.toString() + 'px Microsoft YaHei';
+      }
+    }
+  }
+  return option;
+}
+
+function save_img(echarts_instance, option) {
+  const base64_str = echarts_instance.getDataURL({
+      pixelRatio: 2,
+      backgroundColor: '#fff',
+      width: option['figsize']['width'],
+      height: option['figsize']['height']
+  });
+
+  let testRequest = new Request('http://localhost:' + option['port'] +'/function/js_image_save', {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8;',
+      'Access-Control-Allow-Origin':'*',
+      'Access-Control-Allow-Credentials': 'true',
+      'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+    },
+    body: JSON.stringify({'figname': option['figname'],
+                          'base64_str': base64_str})
+  });
+  fetch(testRequest).then(response => {});
+};
+
+
+function auto_axis_namegap(echarts_instance, auto_axis_list, axis_type) {
+  const globalModel = echarts_instance._api.getModel()
+  const figsize = globalModel.option.figsize
+  const ctx = document.createElement('canvas').getContext('2d')
+  if (typeof globalModel.option['figsize']['width'] === 'string' || globalModel.option['figsize']['width'] instanceof String) {
+    if (globalModel.option['figsize']['width'].includes('%')) {
+      var width = 800 * (parseFloat(globalModel.option['figsize']['width'].slice(0,-1)) / 100);
+    }
+    else if (globalModel.option['figsize']['width'].includes('px')) {
+      var width = parseFloat(globalModel.option['figsize']['width'].slice(0,-2));
+    }
+  }
+  else {
+    var width = globalModel.option['figsize']['width'];
+  }
+
+  if (typeof globalModel.option['figsize']['height'] === 'string' || globalModel.option['figsize']['height'] instanceof String) {
+    if (globalModel.option['figsize']['height'].includes('%')) {
+      var height = 600 * (parseFloat(globalModel.option['figsize']['height'].slice(0,-1)) / 100);
+    }
+    else if (globalModel.option['figsize']['height'].includes('px')) {
+      var height = parseFloat(globalModel.option['figsize']['height'].slice(0,-2));
+    }
+  }
+  else {
+    var height = option['figsize']['height'];
+  }
+  var relative_ratio = Math.min(width / 700, height / 400);
+  if (axis_type==='2d') {
+    const yAxisList = globalModel.option.yAxis
+    const xAxisList = globalModel.option.xAxis
+
+    for (var axis_idx of auto_axis_list) {
+      const yAxis = yAxisList[axis_idx]
+      const fontSize = yAxis.nameTextStyle?.fontSize ?? 12
+      const fontFamily = yAxis.nameTextStyle?.fontFamily ?? 'sans-serif'
+      ctx.save()
+      ctx.font = fontSize.toString() + 'px' + fontFamily.toString()
+
+      const yAxisComponent = globalModel.getComponent('yAxis', axis_idx)?.axis
+      if (yAxis.type === 'value') {
+        var labelMaxWidth = Math.min(Math.max(...yAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width)), 30)
+      }
+      else {
+        var labelMaxWidth = Math.max(...yAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width))
+      }
+      var axisLabelMargin = yAxis.axisLabel?.margin ?? 8
+      axisLabelMargin = axisLabelMargin * relative_ratio
+      yAxisList[axis_idx].nameGap = labelMaxWidth + axisLabelMargin + 5 * relative_ratio
+      ctx.restore()
+    };
+
+    for (var axis_idx of [...Array(xAxisList.length).keys()]) {
+      var new_gap = Math.max(xAxisList[axis_idx].nameGap * relative_ratio, 12);
+      if (figsize['height'] < 400) {
+        new_gap = Math.min(20, new_gap);
+      }
+      xAxisList[axis_idx].nameGap = new_gap;
+    }
+
+    echarts_instance.setOption({
+      yAxis: yAxisList,
+      xAxis: xAxisList
+    })
+  }
+  else {
+    const yAxisList = globalModel.option.yAxis3D
+    const xAxisList = globalModel.option.xAxis3D
+    const zAxisList = globalModel.option.zAxis3D
+
+    for (var axis_idx of auto_axis_list) {
+      if (axis_idx < xAxisList.length) {
+        const xAxis = xAxisList[axis_idx]
+        const fontSize = xAxis.nameTextStyle?.fontSize ?? 12
+        const fontFamily = xAxis.nameTextStyle?.fontFamily ?? 'sans-serif'
+        ctx.save()
+        ctx.font = fontSize.toString() + 'px' + fontFamily.toString()
+
+        const xAxisComponent = globalModel.getComponent('xAxis3D', axis_idx)?.axis
+        if (xAxis.type === 'value') {
+          var labelMaxWidth = Math.min(Math.max(...xAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width)), 30)
+        }
+        else {
+          var labelMaxWidth = Math.max(...xAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width))
+        }
+        var axisLabelMargin = xAxis.axisLabel?.margin ?? 8
+        axisLabelMargin = axisLabelMargin * relative_ratio
+        xAxisList[axis_idx].nameGap = labelMaxWidth + axisLabelMargin + 5 * relative_ratio
+        ctx.restore()
+      }
+    };
+
+    for (var axis_idx of auto_axis_list) {
+      if (axis_idx < yAxisList.length) {
+        const yAxis = yAxisList[axis_idx]
+        const fontSize = yAxis.nameTextStyle?.fontSize ?? 12
+        const fontFamily = yAxis.nameTextStyle?.fontFamily ?? 'sans-serif'
+        ctx.save()
+        ctx.font = fontSize.toString() + 'px' + fontFamily.toString()
+
+        const yAxisComponent = globalModel.getComponent('yAxis3D', axis_idx)?.axis
+        if (yAxis.type === 'value') {
+          var labelMaxWidth = Math.min(Math.max(...yAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width)), 30)
+        }
+        else {
+          var labelMaxWidth = Math.max(...yAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width))
+        }
+        var axisLabelMargin = yAxis.axisLabel?.margin ?? 8
+        axisLabelMargin = axisLabelMargin * relative_ratio
+        yAxisList[axis_idx].nameGap = labelMaxWidth + axisLabelMargin + 5 * relative_ratio
+        ctx.restore()
+      }
+    };
+
+    for (var axis_idx of auto_axis_list) {
+      if (axis_idx < zAxisList.length) {
+        const zAxis = zAxisList[axis_idx]
+        const fontSize = zAxis.nameTextStyle?.fontSize ?? 12
+        const fontFamily = zAxis.nameTextStyle?.fontFamily ?? 'sans-serif'
+        ctx.save()
+        ctx.font = fontSize.toString() + 'px' + fontFamily.toString()
+
+        const zAxisComponent = globalModel.getComponent('zAxis3D', axis_idx)?.axis
+        if (zAxis.type === 'value') {
+          var labelMaxWidth = Math.min(Math.max(...zAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width)), 30)
+        }
+        else {
+          var labelMaxWidth = Math.max(...zAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width))
+        }
+        var axisLabelMargin = zAxis.axisLabel?.margin ?? 8
+        axisLabelMargin = axisLabelMargin * relative_ratio
+        zAxisList[axis_idx].nameGap = labelMaxWidth + axisLabelMargin + 5 * relative_ratio
+        ctx.restore()
+      }
+    };
+    echarts_instance.setOption({
+      yAxis3D: yAxisList,
+      xAxis3D: xAxisList,
+      zAxis3D: zAxisList
+    });
+    }
+
+};
+
+function custom_scatter_size(option) {
+
+  for (var ind = 0; ind < option['series'].length; ind++) {
+    if (option['series'][ind]['symbolSize'] === 'array_size') {
+      var ind_ = option['series'][ind]['data_dict']['size']
+      option['series'][ind]['symbolSize'] = function (data) {return data[ind_];}
+    }
+  }
+  return option;
+
+};
+
+function show_scatter_label(option) {
+
+  for (var ind = 0; ind < option['series'].length; ind++) {
+    if (option['series'][ind]['label'] === 'show_label') {
+      var ind_ = option['series'][ind]['data_dict']['label']
+      option['series'][ind]['label'] = {
+        show: true,
+        formatter: function (params) {return params.data.value[ind_]; }
+      }
+    }
+  }
+  return option;
+};
+
+function hide_min_max_axis_label(option) {
+  for (var ind = 0; ind < option['xAxis3D'].length; ind++) {
+    if (option['xAxis3D'][ind]['type'] == 'value') {
+      var x_min = option['xAxis3D'][ind]['min']
+      var x_max = option['xAxis3D'][ind]['max']
+      option['xAxis3D'][ind]['axisLabel']['formatter'] = function (value, index) {
+        if (value==x_min || value==x_max){}
+        else {return value}
+      }
+    }
+  }
+  for (var ind = 0; ind < option['yAxis3D'].length; ind++) {
+    if (option['yAxis3D'][ind]['type'] == 'value') {
+      var y_min = option['yAxis3D'][ind]['min']
+      var y_max = option['yAxis3D'][ind]['max']
+      option['yAxis3D'][ind]['axisLabel']['formatter'] = function (value, index) {
+        if (value==y_min || value==y_max){}
+        else {return value}
+      }
+    }
+  }
+  for (var ind = 0; ind < option['zAxis3D'].length; ind++) {
+    if (option['zAxis3D'][ind]['type'] == 'value') {
+      var z_min = option['zAxis3D'][ind]['min']
+      var z_max = option['zAxis3D'][ind]['max']
+      option['zAxis3D'][ind]['axisLabel']['formatter'] = function (value, index) {
+        if (value==z_min || value==z_max){}
+        else {return value}
+      }
+   }
+  }
+  return option;
+}
+
+function custom_axis_label(option) {
+  if (Array.isArray(option['xAxis'])) {
+    for (var ind = 0; ind < option['xAxis'].length; ind++) {
+      if (option['xAxis'][ind]['axisLabel']['formatter_func']) {
+        var f = new Function(option['xAxis'][ind]['axisLabel']['formatter_func'].arguments,
+                             option['xAxis'][ind]['axisLabel']['formatter_func'].body)
+        option['xAxis'][ind]['axisLabel']['formatter'] = f
+      }
+    }
+  }
+  else {
+    if (option['xAxis']['axisLabel']['formatter_func']) {
+      var f = new Function(option['xAxis']['axisLabel']['formatter_func'].arguments,
+                           option['xAxis']['axisLabel']['formatter_func'].body)
+      option['xAxis']['axisLabel']['formatter'] = f
+    }
+  }
+  if (Array.isArray(option['yAxis'])) {
+    for (var ind = 0; ind < option['yAxis'].length; ind++) {
+      if (option['yAxis'][ind]['axisLabel']['formatter_func']) {
+        var f = new Function(option['yAxis'][ind]['axisLabel']['formatter_func'].arguments,
+                             option['yAxis'][ind]['axisLabel']['formatter_func'].body)
+        option['yAxis'][ind]['axisLabel']['formatter'] = f
+      }
+    }
+  }
+  else {
+    if (option['yAxis']['axisLabel']['formatter_func']) {
+      var f = new Function(option['yAxis']['axisLabel']['formatter_func'].arguments,
+                           option['yAxis']['axisLabel']['formatter_func'].body)
+      option['yAxis']['axisLabel']['formatter'] = f
+    }
+  }
+  return option;
+}
+
+function custom_tooltip(option, dimension=2) {
+
+  if (dimension === 2) {
+    var xaxis_key = 'xAxis'
+    var yaxis_key = 'yAxis'
+  }
+
+  else if (dimension === 3) {
+    var xaxis_key = 'xAxis3D'
+    var yaxis_key = 'yAxis3D'
+    var zaxis_key = 'zAxis3D'
+  }
+
+  if (option['radar']) {
+    var radar_names = []
+    for (var ind_ = 0; ind_ < option['radar']['indicator'].length; ind_++) {
+      radar_names.push(option['radar']['indicator'][ind_]['name'])
+    }
+  }
+
+
+  if (option[xaxis_key]['name'] !== null && option[xaxis_key]['name'] !== '' && Array.isArray(option[xaxis_key])!==true) {
+    var xaxis_name = option[xaxis_key]['name'];
+  }
+  else {
+    var xaxis_name = 'X';
+  }
+
+  if (option[yaxis_key]['name'] !== null && option[yaxis_key]['name'] !== ''&& Array.isArray(option[xaxis_key])!==true) {
+    var yaxis_name = option[yaxis_key]['name'];
+  }
+  else {
+    var yaxis_name = 'Y';
+  }
+
+  if (typeof zaxis_key !== 'undefined') {
+    if (option[zaxis_key]['name'] !== ''&& Array.isArray(option[xaxis_key])!==true) {
+      var zaxis_name = option[zaxis_key]['name'];
+    }
+    else {
+      var zaxis_name = 'Z';
+    }
+  }
+
+  if (option['tooltip']) {
+    if (option['tooltip']['precision']) {
+      var precision = option['tooltip']['precision']
+      option['tooltip']['valueFormatter'] = (value) =>  Math.round(Number(value) * (10**precision)) / (10**precision)
+    }
+
+    for (var ind_ = 0; ind_ < option['series'].length; ind_++) {
+      if (option['series'][ind_]['tooltip']) {
+        if (option['series'][ind_]['tooltip']['precision']) {
+          var precision = option['series'][ind_]['tooltip']['precision']
+          const fix = precision_ => value => Math.round(Number(value) * (10**precision_)) / (10**precision_),
+          fix_p = fix(precision);
+          option['series'][ind_]['tooltip']['valueFormatter'] = function (value) {
+            return fix_p(value)
+          }
+        }
+      }
+    }
+
+    if (option['series'].length === 1) {
+      if (['scatter', 'heatmap', 'scatter3D', 'radar'].includes(option['series'][0]['type'])) {
+        option['tooltip']['formatter'] = function(params) {
+          if (params.seriesName.includes('series')) {
+            var series_name = ''
+          }
+
+          else {
+            var series_name = params.seriesName + '<br>'
+          }
+
+          if (params.seriesType === 'scatter') {
+            if (option['tooltip']['custom_tooltip'] === true) {
+              formatter = series_name
+                + params.value[dimension]
+            }
+            else {
+              formatter = series_name
+              + xaxis_name + ': '+ Math.round(params.value[0] * 100) / 100
+              +'<br>' + yaxis_name + ': ' + Math.round(params.value[1] * 100) / 100
+            }
+
+          }
+
+          else if (params.seriesType === 'heatmap') {
+            formatter = params.name + ', ' + option['yAxis'][0]['data'][params.data[1]] + '<br> <b>' + Math.round(params.data[2] * 10000) / 10000
+          }
+
+          else if (params.seriesType === 'scatter3D') {
+            if (option['tooltip']['custom_tooltip'] === true) {
+              formatter = series_name
+                + params.value[dimension]
+            }
+            else {
+              formatter = series_name
+                + xaxis_name + ': '+ Math.round(params.value[0] * 100) / 100
+                +'<br>' + yaxis_name + ': ' + Math.round(params.value[1] * 100) / 100
+                +'<br>' + zaxis_name + ': ' + Math.round(params.value[2] * 100) / 100
+            }
+          }
+
+          else if (params.seriesType === 'radar') {
+            formatter = params.name  + '<br>';
+            for (var ind_ = 0; ind_ < option['radar']['indicator'].length; ind_++) {
+              if (ind_ !== option['radar']['indicator'].length - 1) {
+                formatter += radar_names[ind_] + ': ' + Math.round(params.value[ind_] * 100) / 100 + '<br>'
+              }
+              else {
+                formatter += radar_names[ind_] + ': ' + Math.round(params.value[ind_] * 100) / 100
+              }
+            }
+          }
+        return formatter;
+        }
+      }
+    }
+    else {
+      for (var out_ind_ = 0; out_ind_ < option['series'].length; out_ind_++) {
+        if (['scatter', 'heatmap', 'scatter3D', 'radar'].includes(option['series'][out_ind_]['type'])) {
+          if (option['series'][out_ind_]['tooltip']) {
+          }
+          else {
+            option['series'][out_ind_]['tooltip'] = {}
+          }
+          option['series'][out_ind_]['tooltip']['formatter'] = function(params) {
+            if (params.seriesName.includes('series')) {
+              var series_name = ''
+            }
+
+            else {
+              var series_name = params.seriesName + '<br>'
+            }
+
+            if (params.seriesType === 'scatter') {
+              if (option['tooltip']['custom_tooltip'] === true) {
+                formatter = series_name
+                  + params.value[dimension]
+              }
+              else {
+                formatter = series_name
+                  + xaxis_name + ': '+ Math.round(params.value[0] * 100) / 100
+                  +'<br>' + yaxis_name + ': ' + Math.round(params.value[1] * 100) / 100
+              }
+            }
+
+            else if (params.seriesType === 'heatmap') {
+              if ('data' in option['yAxis'][option['series'][params.seriesIndex]['yAxisIndex']]) {
+                formatter = params.name + ', ' + option['yAxis'][option['series'][params.seriesIndex]['yAxisIndex']]['data'][params.data[1]] + '<br> <b>' + Math.round(params.data[2] * 10000) / 10000
+              }
+              else {
+                formatter = Math.round(params.data[2] * 10000) / 10000
+              }
+
+            }
+
+            else if (params.seriesType === 'scatter3D') {
+              if (option['tooltip']['custom_tooltip'] === true) {
+                formatter = series_name
+                  + params.value[dimension]
+              }
+              else {
+                formatter = series_name
+                  + xaxis_name + ': '+ Math.round(params.value[0] * 100) / 100
+                  +'<br>' + yaxis_name + ': ' + Math.round(params.value[1] * 100) / 100
+                  +'<br>' + zaxis_name + ': ' + Math.round(params.value[2] * 100) / 100
+              }
+            }
+
+            else if (params.seriesType === 'radar') {
+              formatter = params.name  + '<br>';
+              for (var ind_ = 0; ind_ < option['radar']['indicator'].length; ind_++) {
+                if (ind_ !== option['radar']['indicator'].length - 1) {
+                  formatter += radar_names[ind_] + ': ' + Math.round(params.value[ind_] * 100) / 100 + '<br>'
+                }
+                else {
+                  formatter += radar_names[ind_] + ': ' + Math.round(params.value[ind_] * 100) / 100
+                }
+              }
+            }
+          return formatter;
+          }
+        }
+      }
+    }
+  }
+  return option;
+};
+
+function support_brush_event(option) {
+  if (option['event']['type_'] === 'brushselected') {
+    if (option['link_id'] === null) {
+      var link_id = option['chart_id'];
+    }
+    else {
+      var link_id = option['link_id'];
+    }
+    var dom = document.getElementById(link_id);
+    var bind_chart = echarts.init(dom, null, {
+        renderer: 'canvas',
+        useDirtyRect: false
+    });
+    var last_selected = [];
+    bind_chart.on(option['event']['type_'], (params) => {
+      var brushed = [];
+      var brushComponent = params.batch[0];
+      for (var sIdx = 0; sIdx < brushComponent.selected.length; sIdx++) {
+        var rawIndices = brushComponent.selected[sIdx].dataIndex;
+        brushed.push(rawIndices);
+      }
+      var brushed_all = brushed[0];
+
+      if (JSON.stringify(last_selected) !== JSON.stringify(brushed_all)) {
+
+        // Update memory
+        let testRequest = new Request('http://localhost:' + option['port'] +'/function/js_call_python_function', {
+          method: 'post',
+          headers: {
+              'Content-Type': 'application/json;charset=utf-8;',
+              'Access-Control-Allow-Origin':'*',
+              'Access-Control-Allow-Credentials': 'true',
+              'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+          },
+          body: JSON.stringify({'js_func_input':{'selected': brushed_all},
+                                'event_id': option['event']['event_id']})
+        });
+        var dom_dict = {}
+        fetch(testRequest).then(response => {
+          var result = response.json();
+          result.then(res => {
+            dom_dict[res['link_id']] = document.getElementById(res['link_id']);
+            setInnerHTML(dom_dict[res['link_id']], res['html']);
+          });
+        });
+        last_selected = brushed_all;
+      }
+
+    // bind_chart.setOption(option);
+    })
+  }
+  return option;
+};
+
+function support_click_event(option) {
+  if (option['event']['type_'] === 'click') {
+    if (option['link_id'] === null) {
+      var link_id = option['chart_id'];
+    }
+    else {
+      var link_id = option['link_id'];
+    }
+    var dom = document.getElementById(link_id);
+    var bind_chart = echarts.init(dom, null, {
+        renderer: 'canvas',
+        useDirtyRect: false
+    });
+
+    if (option['series'][0]['orient'] === 'vertical') {
+      var value_idx = 0
+    }
+    else {
+      var value_idx = 1
+    }
+
+
+    bind_chart.on(option['event']['type_'], (params) => {
+      if (option['event']['task'] === 'singleselect') {
+        for (var ind_2 = 0; ind_2 < option['series'][0]['data'].length; ind_2++) {
+          if (option['series'][0]['data'][ind_2]['itemStyle']['color'] !== '#1f77b4') {
+            option['series'][0]['data'][ind_2]['itemStyle']['color'] = '#1f77b4';
+          }
+        }
+        var idx = option['series'][0]['x_value'].indexOf(params.value[value_idx])
+        option['series'][0]['data'][idx]['itemStyle']['color'] = '#ff7f0e';
+
+        var selected = params.value[value_idx];
+      }
+      else {
+        console.log(params);
+      }
+
+      let testRequest = new Request('http://localhost:' + option['port'] +'/function/js_call_python_function', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8;',
+          'Access-Control-Allow-Origin':'*',
+          'Access-Control-Allow-Credentials': 'true',
+          'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+        },
+        body: JSON.stringify({'js_func_input':{'selected': selected},
+                              'event_id': option['event']['event_id']})
+      });
+      var dom_dict = {}
+      fetch(testRequest).then(response => {
+        var result = response.json();
+        result.then(res => {
+          dom_dict[res['link_id']] = document.getElementById(res['link_id']);
+          setInnerHTML(dom_dict[res['link_id']], res['html']);
+        });
+      });
+      bind_chart.setOption(option);
+    });
+  }
+  return option;
+};function support_popup(option, height, width, inner_html) {
+  option['toolbox']['feature']['myFeature'] = {
+    show: true,
+    title: 'Open in new window',
+    icon: 'image://https://raw.githubusercontent.com/CnBDM-Su/XAI_demo/master/popup_icon.png',
+    onclick: function (){
+      var height_ = Math.min(screen.height, Math.round(1.5 * parseInt(height.slice(0,-2))))
+      var width_ = Math.min(screen.width, Math.round(1.5 * parseInt(width.slice(0,-2))))
+      var left = (screen.width/2)-(width_/2);
+      var top = (screen.height/2)-(height_/2);
+      var win = window.open('template.html', '_blank',
+        `height=${height_}px, width=${width_}px, top=${top}px, left=${left}px`,
+      );
+      win.document.write(`${inner_html}`);
+      win.document.close();
+    }
+  };
+  return option;
+};option = support_popup(option=option, height="400px", width="400px", inner_html=`
+
+        <html lang="en" style="height: 100%; text-align: -webkit-center; align-content: center">
+        <title>MoCharts</title>
+        <head> <meta charset="utf-8"> </head>
+        <body style="height: 100%; margin: 0">
+
+
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"><\/script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/echarts-gl/2.0.8/echarts-gl.min.js"><\/script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"><\/script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-wordcloud@2.1.0/dist/echarts-wordcloud.min.js"><\/script>
+
+
+        <div id="1740379246.40571480.8310" style="height: 90%; width: 90%"></div>
+        <script type="text/javascript">
+            var dom = document.getElementById('1740379246.40571480.8310');
+            var myChart = echarts.init(dom, null, {
+                renderer: 'canvas',
+                useDirtyRect: false
+                });
+            var app = {};
+
+            var option;
+        option = {"chart_id": "1740379246.40571480.8310", "link_id": null, "figname": "", "title": {"show": true, "text": "Heatmap", "link": "", "target": "blank", "textStyle": {"fontStyle": "normal", "fontWeight": "bolder", "fontFamily": "sans-serif", "fontSize": 15, "textBorderType": "solid", "textShadowColor": "transparent", "overflow": "none", "ellipsis": "..."}, "subtext": "", "sublink": "", "subtarget": "blank", "textAlign": "center", "textVerticalAlign": "auto", "padding": 0, "itemGap": 10, "z": 2, "left": "50.0%", "top": "5%", "right": "auto", "bottom": "auto", "backgroundColor": "transparent", "borderColor": "#ccc", "changed_name_key": {"id_": "id"}}, "grid": {"show": true, "width": "auto", "height": "auto", "z": 2, "left": "5%", "top": "10%", "right": "10%", "bottom": "5%", "borderColor": "#ccc", "borderWidth": 1, "containLabel": true, "backgroundColor": "transparent", "changed_name_key": {"id_": "id"}}, "legend": null, "brush": null, "yAxis": [{"show": true, "data": [0.0, 0.09091, 0.1818, 0.2727, 0.3636, 0.4545, 0.5455, 0.6364, 0.7273, 0.8182, 0.9091, 1.0], "type": "category", "position": "bottom", "name": "y", "nameLocation": "center", "nameTextStyle": {"color": "black", "fontStyle": "normal", "fontWeight": "normal", "fontFamily": "sans-serif", "fontSize": 12, "backgroundColor": "", "borderType": "solid", "shadowColor": "transparent", "textBorderType": "solid", "textShadowColor": "transparent", "overflow": "none", "ellipsis": "..."}, "nameGap": "auto", "inverse": true, "splitNumber": 5, "logBase": 10, "axisLine": {}, "axisTick": {"show": true, "alignWithLabel": "none", "interval": "auto", "length": 5}, "axisLabel": {"show": true, "interval": 3, "margin": 8, "showMinLabel": true, "fontStyle": "normal", "fontWeight": "normal", "fontFamily": "sans-serif", "fontSize": 12, "backgroundColor": "transparent", "borderType": "solid", "shadowColor": "transparent", "textBorderType": "solid", "textShadowColor": "transparent", "overflow": "none", "ellipsis": "...", "width": 20.0}, "splitLine": {"show": true, "interval": "auto"}, "splitArea": {"show": false, "interval": "auto"}, "axisPointer": {"show": false}, "dimension": "2d", "ignored": false, "changed_name_key": {"min_": "min", "max_": "max", "type_": "type", "name_": "name"}}], "xAxis": [{"show": true, "data": [0.0, 0.1111, 0.2222, 0.3333, 0.4444, 0.5556, 0.6667, 0.7778, 0.8889, 1.0], "type": "category", "position": "bottom", "name": "x", "nameLocation": "center", "nameTextStyle": {"color": "black", "fontStyle": "normal", "fontWeight": "normal", "fontFamily": "sans-serif", "fontSize": 12, "backgroundColor": "", "borderType": "solid", "shadowColor": "transparent", "textBorderType": "solid", "textShadowColor": "transparent", "overflow": "none", "ellipsis": "..."}, "nameGap": 30, "splitNumber": 5, "logBase": 10, "axisLine": {}, "axisTick": {"show": true, "alignWithLabel": "none", "interval": "auto", "length": 5}, "axisLabel": {"show": true, "interval": 2, "margin": 8, "showMinLabel": true, "fontStyle": "normal", "fontWeight": "normal", "fontFamily": "sans-serif", "fontSize": 12, "backgroundColor": "transparent", "borderType": "solid", "shadowColor": "transparent", "textBorderType": "solid", "textShadowColor": "transparent", "overflow": "none", "ellipsis": "...", "width": null}, "splitLine": {"show": true, "interval": "auto"}, "splitArea": {"show": false, "interval": "auto"}, "axisPointer": {"show": false}, "dimension": "2d", "ignored": false, "changed_name_key": {"min_": "min", "max_": "max", "type_": "type", "name_": "name"}}], "parallelAxis": null, "series": [{"type": "heatmap", "name": "heatmap", "colorBy": "series", "z": 2, "legendHoverLink": true, "stackStrategy": "samesign", "cursor": "pointer", "clip": true, "label": {"show": true, "fontSize": 12}, "seriesLayoutBy": "column", "data": [[0, 0, 0.252], [0, 1, 0.042], [0, 2, 0.996], [0, 3, 0.672], [0, 4, 0.883], [0, 5, 0.426], [0, 6, 0.421], [0, 7, 0.861], [0, 8, 0.141], [0, 9, 0.035], [0, 10, 0.277], [0, 11, 0.926], [1, 0, 0.893], [1, 1, 0.208], [1, 2, 0.044], [1, 3, 0.021], [1, 4, 0.575], [1, 5, 0.416], [1, 6, 0.623], [1, 7, 0.308], [1, 8, 0.288], [1, 9, 0.95], [1, 10, 0.464], [1, 11, 0.644], [2, 0, 0.376], [2, 1, 0.316], [2, 2, 0.292], [2, 3, 0.974], [2, 4, 0.524], [2, 5, 0.312], [2, 6, 0.809], [2, 7, 0.71], [2, 8, 0.264], [2, 9, 0.042], [2, 10, 0.721], [2, 11, 0.442], [3, 0, 0.993], [3, 1, 0.527], [3, 2, 0.325], [3, 3, 0.718], [3, 4, 0.694], [3, 5, 0.941], [3, 6, 0.265], [3, 7, 0.964], [3, 8, 0.454], [3, 9, 0.196], [3, 10, 0.218], [3, 11, 0.254], [4, 0, 0.097], [4, 1, 0.821], [4, 2, 0.704], [4, 3, 0.967], [4, 4, 0.164], [4, 5, 0.518], [4, 6, 0.469], [4, 7, 0.128], [4, 8, 0.545], [4, 9, 0.453], [4, 10, 0.834], [4, 11, 0.654], [5, 0, 0.725], [5, 1, 0.104], [5, 2, 0.894], [5, 3, 0.341], [5, 4, 0.966], [5, 5, 0.687], [5, 6, 0.103], [5, 7, 0.782], [5, 8, 0.549], [5, 9, 0.253], [5, 10, 0.402], [5, 11, 0.879], [6, 0, 0.368], [6, 1, 0.937], [6, 2, 0.489], [6, 3, 0.711], [6, 4, 0.765], [6, 5, 0.485], [6, 6, 0.773], [6, 7, 0.186], [6, 8, 0.911], [6, 9, 0.961], [6, 10, 0.146], [6, 11, 0.111], [7, 0, 0.762], [7, 1, 0.568], [7, 2, 0.223], [7, 3, 0.728], [7, 4, 0.401], [7, 5, 0.601], [7, 6, 0.953], [7, 7, 0.962], [7, 8, 0.578], [7, 9, 0.715], [7, 10, 0.676], [7, 11, 0.269], [8, 0, 0.651], [8, 1, 0.208], [8, 2, 0.97], [8, 3, 0.07], [8, 4, 0.848], [8, 5, 0.454], [8, 6, 0.397], [8, 7, 0.395], [8, 8, 0.534], [8, 9, 0.383], [8, 10, 0.138], [8, 11, 0.828], [9, 0, 0.765], [9, 1, 0.975], [9, 2, 0.424], [9, 3, 0.173], [9, 4, 0.174], [9, 5, 0.78], [9, 6, 0.713], [9, 7, 0.801], [9, 8, 0.015], [9, 9, 0.209], [9, 10, 0.672], [9, 11, 0.65]], "animation": true, "animationThreshold": 2000, "animationDuration": 1000, "animationEasing": "cubicOut", "animationDurationUpdate": 300, "animationEasingUpdate": "cubicOut", "coordinateSystem": "cartesian2d", "pointSize": 20, "blurSize": 10, "maxOpacity": 1, "progressive": 400, "progressiveThreshold": 3000, "colsize": 1, "extent": [0, 1, 0, 1], "visualmap_type": "continuous", "map_range": [0.015, 0.996]}], "visualMap": {"show": true, "type": "continuous", "color": ["#440154", "#481467", "#482576", "#453781", "#404688", "#39558c", "#33638d", "#2d718e", "#287d8e", "#238a8d", "#1f968b", "#20a386", "#29af7f", "#3dbc74", "#56c667", "#75d054", "#95d840", "#bade28", "#dde318", "#fde725"], "left": "auto", "top": "10%", "right": "1%", "bottom": "auto", "min": 0.015, "max": 0.996, "calculable": true, "realtime": true, "precision": 1, "itemWidth": 20.0, "itemHeight": 140.0, "align": "auto", "textGap": 10, "hoverLink": true, "z": 4, "padding": 0, "backgroundColor": "rgba(0,0,0,0)", "borderColor": "#ccc", "textStyle": {"fontSize": 12, "width": 35, "overflow": "none", "ellipsis": ".."}, "indicatorSize": "50%", "orient": "vertical", "changed_name_key": {"id_": "id", "type_": "type", "min_": "min", "max_": "max", "range_": "range"}}, "toolbox": {"show": true, "orient": "horizontal", "itemSize": 15.0, "itemGap": 8.0, "showTitle": true, "feature": {"dataZoom": {}, "saveAsImage": {}}, "z": 2, "left": "auto", "top": "auto", "right": "1%", "bottom": "auto", "width": "auto", "height": "auto", "popup": true, "changed_name_key": {"id_": "id"}}, "tooltip": null, "dataZoom": null, "event": null, "graphic": null, "radar": null, "figsize": {"height": 400, "width": 400}, "color": ["#1f77b4", "#aec7e8", "#ff7f0e", "#ffbb78", "#2ca02c", "#98df8a", "#d62728", "#ff9896", "#9467bd", "#c5b0d5", "#8c564b", "#c49c94", "#e377c2", "#f7b6d2", "#7f7f7f", "#c7c7c7", "#bcbd22", "#dbdb8d", "#17becf", "#9edae5"], "save_img": false, "auto_size": true, "style": {"overflow": "auto"}, "port": "5001"};function setInnerHTML(elm, html) {
+  elm.innerHTML = html;
+
+  Array.from(elm.querySelectorAll("script"))
+    .forEach( oldScriptEl => {
+      const newScriptEl = document.createElement("script");
+
+      Array.from(oldScriptEl.attributes).forEach( attr => {
+        newScriptEl.setAttribute(attr.name, attr.value)
+      });
+
+      const scriptText = document.createTextNode(oldScriptEl.innerHTML);
+      newScriptEl.appendChild(scriptText);
+
+      oldScriptEl.parentNode.replaceChild(newScriptEl, oldScriptEl);
+  });
+};
+
+function getScreenSize(option) {
+  let testRequest = new Request('http://localhost:' + option['port'] +'/function/js_result_save', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8;',
+          'Access-Control-Allow-Origin':'*',
+          'Access-Control-Allow-Credentials': 'true',
+          'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+        },
+        body: JSON.stringify({'js_func_input':{'height': screen.height, 'width': screen.width},
+                              'event_id': 'screen_size'})
+      });
+      fetch(testRequest).then(response => {});
+  return
+}
+function support_scientific_notation(option) {
+  if (Array.isArray(option['yAxis'])) {
+    for (var tar_ind = 0; tar_ind < option['yAxis'].length; tar_ind++) {
+      if (option['yAxis'][tar_ind]['type'] === 'value') {
+        option['yAxis'][tar_ind]['axisLabel']['formatter'] = function(val) {
+          const superscripts = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹','¹⁰',
+                    '¹¹', '¹²', '¹³', '¹⁴', '¹⁵', '¹⁶', '¹⁷', '¹⁸', '¹⁹','²⁰',
+                    '²¹', '²²', '²³', '²⁴', '²⁵', '²⁶', '²⁷', '²⁸', '²⁹'];
+          function toSuperscript(val) {
+            if (val.toString().length > 5 && !val.toString().includes('.')) {
+              val = Number(val).toExponential().toString();
+              if (val.includes('-')) {
+                val = val.split('-');
+                var val0 = val[0];
+                var val1 = superscripts[val[1]];
+                return val0 + '⁻' + val1
+              }
+              else if (val.includes('+')) {
+                val = val.split('+');
+                var val0 = val[0];
+                var val1 = superscripts[val[1]];
+                return val0 + '⁺' + val1
+              }
+            }
+            else {
+              return val
+            }
+          }
+          return toSuperscript(val)
+        }
+      }
+    }
+  }
+  else {
+    if (option['yAxis']['type'] === 'value') {
+      option['yAxis']['axisLabel']['formatter'] = function(val) {
+        const superscripts = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹','¹⁰',
+                '¹¹', '¹²', '¹³', '¹⁴', '¹⁵', '¹⁶', '¹⁷', '¹⁸', '¹⁹','²⁰',
+                '²¹', '²²', '²³', '²⁴', '²⁵', '²⁶', '²⁷', '²⁸', '²⁹'];
+        function toSuperscript(val) {
+          if (val.toString().length > 5 && !val.toString().includes('.')) {
+            val = Number(val).toExponential().toString();
+            if (val.includes('-')) {
+              val = val.split('-');
+              var val0 = val[0];
+              var val1 = superscripts[val[1]];
+              return val0 + '⁻' + val1
+            }
+            else if (val.includes('+')) {
+              val = val.split('+');
+              var val0 = val[0];
+              var val1 = superscripts[val[1]];
+              return val0 + '⁺' + val1
+            }
+          }
+          else {
+            return val
+          }
+        }
+        return toSuperscript(val)
+      }
+    }
+  };
+  return option;
+};
+
+function auto_component_size(option) {
+  if (typeof option['figsize']['width'] === 'string' || option['figsize']['width'] instanceof String) {
+    if (option['figsize']['width'].includes('%')) {
+      var width = 800 * (parseFloat(option['figsize']['width'].slice(0,-1)) / 100);
+    }
+    else if (option['figsize']['width'].includes('px')) {
+      var width = parseFloat(option['figsize']['width'].slice(0,-2));
+    }
+  }
+  else {
+    var width = option['figsize']['width']
+  }
+
+  if (typeof option['figsize']['height'] === 'string' || option['figsize']['height'] instanceof String) {
+    if (option['figsize']['height'].includes('%')) {
+      var height = 600 * (parseFloat(option['figsize']['height'].slice(0,-1)) / 100);
+    }
+    else if (option['figsize']['height'].includes('px')) {
+      var height = parseFloat(option['figsize']['height'].slice(0,-2));
+    }
+  }
+  else {
+    var height = option['figsize']['height']
+  }
+
+  var relative_ratio = Math.min(width / 700, height / 400)
+  if ('xAxis3D' in option) {
+    var keys = ['xAxis3D', 'yAxis3D', 'zAxis3D']
+  }
+  else {
+    var keys = ['xAxis', 'yAxis']
+  }
+  for (single_key of keys) {
+    for (var ind = 0; ind < option[single_key].length; ind++) {
+      option[single_key][ind]['nameTextStyle']['fontSize'] = Math.max(7, option[single_key][ind]['nameTextStyle']['fontSize'] * relative_ratio);
+      option[single_key][ind]['axisLabel']['fontSize'] = Math.max(7, option[single_key][ind]['axisLabel']['fontSize'] * relative_ratio);
+    }
+  }
+  if (option['series']) {
+    for (var ind = 0; ind < option['series'].length; ind++) {
+      if (['heatmap', 'bar'].includes(option['series'][ind]['type'])) {
+        if (option['series'][ind]['label']) {
+          option['series'][ind]['label']['fontSize'] = Math.max(7, option['series'][ind]['label']['fontSize'] * relative_ratio);
+        }
+      }
+    }
+  }
+  if (option['title']) {
+    if (Array.isArray(option['title'])) {
+      for (var ind = 0; ind < option['title'].length; ind++) {
+        option['title'][ind]['textStyle']['fontSize'] = Math.max(9, option['title'][ind]['textStyle']['fontSize'] * relative_ratio);
+      }
+    }
+    else {
+      option['title']['textStyle']['fontSize'] = Math.max(9, option['title']['textStyle']['fontSize'] * relative_ratio);
+    }
+  }
+  if (option['legend']) {
+    option['legend']['itemHeight'] = option['legend']['itemHeight'] * relative_ratio;
+    option['legend']['itemWidth'] = option['legend']['itemWidth'] * relative_ratio;
+    option['legend']['textStyle']['fontSize'] = Math.max(7, option['legend']['textStyle']['fontSize'] * relative_ratio);
+  }
+  if (option['visualMap']) {
+    option['visualMap']['itemHeight'] = option['visualMap']['itemHeight'] * relative_ratio;
+    option['visualMap']['itemWidth'] = option['visualMap']['itemWidth'] * relative_ratio;
+    option['visualMap']['textStyle']['fontSize'] = Math.max(7, option['visualMap']['textStyle']['fontSize'] * relative_ratio);
+  }
+  if (option['toolbox']) {
+    option['toolbox']['itemSize'] = Math.max(8, option['toolbox']['itemSize'] * relative_ratio)
+    option['toolbox']['itemGap'] = Math.max(4, option['toolbox']['itemGap'] * relative_ratio);
+  }
+  if (option['graphic']) {
+    for (var ind = 0; ind < option['graphic'].length; ind++) {
+      for (var ind2 = 0; ind2 < option['graphic'][ind]['children'].length; ind2++) {
+        var new_font = Math.max(7, 12 * relative_ratio);
+        option['graphic'][ind]['children'][ind2]['style']['font'] = new_font.toString() + 'px Microsoft YaHei';
+      }
+    }
+  }
+  return option;
+}
+
+function save_img(echarts_instance, option) {
+  const base64_str = echarts_instance.getDataURL({
+      pixelRatio: 2,
+      backgroundColor: '#fff',
+      width: option['figsize']['width'],
+      height: option['figsize']['height']
+  });
+
+  let testRequest = new Request('http://localhost:' + option['port'] +'/function/js_image_save', {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8;',
+      'Access-Control-Allow-Origin':'*',
+      'Access-Control-Allow-Credentials': 'true',
+      'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+    },
+    body: JSON.stringify({'figname': option['figname'],
+                          'base64_str': base64_str})
+  });
+  fetch(testRequest).then(response => {});
+};
+
+
+function auto_axis_namegap(echarts_instance, auto_axis_list, axis_type) {
+  const globalModel = echarts_instance._api.getModel()
+  const figsize = globalModel.option.figsize
+  const ctx = document.createElement('canvas').getContext('2d')
+  if (typeof globalModel.option['figsize']['width'] === 'string' || globalModel.option['figsize']['width'] instanceof String) {
+    if (globalModel.option['figsize']['width'].includes('%')) {
+      var width = 800 * (parseFloat(globalModel.option['figsize']['width'].slice(0,-1)) / 100);
+    }
+    else if (globalModel.option['figsize']['width'].includes('px')) {
+      var width = parseFloat(globalModel.option['figsize']['width'].slice(0,-2));
+    }
+  }
+  else {
+    var width = globalModel.option['figsize']['width'];
+  }
+
+  if (typeof globalModel.option['figsize']['height'] === 'string' || globalModel.option['figsize']['height'] instanceof String) {
+    if (globalModel.option['figsize']['height'].includes('%')) {
+      var height = 600 * (parseFloat(globalModel.option['figsize']['height'].slice(0,-1)) / 100);
+    }
+    else if (globalModel.option['figsize']['height'].includes('px')) {
+      var height = parseFloat(globalModel.option['figsize']['height'].slice(0,-2));
+    }
+  }
+  else {
+    var height = option['figsize']['height'];
+  }
+  var relative_ratio = Math.min(width / 700, height / 400);
+  if (axis_type==='2d') {
+    const yAxisList = globalModel.option.yAxis
+    const xAxisList = globalModel.option.xAxis
+
+    for (var axis_idx of auto_axis_list) {
+      const yAxis = yAxisList[axis_idx]
+      const fontSize = yAxis.nameTextStyle?.fontSize ?? 12
+      const fontFamily = yAxis.nameTextStyle?.fontFamily ?? 'sans-serif'
+      ctx.save()
+      ctx.font = fontSize.toString() + 'px' + fontFamily.toString()
+
+      const yAxisComponent = globalModel.getComponent('yAxis', axis_idx)?.axis
+      if (yAxis.type === 'value') {
+        var labelMaxWidth = Math.min(Math.max(...yAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width)), 30)
+      }
+      else {
+        var labelMaxWidth = Math.max(...yAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width))
+      }
+      var axisLabelMargin = yAxis.axisLabel?.margin ?? 8
+      axisLabelMargin = axisLabelMargin * relative_ratio
+      yAxisList[axis_idx].nameGap = labelMaxWidth + axisLabelMargin + 5 * relative_ratio
+      ctx.restore()
+    };
+
+    for (var axis_idx of [...Array(xAxisList.length).keys()]) {
+      var new_gap = Math.max(xAxisList[axis_idx].nameGap * relative_ratio, 12);
+      if (figsize['height'] < 400) {
+        new_gap = Math.min(20, new_gap);
+      }
+      xAxisList[axis_idx].nameGap = new_gap;
+    }
+
+    echarts_instance.setOption({
+      yAxis: yAxisList,
+      xAxis: xAxisList
+    })
+  }
+  else {
+    const yAxisList = globalModel.option.yAxis3D
+    const xAxisList = globalModel.option.xAxis3D
+    const zAxisList = globalModel.option.zAxis3D
+
+    for (var axis_idx of auto_axis_list) {
+      if (axis_idx < xAxisList.length) {
+        const xAxis = xAxisList[axis_idx]
+        const fontSize = xAxis.nameTextStyle?.fontSize ?? 12
+        const fontFamily = xAxis.nameTextStyle?.fontFamily ?? 'sans-serif'
+        ctx.save()
+        ctx.font = fontSize.toString() + 'px' + fontFamily.toString()
+
+        const xAxisComponent = globalModel.getComponent('xAxis3D', axis_idx)?.axis
+        if (xAxis.type === 'value') {
+          var labelMaxWidth = Math.min(Math.max(...xAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width)), 30)
+        }
+        else {
+          var labelMaxWidth = Math.max(...xAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width))
+        }
+        var axisLabelMargin = xAxis.axisLabel?.margin ?? 8
+        axisLabelMargin = axisLabelMargin * relative_ratio
+        xAxisList[axis_idx].nameGap = labelMaxWidth + axisLabelMargin + 5 * relative_ratio
+        ctx.restore()
+      }
+    };
+
+    for (var axis_idx of auto_axis_list) {
+      if (axis_idx < yAxisList.length) {
+        const yAxis = yAxisList[axis_idx]
+        const fontSize = yAxis.nameTextStyle?.fontSize ?? 12
+        const fontFamily = yAxis.nameTextStyle?.fontFamily ?? 'sans-serif'
+        ctx.save()
+        ctx.font = fontSize.toString() + 'px' + fontFamily.toString()
+
+        const yAxisComponent = globalModel.getComponent('yAxis3D', axis_idx)?.axis
+        if (yAxis.type === 'value') {
+          var labelMaxWidth = Math.min(Math.max(...yAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width)), 30)
+        }
+        else {
+          var labelMaxWidth = Math.max(...yAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width))
+        }
+        var axisLabelMargin = yAxis.axisLabel?.margin ?? 8
+        axisLabelMargin = axisLabelMargin * relative_ratio
+        yAxisList[axis_idx].nameGap = labelMaxWidth + axisLabelMargin + 5 * relative_ratio
+        ctx.restore()
+      }
+    };
+
+    for (var axis_idx of auto_axis_list) {
+      if (axis_idx < zAxisList.length) {
+        const zAxis = zAxisList[axis_idx]
+        const fontSize = zAxis.nameTextStyle?.fontSize ?? 12
+        const fontFamily = zAxis.nameTextStyle?.fontFamily ?? 'sans-serif'
+        ctx.save()
+        ctx.font = fontSize.toString() + 'px' + fontFamily.toString()
+
+        const zAxisComponent = globalModel.getComponent('zAxis3D', axis_idx)?.axis
+        if (zAxis.type === 'value') {
+          var labelMaxWidth = Math.min(Math.max(...zAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width)), 30)
+        }
+        else {
+          var labelMaxWidth = Math.max(...zAxisComponent.getViewLabels().map(item => ctx.measureText(item.formattedLabel).width))
+        }
+        var axisLabelMargin = zAxis.axisLabel?.margin ?? 8
+        axisLabelMargin = axisLabelMargin * relative_ratio
+        zAxisList[axis_idx].nameGap = labelMaxWidth + axisLabelMargin + 5 * relative_ratio
+        ctx.restore()
+      }
+    };
+    echarts_instance.setOption({
+      yAxis3D: yAxisList,
+      xAxis3D: xAxisList,
+      zAxis3D: zAxisList
+    });
+    }
+
+};
+
+function custom_scatter_size(option) {
+
+  for (var ind = 0; ind < option['series'].length; ind++) {
+    if (option['series'][ind]['symbolSize'] === 'array_size') {
+      var ind_ = option['series'][ind]['data_dict']['size']
+      option['series'][ind]['symbolSize'] = function (data) {return data[ind_];}
+    }
+  }
+  return option;
+
+};
+
+function show_scatter_label(option) {
+
+  for (var ind = 0; ind < option['series'].length; ind++) {
+    if (option['series'][ind]['label'] === 'show_label') {
+      var ind_ = option['series'][ind]['data_dict']['label']
+      option['series'][ind]['label'] = {
+        show: true,
+        formatter: function (params) {return params.data.value[ind_]; }
+      }
+    }
+  }
+  return option;
+};
+
+function hide_min_max_axis_label(option) {
+  for (var ind = 0; ind < option['xAxis3D'].length; ind++) {
+    if (option['xAxis3D'][ind]['type'] == 'value') {
+      var x_min = option['xAxis3D'][ind]['min']
+      var x_max = option['xAxis3D'][ind]['max']
+      option['xAxis3D'][ind]['axisLabel']['formatter'] = function (value, index) {
+        if (value==x_min || value==x_max){}
+        else {return value}
+      }
+    }
+  }
+  for (var ind = 0; ind < option['yAxis3D'].length; ind++) {
+    if (option['yAxis3D'][ind]['type'] == 'value') {
+      var y_min = option['yAxis3D'][ind]['min']
+      var y_max = option['yAxis3D'][ind]['max']
+      option['yAxis3D'][ind]['axisLabel']['formatter'] = function (value, index) {
+        if (value==y_min || value==y_max){}
+        else {return value}
+      }
+    }
+  }
+  for (var ind = 0; ind < option['zAxis3D'].length; ind++) {
+    if (option['zAxis3D'][ind]['type'] == 'value') {
+      var z_min = option['zAxis3D'][ind]['min']
+      var z_max = option['zAxis3D'][ind]['max']
+      option['zAxis3D'][ind]['axisLabel']['formatter'] = function (value, index) {
+        if (value==z_min || value==z_max){}
+        else {return value}
+      }
+   }
+  }
+  return option;
+}
+
+function custom_axis_label(option) {
+  if (Array.isArray(option['xAxis'])) {
+    for (var ind = 0; ind < option['xAxis'].length; ind++) {
+      if (option['xAxis'][ind]['axisLabel']['formatter_func']) {
+        var f = new Function(option['xAxis'][ind]['axisLabel']['formatter_func'].arguments,
+                             option['xAxis'][ind]['axisLabel']['formatter_func'].body)
+        option['xAxis'][ind]['axisLabel']['formatter'] = f
+      }
+    }
+  }
+  else {
+    if (option['xAxis']['axisLabel']['formatter_func']) {
+      var f = new Function(option['xAxis']['axisLabel']['formatter_func'].arguments,
+                           option['xAxis']['axisLabel']['formatter_func'].body)
+      option['xAxis']['axisLabel']['formatter'] = f
+    }
+  }
+  if (Array.isArray(option['yAxis'])) {
+    for (var ind = 0; ind < option['yAxis'].length; ind++) {
+      if (option['yAxis'][ind]['axisLabel']['formatter_func']) {
+        var f = new Function(option['yAxis'][ind]['axisLabel']['formatter_func'].arguments,
+                             option['yAxis'][ind]['axisLabel']['formatter_func'].body)
+        option['yAxis'][ind]['axisLabel']['formatter'] = f
+      }
+    }
+  }
+  else {
+    if (option['yAxis']['axisLabel']['formatter_func']) {
+      var f = new Function(option['yAxis']['axisLabel']['formatter_func'].arguments,
+                           option['yAxis']['axisLabel']['formatter_func'].body)
+      option['yAxis']['axisLabel']['formatter'] = f
+    }
+  }
+  return option;
+}
+
+function custom_tooltip(option, dimension=2) {
+
+  if (dimension === 2) {
+    var xaxis_key = 'xAxis'
+    var yaxis_key = 'yAxis'
+  }
+
+  else if (dimension === 3) {
+    var xaxis_key = 'xAxis3D'
+    var yaxis_key = 'yAxis3D'
+    var zaxis_key = 'zAxis3D'
+  }
+
+  if (option['radar']) {
+    var radar_names = []
+    for (var ind_ = 0; ind_ < option['radar']['indicator'].length; ind_++) {
+      radar_names.push(option['radar']['indicator'][ind_]['name'])
+    }
+  }
+
+
+  if (option[xaxis_key]['name'] !== null && option[xaxis_key]['name'] !== '' && Array.isArray(option[xaxis_key])!==true) {
+    var xaxis_name = option[xaxis_key]['name'];
+  }
+  else {
+    var xaxis_name = 'X';
+  }
+
+  if (option[yaxis_key]['name'] !== null && option[yaxis_key]['name'] !== ''&& Array.isArray(option[xaxis_key])!==true) {
+    var yaxis_name = option[yaxis_key]['name'];
+  }
+  else {
+    var yaxis_name = 'Y';
+  }
+
+  if (typeof zaxis_key !== 'undefined') {
+    if (option[zaxis_key]['name'] !== ''&& Array.isArray(option[xaxis_key])!==true) {
+      var zaxis_name = option[zaxis_key]['name'];
+    }
+    else {
+      var zaxis_name = 'Z';
+    }
+  }
+
+  if (option['tooltip']) {
+    if (option['tooltip']['precision']) {
+      var precision = option['tooltip']['precision']
+      option['tooltip']['valueFormatter'] = (value) =>  Math.round(Number(value) * (10**precision)) / (10**precision)
+    }
+
+    for (var ind_ = 0; ind_ < option['series'].length; ind_++) {
+      if (option['series'][ind_]['tooltip']) {
+        if (option['series'][ind_]['tooltip']['precision']) {
+          var precision = option['series'][ind_]['tooltip']['precision']
+          const fix = precision_ => value => Math.round(Number(value) * (10**precision_)) / (10**precision_),
+          fix_p = fix(precision);
+          option['series'][ind_]['tooltip']['valueFormatter'] = function (value) {
+            return fix_p(value)
+          }
+        }
+      }
+    }
+
+    if (option['series'].length === 1) {
+      if (['scatter', 'heatmap', 'scatter3D', 'radar'].includes(option['series'][0]['type'])) {
+        option['tooltip']['formatter'] = function(params) {
+          if (params.seriesName.includes('series')) {
+            var series_name = ''
+          }
+
+          else {
+            var series_name = params.seriesName + '<br>'
+          }
+
+          if (params.seriesType === 'scatter') {
+            if (option['tooltip']['custom_tooltip'] === true) {
+              formatter = series_name
+                + params.value[dimension]
+            }
+            else {
+              formatter = series_name
+              + xaxis_name + ': '+ Math.round(params.value[0] * 100) / 100
+              +'<br>' + yaxis_name + ': ' + Math.round(params.value[1] * 100) / 100
+            }
+
+          }
+
+          else if (params.seriesType === 'heatmap') {
+            formatter = params.name + ', ' + option['yAxis'][0]['data'][params.data[1]] + '<br> <b>' + Math.round(params.data[2] * 10000) / 10000
+          }
+
+          else if (params.seriesType === 'scatter3D') {
+            if (option['tooltip']['custom_tooltip'] === true) {
+              formatter = series_name
+                + params.value[dimension]
+            }
+            else {
+              formatter = series_name
+                + xaxis_name + ': '+ Math.round(params.value[0] * 100) / 100
+                +'<br>' + yaxis_name + ': ' + Math.round(params.value[1] * 100) / 100
+                +'<br>' + zaxis_name + ': ' + Math.round(params.value[2] * 100) / 100
+            }
+          }
+
+          else if (params.seriesType === 'radar') {
+            formatter = params.name  + '<br>';
+            for (var ind_ = 0; ind_ < option['radar']['indicator'].length; ind_++) {
+              if (ind_ !== option['radar']['indicator'].length - 1) {
+                formatter += radar_names[ind_] + ': ' + Math.round(params.value[ind_] * 100) / 100 + '<br>'
+              }
+              else {
+                formatter += radar_names[ind_] + ': ' + Math.round(params.value[ind_] * 100) / 100
+              }
+            }
+          }
+        return formatter;
+        }
+      }
+    }
+    else {
+      for (var out_ind_ = 0; out_ind_ < option['series'].length; out_ind_++) {
+        if (['scatter', 'heatmap', 'scatter3D', 'radar'].includes(option['series'][out_ind_]['type'])) {
+          if (option['series'][out_ind_]['tooltip']) {
+          }
+          else {
+            option['series'][out_ind_]['tooltip'] = {}
+          }
+          option['series'][out_ind_]['tooltip']['formatter'] = function(params) {
+            if (params.seriesName.includes('series')) {
+              var series_name = ''
+            }
+
+            else {
+              var series_name = params.seriesName + '<br>'
+            }
+
+            if (params.seriesType === 'scatter') {
+              if (option['tooltip']['custom_tooltip'] === true) {
+                formatter = series_name
+                  + params.value[dimension]
+              }
+              else {
+                formatter = series_name
+                  + xaxis_name + ': '+ Math.round(params.value[0] * 100) / 100
+                  +'<br>' + yaxis_name + ': ' + Math.round(params.value[1] * 100) / 100
+              }
+            }
+
+            else if (params.seriesType === 'heatmap') {
+              if ('data' in option['yAxis'][option['series'][params.seriesIndex]['yAxisIndex']]) {
+                formatter = params.name + ', ' + option['yAxis'][option['series'][params.seriesIndex]['yAxisIndex']]['data'][params.data[1]] + '<br> <b>' + Math.round(params.data[2] * 10000) / 10000
+              }
+              else {
+                formatter = Math.round(params.data[2] * 10000) / 10000
+              }
+
+            }
+
+            else if (params.seriesType === 'scatter3D') {
+              if (option['tooltip']['custom_tooltip'] === true) {
+                formatter = series_name
+                  + params.value[dimension]
+              }
+              else {
+                formatter = series_name
+                  + xaxis_name + ': '+ Math.round(params.value[0] * 100) / 100
+                  +'<br>' + yaxis_name + ': ' + Math.round(params.value[1] * 100) / 100
+                  +'<br>' + zaxis_name + ': ' + Math.round(params.value[2] * 100) / 100
+              }
+            }
+
+            else if (params.seriesType === 'radar') {
+              formatter = params.name  + '<br>';
+              for (var ind_ = 0; ind_ < option['radar']['indicator'].length; ind_++) {
+                if (ind_ !== option['radar']['indicator'].length - 1) {
+                  formatter += radar_names[ind_] + ': ' + Math.round(params.value[ind_] * 100) / 100 + '<br>'
+                }
+                else {
+                  formatter += radar_names[ind_] + ': ' + Math.round(params.value[ind_] * 100) / 100
+                }
+              }
+            }
+          return formatter;
+          }
+        }
+      }
+    }
+  }
+  return option;
+};
+
+function support_brush_event(option) {
+  if (option['event']['type_'] === 'brushselected') {
+    if (option['link_id'] === null) {
+      var link_id = option['chart_id'];
+    }
+    else {
+      var link_id = option['link_id'];
+    }
+    var dom = document.getElementById(link_id);
+    var bind_chart = echarts.init(dom, null, {
+        renderer: 'canvas',
+        useDirtyRect: false
+    });
+    var last_selected = [];
+    bind_chart.on(option['event']['type_'], (params) => {
+      var brushed = [];
+      var brushComponent = params.batch[0];
+      for (var sIdx = 0; sIdx < brushComponent.selected.length; sIdx++) {
+        var rawIndices = brushComponent.selected[sIdx].dataIndex;
+        brushed.push(rawIndices);
+      }
+      var brushed_all = brushed[0];
+
+      if (JSON.stringify(last_selected) !== JSON.stringify(brushed_all)) {
+
+        // Update memory
+        let testRequest = new Request('http://localhost:' + option['port'] +'/function/js_call_python_function', {
+          method: 'post',
+          headers: {
+              'Content-Type': 'application/json;charset=utf-8;',
+              'Access-Control-Allow-Origin':'*',
+              'Access-Control-Allow-Credentials': 'true',
+              'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+          },
+          body: JSON.stringify({'js_func_input':{'selected': brushed_all},
+                                'event_id': option['event']['event_id']})
+        });
+        var dom_dict = {}
+        fetch(testRequest).then(response => {
+          var result = response.json();
+          result.then(res => {
+            dom_dict[res['link_id']] = document.getElementById(res['link_id']);
+            setInnerHTML(dom_dict[res['link_id']], res['html']);
+          });
+        });
+        last_selected = brushed_all;
+      }
+
+    // bind_chart.setOption(option);
+    })
+  }
+  return option;
+};
+
+function support_click_event(option) {
+  if (option['event']['type_'] === 'click') {
+    if (option['link_id'] === null) {
+      var link_id = option['chart_id'];
+    }
+    else {
+      var link_id = option['link_id'];
+    }
+    var dom = document.getElementById(link_id);
+    var bind_chart = echarts.init(dom, null, {
+        renderer: 'canvas',
+        useDirtyRect: false
+    });
+
+    if (option['series'][0]['orient'] === 'vertical') {
+      var value_idx = 0
+    }
+    else {
+      var value_idx = 1
+    }
+
+
+    bind_chart.on(option['event']['type_'], (params) => {
+      if (option['event']['task'] === 'singleselect') {
+        for (var ind_2 = 0; ind_2 < option['series'][0]['data'].length; ind_2++) {
+          if (option['series'][0]['data'][ind_2]['itemStyle']['color'] !== '#1f77b4') {
+            option['series'][0]['data'][ind_2]['itemStyle']['color'] = '#1f77b4';
+          }
+        }
+        var idx = option['series'][0]['x_value'].indexOf(params.value[value_idx])
+        option['series'][0]['data'][idx]['itemStyle']['color'] = '#ff7f0e';
+
+        var selected = params.value[value_idx];
+      }
+      else {
+        console.log(params);
+      }
+
+      let testRequest = new Request('http://localhost:' + option['port'] +'/function/js_call_python_function', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8;',
+          'Access-Control-Allow-Origin':'*',
+          'Access-Control-Allow-Credentials': 'true',
+          'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+        },
+        body: JSON.stringify({'js_func_input':{'selected': selected},
+                              'event_id': option['event']['event_id']})
+      });
+      var dom_dict = {}
+      fetch(testRequest).then(response => {
+        var result = response.json();
+        result.then(res => {
+          dom_dict[res['link_id']] = document.getElementById(res['link_id']);
+          setInnerHTML(dom_dict[res['link_id']], res['html']);
+        });
+      });
+      bind_chart.setOption(option);
+    });
+  }
+  return option;
+};option = support_scientific_notation(option=option);option = custom_tooltip(option=option, dimension=2);option = custom_axis_label(option=option);option = auto_component_size(option=option);getScreenSize(option=option);
+
+            myChart.setOption(option);
+            window.addEventListener('resize', function () {
+                myChart.resize();
+                var option_copy = JSON.parse(JSON.stringify(option));
+                option_copy['figsize']['height'] = myChart.getHeight();
+                option_copy['figsize']['width'] = myChart.getWidth();
+                // option_copy = auto_component_size(option_copy);
+                myChart.setOption(option_copy);
+            });
+        <\/script>
+        </body>
+        </html>
+    <style>
+.dg.main.taller-than-window .close-button {
+    border-top: 1px solid #ddd;
+}
+
+.dg.main .close-button {
+    background-color: #e8e8e8;
+}
+
+.dg.main .close-button:hover {
+    background-color: #ddd;
+}
+
+.dg {
+    color: #555;
+    text-shadow: none !important;
+}
+
+.dg.main::-webkit-scrollbar {
+    background: #fafafa;
+}
+
+.dg.main::-webkit-scrollbar-thumb {
+    background: #bbb;
+}
+
+.dg li:not(.folder) {
+    background: #fafafa;
+    border-bottom: 1px solid #ddd;
+}
+
+.dg li.save-row .button {
+    text-shadow: none !important;
+}
+
+.dg li.title {
+    background: #e8e8e8 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;
+}
+
+.dg .cr.function:hover,.dg .cr.boolean:hover {
+    background: #fff;
+}
+
+.dg .c input[type=text] {
+    background: #e9e9e9;
+}
+
+.dg .c input[type=text]:hover {
+    background: #eee;
+}
+
+.dg .c input[type=text]:focus {
+    background: #eee;
+    color: #555;
+}
+
+.dg .c .slider {
+    background: #e9e9e9;
+}
+
+.dg .c .slider:hover {
+    background: #eee;
+}<\/style>`);option = support_scientific_notation(option=option);option = custom_tooltip(option=option, dimension=2);option = custom_axis_label(option=option);option = auto_component_size(option=option);getScreenSize(option=option);
+
+            if (option && typeof option === 'object') {
+                myChart.setOption(option);
+                }
+
+            auto_axis_namegap(echarts_instance=myChart, auto_axis_list=[0], axis_type="2d");
+
+        </script>
+        </body>
+        </html>
+
+</div>
+<br />
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.011 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-source-auto-galleries-galleries-plots-plots-0-heatmap-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../../_downloads/32eebd62f37954eba0b4ceccfe3a5c83/plots_0_heatmap.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plots_0_heatmap.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../../_downloads/a3a100492aa2305f473aab594440827a/plots_0_heatmap.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plots_0_heatmap.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../../_downloads/ff2175b1967ae8fe4f392a1c8534d507/plots_0_heatmap.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">plots_0_heatmap.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="plots_0_density.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Density Plot</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="plots_0_hist.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Histogram Plot</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024-2025, Modeva Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
