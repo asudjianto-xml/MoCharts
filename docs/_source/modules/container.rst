@@ -3,16 +3,13 @@
 Container
 =====================
 
-.. currentmodule:: mocharts.plot
+.. currentmodule:: mocharts
 
 
-Container
----------------------------
 .. autosummary::
    :nosignatures:
    :template: class.rst
    :toctree: generated/
 
-    container.Figure
-    container.SubPlots
-    container.Figure3D
+    Figure
+    SubPlots

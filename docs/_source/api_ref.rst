@@ -1,12 +1,16 @@
 API Reference
 ===============
 
-This section contains the key class reference of MoCharts, frequently asked questions, and utilities.
+This section contains the key API reference of MoCharts.
+
+.. contents:: **Table of Contents**
+    :local:
+    :depth: 2
 
 .. toctree::
-    :hidden:
+    :maxdepth: 2
 
     modules/calculation.rst
-    modules/plots.rst
+    modules/charts.rst
     modules/container.rst
     modules/render.rst

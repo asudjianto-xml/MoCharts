@@ -3,14 +3,12 @@
 Render
 =====================
 
-.. currentmodule:: mocharts.render
+.. currentmodule:: mocharts
 
 
-Render
----------------------------
 .. autosummary::
    :nosignatures:
    :toctree: generated/
 
-    utils.mocharts_plot
-    utils.mocharts_save
+    mocharts_plot
+    mocharts_save

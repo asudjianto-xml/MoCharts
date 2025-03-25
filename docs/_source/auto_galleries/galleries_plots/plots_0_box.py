@@ -27,7 +27,7 @@ HTML(box.show(return_html=True, silent=True))
 # Horizontal Box Plot
 
 box = mc.boxplot(x=tips["day"].values, y=tips["total_bill"].values, orient='horizontal', color='orange')
-box.set_tooltip
+box.set_tooltip()
 # box.show()
 HTML(box.show(return_html=True, silent=True))
 

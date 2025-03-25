@@ -31,13 +31,13 @@
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/theme_override.css?v=6ecc848e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/theme_override.css?v=578d8e15" />
     <link rel="stylesheet" type="text/css" href="../../../_static/hide_links.css?v=60d22a59" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=d2d258e8" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=94c917f8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=a6e25548" />
   
   <!-- So that users can add custom icons -->
   <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
@@ -51,11 +51,26 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '_source/modules/generated/mocharts.calculation.utils.Jitter';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Plots" href="../plots.html" />
+    <link rel="next" title="Charts" href="../charts.html" />
     <link rel="prev" title="mocharts.calculation.sampler.Sampler" href="mocharts.calculation.sampler.Sampler.html" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.1.1" />
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="MoDeVa">
+  <meta property="og:description" content="An Integrated Tool for Model Development and Validation">
+  <meta property="og:image" content="_static/logo-text.jpg">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SMVZ23N4JL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-SMVZ23N4JL');
+  </script>
+
   </head>
   
   
@@ -125,7 +140,7 @@
     <img src="../../../_static/logo.jpg" class="logo__image only-dark pst-js-only" alt=""/>
   
   
-    <p class="title logo__title">Modeva-AI</p>
+    <p class="title logo__title">MoCharts</p>
   
 </a></div>
     
@@ -317,7 +332,7 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">mocharts.calculation.utils.Jitter</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../plots.html">Plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts.html">Charts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../container.html">Container</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../render.html">Render</a></li>
 </ul>
@@ -382,7 +397,7 @@
 <h1>mocharts.calculation.utils.Jitter<a class="headerlink" href="#mocharts-calculation-utils-jitter" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="mocharts.calculation.utils.Jitter">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mocharts.calculation.utils.</span></span><span class="sig-name descname"><span class="pre">Jitter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.calculation.utils.Jitter" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mocharts.calculation.utils.</span></span><span class="sig-name descname"><span class="pre">Jitter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.calculation.utils.Jitter" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Random displacement along one or both axes to reduce overlap.</p>
 <dl class="field-list simple">
@@ -426,11 +441,11 @@ there will be a small amount of jitter applied by default.</p>
       </div>
     </a>
     <a class="right-next"
-       href="../plots.html"
+       href="../charts.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Plots</p>
+        <p class="prev-next-title">Charts</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -494,7 +509,7 @@ there will be a small amount of jitter applied by default.</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
     <br/>
   </p>
 </div>

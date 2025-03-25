@@ -22,7 +22,7 @@ uniform_data = np.random.rand(10, 12)
 hm = mc.heatmap(data=uniform_data)
 hm.set_visualmap(height=560, width=20)
 hm.set_figsize((3,3))
-hm.set_toolbox(itemSize=30, left='7%')
+hm.set_toolbox(item_size=30, left='7%')
 # hm.show()
 HTML(hm.show(return_html=True, silent=True))
 

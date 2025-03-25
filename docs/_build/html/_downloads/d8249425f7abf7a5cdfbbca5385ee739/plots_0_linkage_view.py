@@ -42,9 +42,9 @@ def func1(js_input, py_input):  # for use by card2
     return fig2.show(return_html=True, silent=True)
 
 tmp = df.Species.value_counts()
-fig = mc.barplot(x=list(tmp.index.astype(str)), y=tmp.values, sorted_x=True)
+fig = mc.barplot(x=list(tmp.index.astype(str)), y=tmp.values)
 fig.set_event(type_='click', func=func1, link_id='card2')    # Link to ChartID = card2, 
-fig.set_yaxis(axis_name='Count', nameGap=20)
+fig.set_yaxis(axis_name='Count', name_gap=20)
 fig.set_xaxis(axis_name='Species')
 fig.set_figsize((4, 4))
 fig.set_title('Histogram of species')

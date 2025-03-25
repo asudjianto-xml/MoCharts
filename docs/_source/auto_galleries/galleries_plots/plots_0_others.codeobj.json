@@ -341,9 +341,9 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "_cython_3_0_10",
-   "module_short": "_cython_3_0_10",
-   "name": "cython_function_or_method"
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
   },
   {
    "is_class": false,
@@ -357,9 +357,9 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "_cython_3_0_10",
-   "module_short": "_cython_3_0_10",
-   "name": "cython_function_or_method"
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
   },
   {
    "is_class": false,
@@ -373,9 +373,9 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "_cython_3_0_10",
-   "module_short": "_cython_3_0_10",
-   "name": "cython_function_or_method"
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
   },
   {
    "is_class": false,
@@ -389,9 +389,9 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "_cython_3_0_10",
-   "module_short": "_cython_3_0_10",
-   "name": "cython_function_or_method"
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
   },
   {
    "is_class": false,
@@ -405,9 +405,9 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "_cython_3_0_10",
-   "module_short": "_cython_3_0_10",
-   "name": "cython_function_or_method"
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
   },
   {
    "is_class": false,

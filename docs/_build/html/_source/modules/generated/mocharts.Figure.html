@@ -1,0 +1,1025 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>mocharts.Figure &#8212; Mocharts  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/theme_override.css?v=578d8e15" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/hide_links.css?v=60d22a59" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=a6e25548" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../_static/documentation_options.js?v=7f41d439"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_source/modules/generated/mocharts.Figure';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="mocharts.SubPlots" href="mocharts.SubPlots.html" />
+    <link rel="prev" title="Container" href="../container.html" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.1" />
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="MoDeVa">
+  <meta property="og:description" content="An Integrated Tool for Model Development and Validation">
+  <meta property="og:image" content="_static/logo-text.jpg">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SMVZ23N4JL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-SMVZ23N4JL');
+  </script>
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.jpg" class="logo__image only-light" alt=""/>
+    <img src="../../../_static/logo.jpg" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">MoCharts</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../api_ref.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../galleries.html">
+    Galleries
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/Mocharts" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../api_ref.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../galleries.html">
+    Galleries
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/Mocharts" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../calculation.html">Calculation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts.html">Charts</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../container.html">Container</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">mocharts.Figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mocharts.SubPlots.html">mocharts.SubPlots</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../render.html">Render</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../api_ref.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../container.html" class="nav-link">Container</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">mocharts.Figure</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="mocharts-figure">
+<h1>mocharts.Figure<a class="headerlink" href="#mocharts-figure" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="mocharts.Figure">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mocharts.</span></span><span class="sig-name descname"><span class="pre">Figure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chart_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Title</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Grid</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Legend</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yAxis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xAxis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallelAxis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualmap</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PiecewiseVisualMap</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ContinuousVisualMap</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toolbox</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Toolbox</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tooltip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tooltip</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">brush</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Brush</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataZoom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Event</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graphic</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">animation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Animation</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(8,</span> <span class="pre">6)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">['#1f77b4',</span> <span class="pre">'#ff7f0e',</span> <span class="pre">'#2ca02c',</span> <span class="pre">'#e377c2',</span> <span class="pre">'#9467bd',</span> <span class="pre">'#d62728',</span> <span class="pre">'#8c564b',</span> <span class="pre">'#bcbd22',</span> <span class="pre">'#17becf',</span> <span class="pre">'#7f7f7f']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">silent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{'overflow':</span> <span class="pre">'auto'}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Figure object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>chart_id</strong> (<em>str</em><em>, </em><em>default=None</em>) – Chart ID.</p></li>
+<li><p><strong>link_id</strong> (<em>str</em><em>, </em><em>default=None</em>) – ID to link other chart.</p></li>
+<li><p><strong>title</strong> (<em>Title</em><em>, </em><em>default=None</em>) – Title of chart.</p></li>
+<li><p><strong>grid</strong> (<em>Grid</em><em>, </em><em>default=None</em>) – Grid of chart.</p></li>
+<li><p><strong>legend</strong> (<em>Legend</em><em>, </em><em>default=None</em>) – Legend of chart.</p></li>
+<li><p><strong>yAxis</strong> (<em>list</em><em>, </em><em>default=None</em>) – List of yaxis.</p></li>
+<li><p><strong>xAxis</strong> (<em>list</em><em>, </em><em>default=None</em>) – List of xaxis.</p></li>
+<li><p><strong>parallelAxis</strong> (<em>list</em><em>, </em><em>default=None</em>) – ParallelAxis of chart, only works for parallel plot.</p></li>
+<li><p><strong>series</strong> (<em>list</em><em>, </em><em>default=None</em>) – List of series.</p></li>
+<li><p><strong>visualmap</strong> (<em>Union</em><em>[</em><em>PiecewiseVisualMap</em><em>, </em><em>ContinuousVisualMap</em><em>]</em><em>, </em><em>default=None</em>) – Visualmap of chart.</p></li>
+<li><p><strong>toolbox</strong> (<em>Toolbox</em><em>, </em><em>default=None</em>) – Toolbox of chart.</p></li>
+<li><p><strong>tooltip</strong> (<em>Tooltip</em><em>, </em><em>default=None</em>) – Tooltip of chart.</p></li>
+<li><p><strong>brush</strong> (<em>Brush</em><em>, </em><em>default=None</em>) – Brush of chart.</p></li>
+<li><p><strong>dataZoom</strong> (<em>list</em><em>, </em><em>default=None</em>) – List of Datazoom object.</p></li>
+<li><p><strong>event</strong> (<em>Event</em><em>, </em><em>default=None</em>) – Event of chart.</p></li>
+<li><p><strong>graphic</strong> (<em>list</em><em>, </em><em>default=None</em>) – List of graphic info.</p></li>
+<li><p><strong>radar</strong> (<em>dict</em><em>, </em><em>default=None</em>) – Dict of radar info.</p></li>
+<li><p><strong>animation</strong> (<em>Animation</em><em>, </em><em>default=None</em>) – Animation of chart.</p></li>
+<li><p><strong>figsize</strong> (<em>tuple</em><em>, </em><em>default=</em><em>(</em><em>8</em><em>, </em><em>6</em><em>)</em>) – Figure size of chart.</p></li>
+<li><p><strong>color</strong> (<em>list</em><em>, </em><em>default=DEFAULT_QUALITATIVE_PALETTE</em>) – Color palette of chart.</p></li>
+<li><p><strong>silent</strong> (<em>bool</em><em>, </em><em>default=False</em>) – Whether to show the figure.</p></li>
+<li><p><strong>meta_info</strong> (<em>dict</em><em>, </em><em>default={}</em>) – Meta info.</p></li>
+<li><p><strong>auto_size</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Whether to adjust the figure element size automatically.</p></li>
+<li><p><strong>style</strong> (<em>dict</em><em>, </em><em>default={'overflow': 'auto'}</em>) – Style css of the figure.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serie_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xaxis_idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yaxis_idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.add" title="Link to this definition">#</a></dt>
+<dd><p>Add plot to this figure object.
+If <cite>xaxis_idx</cite> or <cite>yaxis_idx</cite> is beyond the range of existing axes,
+their values will be set to the length of the existing axes plus 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plot</strong> (<a class="reference internal" href="#mocharts.Figure" title="mocharts.Figure"><em>Figure</em></a>) – The Figure object to add.</p></li>
+<li><p><strong>serie_name</strong> (<em>str</em><em>, </em><em>default=None</em>) – The series name to add.</p></li>
+<li><p><strong>xaxis_idx</strong> (<em>int</em><em>, </em><em>default=0</em>) – The index of the x-axis this plot is going to share.</p></li>
+<li><p><strong>yaxis_idx</strong> (<em>int</em><em>, </em><em>default=0</em>) – The index of the y-axis this plot is going to share.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.add_annotation">
+<span class="sig-name descname"><span class="pre">add_annotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottom_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">silent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">12</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.add_annotation" title="Link to this definition">#</a></dt>
+<dd><p>Add annotations on the figure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text_list</strong> (<em>list</em><em>, </em><em>default=</em><em>[</em><em>]</em>) – The texts to display.</p></li>
+<li><p><strong>left_list</strong> (<em>list</em><em>, </em><em>default=</em><em>[</em><em>]</em>) – Left distance for each text.</p></li>
+<li><p><strong>top_list</strong> (<em>list</em><em>, </em><em>default=</em><em>[</em><em>]</em>) – Top distance for each text.</p></li>
+<li><p><strong>right_list</strong> (<em>list</em><em>, </em><em>default=</em><em>[</em><em>]</em>) – Right distance for each text.</p></li>
+<li><p><strong>bottom_list</strong> (<em>list</em><em>, </em><em>default=</em><em>[</em><em>]</em>) – Bottom distance for each text.</p></li>
+<li><p><strong>silent</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Whether to show the annotation.</p></li>
+<li><p><strong>fontsize</strong> (<em>int</em><em>, </em><em>default=12</em>) – Font size.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.add_hline">
+<span class="sig-name descname"><span class="pre">add_hline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_ind</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">silent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.add_hline" title="Link to this definition">#</a></dt>
+<dd><p>Add one horizontal line to plot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y</strong> (<em>float</em><em>, </em><em>int</em>) – The y value of this line.</p></li>
+<li><p><strong>series_ind</strong> (<em>int</em><em>, </em><em>default=None</em>) – The index of this line among series.</p></li>
+<li><p><strong>color</strong> (<em>str</em><em>, </em><em>default=None</em>) – The color of this line.</p></li>
+<li><p><strong>line_type</strong> (<em>str</em><em>, </em><em>default=None</em>) – The type of line.</p></li>
+<li><p><strong>show_label</strong> (<em>bool</em><em>, </em><em>default=False</em>) – Whether to show the label on the line.</p></li>
+<li><p><strong>silent</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Whether to show the line.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.add_vline">
+<span class="sig-name descname"><span class="pre">add_vline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_ind</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">silent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.add_vline" title="Link to this definition">#</a></dt>
+<dd><p>Add one vertical line to plot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em><em>, </em><em>int</em>) – The x value of this line.</p></li>
+<li><p><strong>series_ind</strong> (<em>int</em><em>, </em><em>default=None</em>) – The index of this line among series.</p></li>
+<li><p><strong>color</strong> (<em>str</em><em>, </em><em>default=None</em>) – The color of this line.</p></li>
+<li><p><strong>line_type</strong> (<em>str</em><em>, </em><em>default=None</em>) – The type of line.</p></li>
+<li><p><strong>show_label</strong> (<em>bool</em><em>, </em><em>default=False</em>) – Whether to show the label on the line.</p></li>
+<li><p><strong>silent</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Whether to show the line.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.render">
+<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.render" title="Link to this definition">#</a></dt>
+<dd><p>Get dictionary of options for this figure</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'mocharts'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'png'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.save" title="Link to this definition">#</a></dt>
+<dd><p>Save the plot to png or html</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>options</strong> (<em>dict</em><em>, </em><em>default=None</em>) – The plot options to save. If None, options will be got from self.render().</p></li>
+<li><p><strong>file_name</strong> (<em>str</em><em>, </em><em>default='mocharts'</em>) – The file name to save.</p></li>
+<li><p><strong>format</strong> (<em>str</em><em>, </em><em>default='png'</em>) – The format to save.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.set_animation">
+<span class="sig-name descname"><span class="pre">set_animation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allow_animation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.set_animation" title="Link to this definition">#</a></dt>
+<dd><p>Set animation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>allow_animation</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Whether to allow animation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.set_brush">
+<span class="sig-name descname"><span class="pre">set_brush</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">toolbox</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">brush_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">brush_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">brush_style</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_on_click</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_brush</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_of_brush</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.set_brush" title="Link to this definition">#</a></dt>
+<dd><p>Brush settings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>toolbox</strong> (<em>list</em><em>, </em><em>default=None</em>) – Use the buttons in the toolbox, If None, toolbox will be [‘rect’, ‘polygon’, ‘keep’, ‘clear’].</p></li>
+<li><p><strong>brush_type</strong> (<em>str</em><em>, </em><em>default=None</em>) – <dl class="simple">
+<dt>Type of brush. Options:</dt><dd><ul>
+<li><p>’rect’: for selection-box in rectangle shape.</p></li>
+<li><p>’polygon’: for selection-box in polygon shape.</p></li>
+<li><p>’lineX’: for horizontal selection-box.</p></li>
+<li><p>’lineY’: for vertical selection-box.</p></li>
+</ul>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>brush_mode</strong> (<em>str</em><em>, </em><em>default=None</em>) – Brush mode, can be ‘single’ or ‘multiple’.</p></li>
+<li><p><strong>brush_style</strong> (<em>dict</em><em>, </em><em>default=None</em>) – Brush style.</p></li>
+<li><p><strong>remove_on_click</strong> (<em>bool</em><em>, </em><em>default=None</em>) – Whether clearing all select-boxes on click is enabled when <cite>brushMode</cite> is ‘single’.</p></li>
+<li><p><strong>in_brush</strong> (<em>dict</em><em>, </em><em>default=None</em>) – Defines visual effects of items in selection.</p></li>
+<li><p><strong>out_of_brush</strong> (<em>dict</em><em>, </em><em>default=None</em>) – Defines visual effects of items out of selection.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.set_datazoom">
+<span class="sig-name descname"><span class="pre">set_datazoom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horizontal_inside</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertical_inside</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horizontal_slider</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertical_slider</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.set_datazoom" title="Link to this definition">#</a></dt>
+<dd><p>Set datazoom config</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>show</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Whether to show the slider.</p></li>
+<li><p><strong>horizontal_inside</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Whether to allow horizontal inside zoom.</p></li>
+<li><p><strong>vertical_inside</strong> (<em>bool</em><em>, </em><em>default=False</em>) – Whether to allow vertical inside zoom.</p></li>
+<li><p><strong>horizontal_slider</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Whether to allow horizontal slider zoom.</p></li>
+<li><p><strong>vertical_slider</strong> (<em>bool</em><em>, </em><em>default=False</em>) – Whether to allow vertical slider zoom.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.set_event">
+<span class="sig-name descname"><span class="pre">set_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'singleselect'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.set_event" title="Link to this definition">#</a></dt>
+<dd><p>Set chart event</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event_id</strong> (<em>str</em><em>, </em><em>default=None</em>) – The ID of the event to store event information.
+If None, the timestamp is used as the event_id.</p></li>
+<li><p><strong>link_id</strong> (<em>str</em><em>, </em><em>default=None</em>) – The div ID for output result.</p></li>
+<li><p><strong>type</strong> (<em>str</em><em>, </em><em>default=None</em>) – The event type to trigger, including “click”, “brushselected”, etc.</p></li>
+<li><p><strong>task</strong> (<em>str</em><em>, </em><em>default='singleselect'</em>) – The event task to perform, including “singleselect”, “doubleselect”, etc.</p></li>
+<li><p><strong>plot_type</strong> (<em>str</em><em>, </em><em>default=None</em>) – The plot type to trigger the event, including “bar”, “scatter”, etc.</p></li>
+<li><p><strong>func</strong> (<em>Callable</em><em>, </em><em>default=None</em>) – The function that will be triggered.</p></li>
+<li><p><strong>additional_info</strong> (<em>dict</em><em>, </em><em>default=None</em>) – A dictionary to store additional information.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.set_figsize">
+<span class="sig-name descname"><span class="pre">set_figsize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.set_figsize" title="Link to this definition">#</a></dt>
+<dd><p>Set figsize</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>figsize</strong> (<em>tuple</em>) – The figure size</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.set_grid">
+<span class="sig-name descname"><span class="pre">set_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'10%'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'10%'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contain_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background_color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.set_grid" title="Link to this definition">#</a></dt>
+<dd><p>Set grid config</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>show</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Whether to show the grid.</p></li>
+<li><p><strong>left</strong> (<em>str</em><em>, </em><em>default=None</em>) – The left border location.</p></li>
+<li><p><strong>top</strong> (<em>str</em><em>, </em><em>default='10%'</em>) – The top border location.</p></li>
+<li><p><strong>right</strong> (<em>str</em><em>, </em><em>default='10%'</em>) – The right border location.</p></li>
+<li><p><strong>bottom</strong> (<em>str</em><em>, </em><em>default=None</em>) – The bottom border location.</p></li>
+<li><p><strong>width</strong> (<em>str</em><em>, </em><em>default='auto'</em>) – The grid width.</p></li>
+<li><p><strong>height</strong> (<em>str</em><em>, </em><em>default='auto'</em>) – The grid height.</p></li>
+<li><p><strong>contain_label</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Whether the grid region contains axis labels.</p></li>
+<li><p><strong>background_color</strong> (<em>str</em><em>, </em><em>default=None</em>) – The grid background color.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.set_legend">
+<span class="sig-name descname"><span class="pre">set_legend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><span class="pre">ndarray</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'outer</span> <span class="pre">top</span> <span class="pre">right'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orient</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'vertical'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unselected</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'plain'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tooltip_title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.set_legend" title="Link to this definition">#</a></dt>
+<dd><p>Set legend config</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>show</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Whether to show the legend.</p></li>
+<li><p><strong>data</strong> (<em>Union</em><em>[</em><em>list</em><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>numpy.ndarray</em></a><em>]</em><em>, </em><em>default=None</em>) – The legend content. If None, all data is extracted from series.</p></li>
+<li><p><strong>loc</strong> (<em>str</em><em>, </em><em>default='outer top right'</em>) – <dl class="simple">
+<dt>The legend location. Options:</dt><dd><p>’outer top left’, ‘outer top right’, ‘outer bottom left’, ‘outer bottom right’,
+‘outer top center’, ‘outer bottom center’, ‘outer center left’, ‘outer left’,
+‘outer center right’, ‘outer right’, ‘top left’, ‘top right’, ‘bottom left’,
+‘bottom right’, ‘top center’, ‘bottom center’, ‘center left’, ‘left’,
+‘center right’, ‘right’, ‘center’.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>left</strong> (<em>str</em><em>, </em><em>default=None</em>) – Distance between legend component and the left side of the container.</p></li>
+<li><p><strong>right</strong> (<em>str</em><em>, </em><em>default=None</em>) – Distance between legend component and the right side of the container.</p></li>
+<li><p><strong>top</strong> (<em>str</em><em>, </em><em>default=None</em>) – Distance between legend component and the top side of the container.</p></li>
+<li><p><strong>bottom</strong> (<em>str</em><em>, </em><em>default=None</em>) – Distance between legend component and the bottom side of the container.</p></li>
+<li><p><strong>width</strong> (<em>str</em><em>, </em><em>default='auto'</em>) – The legend frame width.</p></li>
+<li><p><strong>height</strong> (<em>str</em><em>, </em><em>default='auto'</em>) – The legend frame height.</p></li>
+<li><p><strong>orient</strong> (<em>str</em><em>, </em><em>default='vertical'</em>) – The legend arrangement.</p></li>
+<li><p><strong>unselected</strong> (<em>list</em><em>, </em><em>default=</em><em>[</em><em>]</em>) – The initial unselected series names.</p></li>
+<li><p><strong>legend_type</strong> (<em>str</em><em>, </em><em>default='plain'</em>) – Type of legend. Options: [‘plain’, ‘scroll’].</p></li>
+<li><p><strong>text_width</strong> (<em>int</em><em>, </em><em>default=None</em>) – The text width.</p></li>
+<li><p><strong>tooltip_title</strong> (<em>str</em><em>, </em><em>default=None</em>) – The legend title shown in the tooltip.</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>default=None</em>) – The legend title shown above the legend.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.set_radar">
+<span class="sig-name descname"><span class="pre">set_radar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><span class="pre">ndarray</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.set_radar" title="Link to this definition">#</a></dt>
+<dd><p>Set radar infomation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>names</strong> (<em>Union</em><em>[</em><em>list</em><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>numpy.ndarray</em></a><em>]</em>) – Names of each axis.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.set_title">
+<span class="sig-name descname"><span class="pre">set_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'50%'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_align</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.set_title" title="Link to this definition">#</a></dt>
+<dd><p>Set title config</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em><em>, </em><em>default=None</em>) – Text content of the title.</p></li>
+<li><p><strong>show</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Whether to show the title.</p></li>
+<li><p><strong>left</strong> (<em>str</em><em>, </em><em>default='50%'</em>) – Distance between title component and the left side of the container.</p></li>
+<li><p><strong>right</strong> (<em>str</em><em>, </em><em>default='auto'</em>) – Distance between title component and the right side of the container.</p></li>
+<li><p><strong>top</strong> (<em>str</em><em>, </em><em>default='auto'</em>) – Distance between title component and the top side of the container.</p></li>
+<li><p><strong>bottom</strong> (<em>str</em><em>, </em><em>default='auto'</em>) – Distance between title component and the bottom side of the container.</p></li>
+<li><p><strong>fontsize</strong> (<em>str</em><em>, </em><em>default=DEFAULT_TITLE_SIZE</em>) – Font size of the title.</p></li>
+<li><p><strong>color</strong> (<em>str</em><em>, </em><em>default=None</em>) – Font color of the title.</p></li>
+<li><p><strong>text_align</strong> (<em>str</em><em>, </em><em>default='auto'</em>) – How to align the title.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.set_toolbox">
+<span class="sig-name descname"><span class="pre">set_toolbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orient</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'horizontal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'1%'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tool_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">['dataZoom',</span> <span class="pre">'saveAsImage']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item_gap</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">popup</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.set_toolbox" title="Link to this definition">#</a></dt>
+<dd><p>Set toolbox config</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>show</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Whether to show the toolbox.</p></li>
+<li><p><strong>orient</strong> (<em>str</em><em>, </em><em>default='horizontal'</em>) – The layout orientation of the toolbox’s icon.</p></li>
+<li><p><strong>left</strong> (<em>str</em><em>, </em><em>default='auto'</em>) – Distance between the toolbox component and the left side of the container.</p></li>
+<li><p><strong>right</strong> (<em>str</em><em>, </em><em>default='1%'</em>) – Distance between the toolbox component and the right side of the container.</p></li>
+<li><p><strong>bottom</strong> (<em>str</em><em>, </em><em>default='auto'</em>) – Distance between the toolbox component and the bottom side of the container.</p></li>
+<li><p><strong>top</strong> (<em>str</em><em>, </em><em>default='auto'</em>) – Distance between the toolbox component and the top side of the container.</p></li>
+<li><p><strong>tool_list</strong> (<em>list</em><em>, </em><em>default=</em><em>[</em><em>'dataZoom'</em><em>, </em><em>'saveAsImage'</em><em>]</em>) – <dl class="simple">
+<dt>The tools included in the toolbox. Options:</dt><dd><ul>
+<li><p>’saveAsImage’: Save as image.</p></li>
+<li><p>’restore’: Restore configuration item.</p></li>
+<li><p>’dataView’: Data view tool, which displays data in the current chart and updates the chart after editing.</p></li>
+<li><p>’dataZoom’: Data area zooming, which only supports rectangular coordinate systems.</p></li>
+<li><p>’magicType’: Change plot type.</p></li>
+</ul>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>item_size</strong> (<em>float</em><em>, </em><em>default=15.</em>) – The size of each item in the toolbox.</p></li>
+<li><p><strong>item_gap</strong> (<em>float</em><em>, </em><em>default=8.</em>) – The gap between each two items.</p></li>
+<li><p><strong>popup</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Whether to include a popup function in the toolbox.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.set_tooltip">
+<span class="sig-name descname"><span class="pre">set_tooltip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigger_on</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_tooltip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_css_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.set_tooltip" title="Link to this definition">#</a></dt>
+<dd><p>Set tooltip config</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>show</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Whether to show the tooltip.</p></li>
+<li><p><strong>trigger</strong> (<em>str</em><em>, </em><em>default=None</em>) – <dl class="simple">
+<dt>Type of triggering. Options:</dt><dd><ul>
+<li><p>’item’: Triggered by data item, typically used for charts that don’t have a category axis.</p></li>
+<li><p>’axis’: Triggered by axes, typically used for charts that have category axes.</p></li>
+<li><p>’none’: Trigger nothing.</p></li>
+</ul>
+</dd>
+</dl>
+<p>If None, it will be ‘item’</p>
+</p></li>
+<li><p><strong>trigger_on</strong> (<em>str</em><em>, </em><em>default=None</em>) – <dl class="simple">
+<dt>Conditions to trigger the tooltip. Options:</dt><dd><ul>
+<li><p>’mousemove’: Trigger when the mouse moves.</p></li>
+<li><p>’click’: Trigger when the mouse clicks.</p></li>
+<li><p>’mousemove|click’: Trigger when the mouse moves or clicks.</p></li>
+<li><p>’none’: No triggers.</p></li>
+</ul>
+</dd>
+</dl>
+<p>If None, it will be ‘mousemove|click’.</p>
+</p></li>
+<li><p><strong>type</strong> (<em>str</em><em>, </em><em>default=None</em>) – <dl class="simple">
+<dt>Indicator type. Options:</dt><dd><ul>
+<li><p>’line’: Line indicator.</p></li>
+<li><p>’shadow’: Shadow crosshair indicator.</p></li>
+<li><p>’none’: No indicator displayed.</p></li>
+<li><p>’cross’: Crosshair indicator, which enables two-axis pointers.</p></li>
+</ul>
+</dd>
+</dl>
+<p>If None, it will be ‘shadow’.</p>
+</p></li>
+<li><p><strong>formatter</strong> (<em>str</em><em>, </em><em>default=None</em>) – The content formatter for the tooltip’s floating layer, which supports string templates and callback functions.
+The template variables are {a}, {b}, {c}, {d}, and {e}, corresponding to series name, data name, data value, and more.</p></li>
+<li><p><strong>precision</strong> (<em>int</em><em>, </em><em>default=None</em>) – The precision of the tooltip value.</p></li>
+<li><p><strong>custom_tooltip</strong> (<em>bool</em><em>, </em><em>default=None</em>) – Whether to use a custom tooltip.</p></li>
+<li><p><strong>extra_css_text</strong> (<em>str</em><em>, </em><em>default=None</em>) – The CSS for the tooltip.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.set_visualmap">
+<span class="sig-name descname"><span class="pre">set_visualmap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'continuous'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">['#440154',</span> <span class="pre">'#481467',</span> <span class="pre">'#482576',</span> <span class="pre">'#453781',</span> <span class="pre">'#404688',</span> <span class="pre">'#39558c',</span> <span class="pre">'#33638d',</span> <span class="pre">'#2d718e',</span> <span class="pre">'#287d8e',</span> <span class="pre">'#238a8d',</span> <span class="pre">'#1f968b',</span> <span class="pre">'#20a386',</span> <span class="pre">'#29af7f',</span> <span class="pre">'#3dbc74',</span> <span class="pre">'#56c667',</span> <span class="pre">'#75d054',</span> <span class="pre">'#95d840',</span> <span class="pre">'#bade28',</span> <span class="pre">'#dde318',</span> <span class="pre">'#fde725']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_min</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_max</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calculable</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orient</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'vertical'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">140</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.set_visualmap" title="Link to this definition">#</a></dt>
+<dd><p>Set color visual map</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>str</em><em>, </em><em>default='continuous'</em>) – The type of visual map, can be ‘continuous’ or ‘piecewise’.</p></li>
+<li><p><strong>color</strong> (<em>list</em><em>, </em><em>default=DEFAULT_SEQUENCIAL_PALETTE</em>) – Color palette for visual map.</p></li>
+<li><p><strong>map_min</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em><em>, </em><em>default=None</em>) – Minimum value of the visual map.</p></li>
+<li><p><strong>map_max</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em><em>, </em><em>default=None</em>) – Maximum value of the visual map.</p></li>
+<li><p><strong>map_range</strong> (<em>list</em><em>, </em><em>default=None</em>) – Selected range.</p></li>
+<li><p><strong>split_number</strong> (<em>int</em><em>, </em><em>default=5</em>) – The number of split ranges, only works when type=’piecewise’.</p></li>
+<li><p><strong>calculable</strong> (<em>bool</em><em>, </em><em>default=False</em>) – Whether to support dragging.</p></li>
+<li><p><strong>orient</strong> (<em>str</em><em>, </em><em>default='vertical'</em>) – The visual map display orientation.</p></li>
+<li><p><strong>left</strong> (<em>str</em><em>, </em><em>default='auto'</em>) – Distance between visual map component and the left side of the container.</p></li>
+<li><p><strong>bottom</strong> (<em>str</em><em>, </em><em>default='auto'</em>) – Distance between visual map component and the bottom side of the container.</p></li>
+<li><p><strong>right</strong> (<em>str</em><em>, </em><em>default='auto'</em>) – Distance between visual map component and the right side of the container.</p></li>
+<li><p><strong>top</strong> (<em>str</em><em>, </em><em>default='auto'</em>) – Distance between visual map component and the top side of the container.</p></li>
+<li><p><strong>height</strong> (<em>float</em><em>, </em><em>default=140.</em>) – The height of the visual map bar.</p></li>
+<li><p><strong>width</strong> (<em>float</em><em>, </em><em>default=20.</em>) – The width of the visual map bar.</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>default=None</em>) – Title text above the visual map.</p></li>
+<li><p><strong>dimension</strong> (<em>int</em><em>, </em><em>default=None</em>) – Specify which dimension should be used to fetch data values from series.data,
+and then map them to the visual channel.</p></li>
+<li><p><strong>precision</strong> (<em>int</em><em>, </em><em>default=None</em>) – The decimal precision of the label.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.set_xaxis">
+<span class="sig-name descname"><span class="pre">set_xaxis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><span class="pre">ndarray</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary_gap</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_gap</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_label_interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_label_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_label_overflow</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'none'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_label_rotate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_area_show</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_line_show</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_tick_align</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'none'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignored</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.set_xaxis" title="Link to this definition">#</a></dt>
+<dd><p>Set x-axis config</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>show</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Whether to show the axis.</p></li>
+<li><p><strong>axis_type</strong> (<em>str</em><em>, </em><em>default=None</em>) – The axis type.</p></li>
+<li><p><strong>axis_name</strong> (<em>str</em><em>, </em><em>default=None</em>) – The name of the axis.</p></li>
+<li><p><strong>data</strong> (<em>list</em><em>, </em><em>default=None</em>) – The data of the axis.</p></li>
+<li><p><strong>fontsize</strong> (<em>int</em><em>, </em><em>default=None</em>) – The font size of the axis name.</p></li>
+<li><p><strong>lim</strong> (<em>tuple</em><em>, </em><em>list</em><em>, </em><em>default=None</em>) – The limitation range of the axis.</p></li>
+<li><p><strong>boundary_gap</strong> (<em>bool</em><em>, </em><em>default=None</em>) – The boundary gap on both sides of a coordinate axis.</p></li>
+<li><p><strong>name_gap</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>int</em><em>]</em><em>, </em><em>default=None</em>) – Gap between axis name and axis line.</p></li>
+<li><p><strong>name_location</strong> (<em>str</em><em>, </em><em>default=None</em>) – Location of the axis name.</p></li>
+<li><p><strong>axis_label_interval</strong> (<em>int</em><em>, </em><em>default=None</em>) – Interval between each text label.</p></li>
+<li><p><strong>axis_label_width</strong> (<em>int</em><em>, </em><em>default=None</em>) – Width of text block, by default None.</p></li>
+<li><p><strong>axis_label_overflow</strong> (<em>str</em><em>, </em><em>default='none'</em>) – How to handle labels out of width.</p></li>
+<li><p><strong>axis_label_rotate</strong> (<em>int</em><em>, </em><em>default=None</em>) – The rotation degree of the axis label.</p></li>
+<li><p><strong>split_number</strong> (<em>int</em><em>, </em><em>default=None</em>) – Number of segments on the axis.</p></li>
+<li><p><strong>split_area_show</strong> (<em>bool</em><em>, </em><em>default=False</em>) – Whether to show the split area.</p></li>
+<li><p><strong>split_line_show</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Whether to show the split line.</p></li>
+<li><p><strong>axis_tick_align</strong> (<em>str</em><em>, </em><em>default='none'</em>) – Align axis tick with label.</p></li>
+<li><p><strong>axis_list</strong> (<em>list</em><em>, </em><em>default=None</em>) – The axis list input for multiple axes.</p></li>
+<li><p><strong>ignored</strong> (<em>bool</em><em>, </em><em>default=False</em>) – Whether the axis is ignored when combining axes.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.set_yaxis">
+<span class="sig-name descname"><span class="pre">set_yaxis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><span class="pre">ndarray</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary_gap</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inverse</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_gap</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_label_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_label_overflow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'none'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_label_interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_area_show</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_line_show</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_tick_align</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'none'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignored</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.set_yaxis" title="Link to this definition">#</a></dt>
+<dd><p>Set y-axis config</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>show</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Whether to show the axis.</p></li>
+<li><p><strong>axis_type</strong> (<em>str</em><em>, </em><em>default=None</em>) – The axis type.</p></li>
+<li><p><strong>axis_name</strong> (<em>str</em><em>, </em><em>default=None</em>) – The name of the axis.</p></li>
+<li><p><strong>data</strong> (<em>list</em><em>, </em><em>default=None</em>) – The data of the axis.</p></li>
+<li><p><strong>fontsize</strong> (<em>int</em><em>, </em><em>default=None</em>) – The font size of the axis name.</p></li>
+<li><p><strong>lim</strong> (<em>Union</em><em>[</em><em>list</em><em>, </em><em>tuple</em><em>]</em><em>, </em><em>default=None</em>) – The limitation range of the axis.</p></li>
+<li><p><strong>boundary_gap</strong> (<em>bool</em><em>, </em><em>default=None</em>) – The boundary gap on both sides of a coordinate axis.</p></li>
+<li><p><strong>inverse</strong> (<em>bool</em><em>, </em><em>default=None</em>) – Whether to invert the y-axis.</p></li>
+<li><p><strong>name_location</strong> (<em>str</em><em>, </em><em>default=None</em>) – Location of the axis name.</p></li>
+<li><p><strong>name_gap</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>int</em><em>]</em><em>, </em><em>default=None</em>) – Gap between axis name and axis line.</p></li>
+<li><p><strong>axis_label_width</strong> (<em>int</em><em>, </em><em>default=None</em>) – Width of text block.</p></li>
+<li><p><strong>axis_label_overflow</strong> (<em>str</em><em>, </em><em>default='none'</em>) – How to handle labels out of width.</p></li>
+<li><p><strong>axis_label_interval</strong> (<em>int</em><em>, </em><em>Optional</em>) – Interval between each text label.</p></li>
+<li><p><strong>split_number</strong> (<em>int</em><em>, </em><em>default=None</em>) – Number of segments on the axis.</p></li>
+<li><p><strong>split_area_show</strong> (<em>bool</em><em>, </em><em>default=False</em>) – Whether to show the split area.</p></li>
+<li><p><strong>split_line_show</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Whether to show the split line.</p></li>
+<li><p><strong>axis_tick_align</strong> (<em>str</em><em>, </em><em>default='none'</em>) – Align axis tick with label.</p></li>
+<li><p><strong>axis_list</strong> (<em>list</em><em>, </em><em>default=None</em>) – The axis list input for multiple axes.</p></li>
+<li><p><strong>ignored</strong> (<em>bool</em><em>, </em><em>default=False</em>) – Whether the axis is ignored when combining axes.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mocharts.Figure.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_html</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">silent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mocharts.Figure.show" title="Link to this definition">#</a></dt>
+<dd><p>Show the plot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>options</strong> (<em>dict</em><em>, </em><em>default=None</em>) – The options to show. If None, options will be got from self.render().</p></li>
+<li><p><strong>return_html</strong> (<em>bool</em><em>, </em><em>default=False</em>) – Whether to return an HTML string.</p></li>
+<li><p><strong>silent</strong> (<em>bool</em><em>, </em><em>default=False</em>) – Whether to mute plot automatically.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../container.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Container</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="mocharts.SubPlots.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">mocharts.SubPlots</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure"><code class="docutils literal notranslate"><span class="pre">Figure</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.add"><code class="docutils literal notranslate"><span class="pre">Figure.add()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.add_annotation"><code class="docutils literal notranslate"><span class="pre">Figure.add_annotation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.add_hline"><code class="docutils literal notranslate"><span class="pre">Figure.add_hline()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.add_vline"><code class="docutils literal notranslate"><span class="pre">Figure.add_vline()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.render"><code class="docutils literal notranslate"><span class="pre">Figure.render()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.save"><code class="docutils literal notranslate"><span class="pre">Figure.save()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.set_animation"><code class="docutils literal notranslate"><span class="pre">Figure.set_animation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.set_brush"><code class="docutils literal notranslate"><span class="pre">Figure.set_brush()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.set_datazoom"><code class="docutils literal notranslate"><span class="pre">Figure.set_datazoom()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.set_event"><code class="docutils literal notranslate"><span class="pre">Figure.set_event()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.set_figsize"><code class="docutils literal notranslate"><span class="pre">Figure.set_figsize()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.set_grid"><code class="docutils literal notranslate"><span class="pre">Figure.set_grid()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.set_legend"><code class="docutils literal notranslate"><span class="pre">Figure.set_legend()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.set_radar"><code class="docutils literal notranslate"><span class="pre">Figure.set_radar()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.set_title"><code class="docutils literal notranslate"><span class="pre">Figure.set_title()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.set_toolbox"><code class="docutils literal notranslate"><span class="pre">Figure.set_toolbox()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.set_tooltip"><code class="docutils literal notranslate"><span class="pre">Figure.set_tooltip()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.set_visualmap"><code class="docutils literal notranslate"><span class="pre">Figure.set_visualmap()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.set_xaxis"><code class="docutils literal notranslate"><span class="pre">Figure.set_xaxis()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.set_yaxis"><code class="docutils literal notranslate"><span class="pre">Figure.set_yaxis()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocharts.Figure.show"><code class="docutils literal notranslate"><span class="pre">Figure.show()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024-2025, Modeva Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

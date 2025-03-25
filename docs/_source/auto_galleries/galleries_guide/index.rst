@@ -17,6 +17,23 @@ This section contains several example about how to use mocharts.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Mocharts supports a variety of chart types. In this example, we will demonstrate some simple use cases for these charts. For more details, you can refer to the API documentation for each plot or explore the examples for each chart.">
+
+.. only:: html
+
+  .. image:: /_source/auto_galleries/galleries_guide/images/thumb/sphx_glr_plots_0_basic_plots_thumb.png
+    :alt:
+
+  :ref:`sphx_glr__source_auto_galleries_galleries_guide_plots_0_basic_plots.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Basic Plots</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Mocharts supports various layout options for displaying multiple plots. In this example, we will demonstrate how to display a single plot, how to combine multiple plots into a single figure, and how to manage multiple plots using the SubPlots object.">
 
 .. only:: html
@@ -49,23 +66,6 @@ This section contains several example about how to use mocharts.
     </div>
 
 
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Mocharts supports a variety of chart types. In this example, we will demonstrate some simple use cases for these charts. For more details, you can refer to the API documentation for each plot or explore the examples for each chart.">
-
-.. only:: html
-
-  .. image:: /_source/auto_galleries/galleries_guide/images/thumb/sphx_glr_plots_0_plots_thumb.png
-    :alt:
-
-  :ref:`sphx_glr__source_auto_galleries_galleries_guide_plots_0_plots.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Basic Plots</div>
-    </div>
-
-
 .. thumbnail-parent-div-close
 
 .. raw:: html
@@ -76,9 +76,9 @@ This section contains several example about how to use mocharts.
 .. toctree::
    :hidden:
 
+   /_source/auto_galleries/galleries_guide/plots_0_basic_plots
    /_source/auto_galleries/galleries_guide/plots_0_container
    /_source/auto_galleries/galleries_guide/plots_0_linkage_view
-   /_source/auto_galleries/galleries_guide/plots_0_plots
 
 
 

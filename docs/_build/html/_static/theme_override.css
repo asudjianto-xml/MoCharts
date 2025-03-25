@@ -1,10 +1,10 @@
+/* Keep your existing styles */
 .wy-nav-top {
     background-color: #FF8C38 !important;
 }
 .wy-side-nav-search {
     background-color: #FF8C38 !important;
 }
-
 
 div[class^="highlight"] a {
     background-color: #E6E6E6;
@@ -32,4 +32,15 @@ a.sphx-glr-backref-module-sphinx_gallery {
 
 .anim-state label {
     display: inline-block;
+}
+
+div.output_subarea {
+     overflow-x: auto; /* Add scroll bar for large cells or tables */
+}
+
+/* New rule to left-align all tables */
+table {
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
 }

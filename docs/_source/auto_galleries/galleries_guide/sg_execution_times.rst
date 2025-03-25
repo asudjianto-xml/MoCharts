@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:02.784** total execution time for 3 files **from _source\auto_galleries\galleries_guide**:
+**00:02.758** total execution time for 3 files **from _source\auto_galleries\galleries_guide**:
 
 .. container::
 
@@ -32,12 +32,12 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr__source_auto_galleries_galleries_guide_plots_0_container.py` (``plots_0_container.py``)
-     - 00:02.654
-     - 0.0
-   * - :ref:`sphx_glr__source_auto_galleries_galleries_guide_plots_0_plots.py` (``plots_0_plots.py``)
-     - 00:00.100
+   * - :ref:`sphx_glr__source_auto_galleries_galleries_guide_plots_0_basic_plots.py` (``plots_0_basic_plots.py``)
+     - 00:02.708
      - 0.0
    * - :ref:`sphx_glr__source_auto_galleries_galleries_guide_plots_0_linkage_view.py` (``plots_0_linkage_view.py``)
-     - 00:00.029
+     - 00:00.028
+     - 0.0
+   * - :ref:`sphx_glr__source_auto_galleries_galleries_guide_plots_0_container.py` (``plots_0_container.py``)
+     - 00:00.022
      - 0.0

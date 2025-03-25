@@ -15,7 +15,8 @@ Dependency              Minimum Version      Maximum Version
 ======================= ===================  ===================
 uvicorn              
 fastapi                 
-selenium                
+selenium                4.19.0
+webdriver-manager       4.0.2                
 ======================= ===================  ===================
 
 **Dashboard & Visualization**
